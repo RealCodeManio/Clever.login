@@ -1,0 +1,53 @@
+* {
+    font-family: 'Roboto';
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--background);
+    --background: #1c1c1c;
+    --theme: #4CAF50;
+    --text: white;
+    --text-secondary: black;
+}
+
+.navbar {
+    height: 56px;
+    border-bottom: 1px solid var(--theme);
+}
+
+.navitems {
+    margin: 5px 6px;
+    display: flex;
+}
+
+.navitem {
+    border-radius: 40px;
+    padding: 16px 10px;
+    font-size: 15px;
+    background: var(--theme);
+    cursor: pointer;
+    user-select: none;
+}
+
+.title {
+    font-size: 3em;
+    color: var(--text);
+    text-align: center;
+    margin-top: 180px;
+    font-weight: bold;
+    user-select: none;
+}
+
+.play {
+    height: 30px;
+    padding: 20px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--theme);
+    font-size: 1rem;
+    border-radius: 15px;
+    cursor: pointer;
+}
