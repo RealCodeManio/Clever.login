@@ -110,6 +110,53 @@ footer {
     max-width: calc(100% - 4rem);
 }
 
+.games {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 200px);
+    justify-content: space-between;
+    grid-gap: 2rem;
+    margin: 1rem 2rem 2rem 2rem;
+    z-index: -5;
+}
+
+.game {
+    height: 240px;
+    width: 200px;
+    background: var(--theme);
+    color: var(--text);
+    text-decoration: none;
+    border-radius: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    -webkit-user-select: none;
+    user-select: none;
+    position: relative;
+}
+
+.game-image {
+    background: var(--url) 0% 0% / cover, var(--theme);
+    background-position: center;
+    background-size: cover;
+    height: 200px;
+    width: 200px;
+    border-radius: 15px 15px 0 0;
+}
+
+.game-text {
+    line-height: 40px;
+    width: 200px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: var(--text-secondary);
+    padding: 0 10px;
+    font-size: 18px;
+}
+
 ::-webkit-scrollbar-thumb {
     background: var(--theme);
 }
