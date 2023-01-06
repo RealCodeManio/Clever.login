@@ -20,6 +20,7 @@ body {
     box-shadow: 0 5px 1000px var(--theme);
     position: sticky;
     top: 0;
+    z-index: 9999;
 }
 
 .navitems {
@@ -116,7 +117,6 @@ footer {
     justify-content: space-between;
     grid-gap: 2rem;
     margin: 1rem 2rem 2rem 2rem;
-    z-index: -5;
 }
 
 .game {

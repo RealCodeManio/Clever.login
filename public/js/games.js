@@ -5,8 +5,9 @@
     var games = await gamesData.json()
 
     for (let game in games) {
-        var newGame = document.createElement("div")
+        var newGame = document.createElement("a")
         newGame.className = "game"
+        newGame.setAttribute("href", games[game].url)
 
         var gameImage = document.createElement("div")
         gameImage.className = "game-image"
