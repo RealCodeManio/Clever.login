@@ -22,6 +22,6 @@ self.addEventListener("fetch", function(e) {
     if (path.startsWith("/files/")) {
         var fetchPath = "https://cdn.jsdelivr.net/gh/3kh0/3kh0.github.io/projects/" + path.split("/files/")[1]
 
-            e.respondWith(handleRequest(fetchPath))
+        e.respondWith(handleRequest(fetchPath))
     }
 })

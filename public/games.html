@@ -20,7 +20,7 @@
     </div>
 
     <center>
-        <input class="searchbar" placeholder="Search">
+        <input onkeyup="searchGames(this.value.trim().toLowerCase())" class="searchbar" placeholder="Search">
     </center>
 
     <div class="games"></div>

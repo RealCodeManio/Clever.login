@@ -1,3 +1,22 @@
+function searchGames(query) {
+    var gamesElement = document.querySelector(".games")
+
+    for (let game in gamesElement.children) {
+        if (gamesElement.children[game] instanceof Element) {
+            if (query) {
+                var gameName = gamesElement.children[game].querySelector(".game-text").innerText.trim().toLowerCase()
+                if (gameName.includes(query)) {
+                    gamesElement.children[game].removeAttribute("hidden")
+                } else {
+                    gamesElement.children[game].setAttribute("hidden", "")
+                }
+            } else {
+                gamesElement.children[game].removeAttribute("hidden")
+            }
+        }
+    }
+}
+
 (async () => {
     var gamesElement = document.querySelector(".games")
 

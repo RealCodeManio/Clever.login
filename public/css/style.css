@@ -136,6 +136,10 @@ footer {
     position: relative;
 }
 
+.game[hidden] {
+    display: none;
+}
+
 .game-image {
     background: var(--url) 0% 0% / cover, var(--theme);
     background-position: center;
