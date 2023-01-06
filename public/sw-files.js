@@ -1,8 +1,13 @@
-async function handleHTMLRequest(fetchPath) {
+async function handleRequest(fetchPath) {
+    if (!fetchPath.endsWith(".html")) {
+        return fetch(fetchPath)
+    }
+
     var customFetch = await fetch(fetchPath)
     var htmlCode = await customFetch.text()
 
-    var newHeaders = customFetch.rawHeaders
+    var newHeaders = Object.assign({}, customFetch.rawHeaders)
+
     newHeaders['content-type'] = "text/html"
 
     return new Response(htmlCode, {
@@ -17,10 +22,6 @@ self.addEventListener("fetch", function(e) {
     if (path.startsWith("/files/")) {
         var fetchPath = "https://cdn.jsdelivr.net/gh/3kh0/3kh0.github.io/projects/" + path.split("/files/")[1]
 
-        if (fetchPath.endsWith(".html")) {
-            e.respondWith(handleHTMLRequest(fetchPath))
-        } else {
-            //e.respondWith(fetch(fetchPath))
-        }
+            e.respondWith(handleRequest(fetchPath))
     }
 })
