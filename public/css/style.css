@@ -9,10 +9,6 @@ body {
     flex-direction: column;
     min-height: 100vh;
     background: var(--background);
-    --background: #1c1c1c;
-    --theme: #4CAF50;
-    --text: white;
-    --text-secondary: black;
 }
 
 .navbar {
@@ -71,6 +67,10 @@ body {
     margin: 1rem;
 }
 
+.homemessage {
+    cursor: pointer;
+}
+
 .play {
     height: 30px;
     padding: 20px 15px;
@@ -84,6 +84,7 @@ body {
     margin-bottom: 10rem;
     user-select: none;
     border: none;
+    color: var(--text-secondary);
 }
 
 a {

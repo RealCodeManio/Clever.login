@@ -4,8 +4,10 @@ async function randomSay() {
     return says[Math.floor(Math.random()*says.length)]
 }
 
+async function setRandomSay() {
+    document.querySelector(".message").innerText = await randomSay()
+}
+
 if (document.querySelector(".message")) {
-    (async () => {
-        document.querySelector(".message").innerText = await randomSay()
-    })()
+    setRandomSay()
 }
