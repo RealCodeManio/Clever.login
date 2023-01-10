@@ -69,6 +69,13 @@ body {
 
 .homemessage {
     cursor: pointer;
+    width: fit-content;
+    user-select: none;
+}
+
+.play-link {
+    width: fit-content;
+    display: block;
 }
 
 .play {

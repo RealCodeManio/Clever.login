@@ -1,14 +1,24 @@
+var splashCacheAll;
 var splashCache;
 
 async function randomSay() {
     if (splashCache) {
+        if (!splashCache.length) {
+            splashCache = splashCacheAll
+        }
         var says = splashCache
     } else {
         var say = await fetch(location.origin + "/assets/say.json")
         var says = await say.json()
+        splashCacheAll = says
         splashCache = says
     }
-    return says[Math.floor(Math.random()*says.length)]
+
+    var getRandomSay = says[Math.floor(Math.random()*says.length)]
+
+    splashCache = splashCache.filter(splash => splash !== getRandomSay)
+
+    return getRandomSay
 }
 
 async function setRandomSay() {
