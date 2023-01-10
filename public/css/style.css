@@ -162,26 +162,27 @@ footer {
     font-size: 18px;
 }
 
-.settings-title {
+.section-title {
     color: var(--text);
     font-size: 1.5rem;
     margin: 1rem;
 }
 
-.settings-buttons {
+.buttons {
     display: flex;
     gap: 10px;
     margin: 0 1rem;
     user-select: none;
 }
 
-.settings-button {
+.button {
     background: var(--theme);
     width: fit-content;
     padding: 10px;
     border-radius: 15px;
     cursor: pointer;
     color: var(--text-secondary);
+    border: 0;
 }
 
 ::-webkit-scrollbar-thumb {
