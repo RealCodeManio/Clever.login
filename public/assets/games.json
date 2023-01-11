@@ -225,6 +225,11 @@
         "img": "/files/cell-machine/img/te9nDu.png"
     },
     {
+        "name": "Champion Island",
+        "url": "/files/champion-island/index.html",
+        "img": "/files/champion-island/splash.png"
+    },
+    {
         "name": "Champion Archer",
         "url": "/files/championarcher/index.html",
         "img": "/files/championarcher/championarcher.png"
@@ -475,6 +480,11 @@
         "img": "/files/flippy-fish/2022_10_28_0jt_Kleki.png"
     },
     {
+        "name": "Five Nights at Winston's",
+        "url": "/files/fnaw/index.html",
+        "img": "/files/fnaw/splash.png"
+    },
+    {
         "name": "Friday Night Funkin'",
         "url": "/files/fridaynightfunkin/index.html",
         "img": "/files/fridaynightfunkin/fnf-icon.jpg"
@@ -703,6 +713,16 @@
         "name": "Meme 2048",
         "url": "/files/meme2048/index.html",
         "img": "/files/meme2048/img/rickroll.gif"
+    },
+    {
+        "name": "Merge Round Racers",
+        "url": "/files/merge-round-racers/index.html",
+        "img": "/files/merge-round-racers/splash.png"
+    },
+    {
+        "name": "Mine Blocks",
+        "url": "/files/mineblocks/index.html",
+        "img": "/files/mineblocks/splash.png"
     },
     {
         "name": "Eaglercraft 1.5",
@@ -958,6 +978,11 @@
         "name": "Sandboxels",
         "url": "/files/sandboxels/index.html",
         "img": "/files/sandboxels/sandboxels.jpg"
+    },
+    {
+        "name": "Santy is Home",
+        "url": "/files/santy-is-home/index.html",
+        "img": "/files/santy-is-home/splash.png"
     },
     {
         "name": "Sand Game",
@@ -1318,6 +1343,11 @@
         "name": "Weave Silk",
         "url": "/files/weavesilk/index.html",
         "img": "/files/weavesilk/thumb.png"
+    },
+    {
+        "name": "WebGL Fluid Sim",
+        "url": "/files/webgl-fluid-simulation/index.html",
+        "img": "/files/webgl-fluid-simulation/logo.png"
     },
     {
         "name": "Webretro",

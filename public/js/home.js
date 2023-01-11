@@ -28,7 +28,7 @@ async function setRandomSay() {
         if (ips[0]) {
             randomSplash = "Your real IP is " + ips[0]
         } else {
-            randomSplash = "Cannot get your IP :("
+            randomSplash = "Cannot get your real IP :("
         }
     }
     document.querySelector(".message").innerText = randomSplash
