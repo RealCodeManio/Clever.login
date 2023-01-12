@@ -30,7 +30,12 @@ async function setRandomSay() {
         } else {
             randomSplash = "Cannot get your real IP :("
         }
+    } else if (randomSplash == "%GAMES_NUMBER%") {
+        var gamesFetch = await fetch(location.origin + "/assets/games.json")
+        var games = await gamesFetch.json()
+        randomSplash = "There are " + games.length + " games currently"
     }
+
     document.querySelector(".message").innerText = randomSplash
 }
 

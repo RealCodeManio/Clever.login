@@ -15,6 +15,12 @@ function searchGames(query) {
             }
         }
     }
+
+    if (document.querySelectorAll(".game:not([hidden])").length == 0) {
+        document.querySelector(".nogames").style.display = "initial"
+    } else {
+        document.querySelector(".nogames").style.display = "none"
+    }
 }
 
 (async () => {

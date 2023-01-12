@@ -11,3 +11,10 @@ body[theme=orchid] {
     --text: white;
     --text-secondary: white;
 }
+
+body[theme=sky] {
+    --background: #1c1c1c;
+    --theme: #0084ff;
+    --text: white;
+    --text-secondary: black;
+}

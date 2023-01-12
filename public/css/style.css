@@ -96,6 +96,7 @@ body {
 
 a {
     text-decoration: none;
+    color: #0084ff;
 }
 
 footer {
@@ -169,10 +170,24 @@ footer {
     font-size: 18px;
 }
 
+.nogames {
+    color: var(--text);
+    margin: 0 2rem;
+    margin-top: -2rem;
+    text-align: center;
+    display: none;
+}
+
 .section-title {
     color: var(--text);
     font-size: 1.5rem;
     margin: 1rem;
+}
+
+.section-text {
+    color: var(--text);
+    font-size: 1rem;
+    margin: 0 1rem;
 }
 
 .buttons {
