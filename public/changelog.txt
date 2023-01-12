@@ -1,4 +1,3 @@
-
 ░█████╗░██╗░░██╗░█████╗░███╗░░██╗░██████╗░███████╗  ██╗░░░░░░█████╗░░██████╗░
 ██╔══██╗██║░░██║██╔══██╗████╗░██║██╔════╝░██╔════╝  ██║░░░░░██╔══██╗██╔════╝░
 ██║░░╚═╝███████║███████║██╔██╗██║██║░░██╗░█████╗░░  ██║░░░░░██║░░██║██║░░██╗░
@@ -17,6 +16,12 @@ NOTE: Make sure you refresh the page! Sometimes you will not get the lastest upd
 + Means something was added
 ^ Means something was upgraded or changed
 - Means something was removed
+------------------------------------------------------------
+Jan, 11
+^ Fixed Escaping the prison by Piplup! 
+------------------------------------------------------------
+Jan, 10
+^ Updated some photos
 ------------------------------------------------------------
 Jan, 7
 + Added Mine Blocks
