@@ -22,4 +22,19 @@
     .game-text {
         line-height: 35px;
         width: 150px;
+    }
+
+    .review:last-child {
+        display: none;
+    }
+    
+    .review:first-child {
+        display: none;
+    }    
+}
+
+@media only screen and (max-height: 432px) {
+    .reviews-link {
+        display: none;
+    }
 }
