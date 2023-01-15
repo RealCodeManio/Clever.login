@@ -4,6 +4,11 @@
     var reviewsData = await fetch(location.origin + "/assets/reviews.json")
     var reviews = await reviewsData.json()
 
+    for (let i = reviews.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [reviews[i], reviews[j]] = [reviews[j], reviews[i]];
+    }
+
     var reviewsGroups = reviews.reduce((r, e, i) => (i % 3 ? r[r.length - 1].push(e) : r.push([e])) && r, []);
 
     var lastReviewGroup = reviewsGroups[reviewsGroups.length - 1]

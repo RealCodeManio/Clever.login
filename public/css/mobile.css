@@ -30,7 +30,11 @@
     
     .review:first-child {
         display: none;
-    }    
+    }
+
+    .review-placeholder {
+        display: none;
+    }
 }
 
 @media only screen and (max-height: 432px) {

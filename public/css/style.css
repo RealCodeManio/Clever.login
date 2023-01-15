@@ -269,14 +269,13 @@ footer {
     text-align: center;
     margin: 0.5rem;
     overflow: hidden;
+    height: 29.6px;
 }
 
 .review-content {
-    display: flex;
     margin: 0 10px;
     text-align: center;
     overflow: hidden;
-    text-overflow: ellipsis;
     height: 44%;
     color: var(--text-secondary);
 }

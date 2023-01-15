@@ -4,7 +4,7 @@
 
 async function v3gamestojson() {
 var games = []
-    
+
 var projectsCdn = await fetch("https://cdn.jsdelivr.net/gh/3kh0/3kh0.github.io/projects.html")
 var projectsCode = await projectsCdn.text()
 projectsCode = projectsCode.split(`<div id="search" class="flex-container">`)[1]
