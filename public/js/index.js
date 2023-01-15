@@ -1,3 +1,3 @@
-if (localStorage.getItem("theme")) {
-    document.body.setAttribute("theme", localStorage.getItem("theme"))
-}
+var theme = localStorage.getItem("theme") || "default"
+
+document.body.setAttribute("theme", theme)

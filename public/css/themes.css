@@ -1,4 +1,4 @@
-body {
+body[theme=default] {
     --background: #1c1c1c;
     --theme: #4CAF50;
     --text: white;
