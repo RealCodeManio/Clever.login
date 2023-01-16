@@ -1,4 +1,4 @@
-<img style="border-radius:50%" height="150px" src="https://raw.githubusercontent.com/3kh0/3kh0.github.io/main/images/logo.png">
+<img style="border-radius:50%" height="150px" src="https://raw.githubusercontent.com/3kh0/3kh0.github.io/main/images/logo.png"></img>
 # 3kh0
 The better unblocked games website.
 
@@ -93,10 +93,3 @@ sense, this is v4
 - [Website v1](https://github.com/3kh0/website-v1)
 - [Website v2](https://github.com/3kh0/website-v2)
 - [Website v3](https://github.com/3kh0/website-v3)
-
-To Do:
-- Tab Cloak
-- Readme.md
-- Version in about page
-- Remove package.json and package-lock.json
-- Remove games proxy and add game at path `/files/`
