@@ -211,6 +211,16 @@ footer {
     border: 0;
 }
 
+.input {
+    border: none;
+    background: var(--theme);
+    width: 200px;
+    padding: 10px;
+    border-radius: 15px;
+    outline: none;
+    color: var(--text-secondary);
+}
+
 .play-link {
     width: fit-content;
     display: block;

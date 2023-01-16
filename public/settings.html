@@ -25,6 +25,13 @@
         </div>
     </div>
 
+    <div class="section-title">Tab Cloak</div>
+    <div class="buttons">
+    <input id="title" class="input" placeholder="Title" onkeyup="setTitle(this.value)">
+    <input id="icon" class="input" placeholder="Favicon" onkeyup="setFavicon(this.value.trim())">
+    <button class="button" onclick="resetTab()">Reset</button>
+    </div>
+
     <div class="section-title">Theme</div>
     <div class="buttons">
     <button class="button" onclick="setTheme('default')">Default</button>
@@ -32,8 +39,6 @@
     <button class="button" onclick="setTheme('sky')">Sky</button>
     <button class="button" onclick="setTheme('winter')">Winter</button>
     </div>
-
-    <div class="section-title">Tab Cloak (Coming soon)</div>
 
     <footer>© 3kh0 2023</footer>
 
