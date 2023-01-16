@@ -200,6 +200,11 @@
         "img": "/files/btts/images.png"
     },
     {
+        "name": "Big NEON Tower Tiny Square  Hot",
+        "url": "/files/bntts/index.html",
+        "img": "/files/bntts/icons/icon-256.png"
+    },
+    {
         "name": "Burger and Frights",
         "url": "/files/burger-and-frights/index.html",
         "img": "/files/burger-and-frights/splash.png"
@@ -253,6 +258,11 @@
         "name": "Cluster Rush",
         "url": "/files/cluster-rush/index.html",
         "img": "/files/cluster-rush/splash.png"
+    },
+    {
+        "name": "Table Tennis Ultimate",
+        "url": "/files/cnpingpong/index.html",
+        "img": "/files/cnpingpong/tabletennisultimate.png"
     },
     {
         "name": "Connect 3",
@@ -443,6 +453,11 @@
         "name": "Factory Balls Forever",
         "url": "/files/factoryballs/index.html",
         "img": "/files/factoryballs/images/splash.png"
+    },
+    {
+        "name": "Fair Squares",
+        "url": "/files/fairsquares/index.html",
+        "img": "/files/fairsquares/index.apple-touch-icon.png"
     },
     {
         "name": "Fancy Pants Adventures",
@@ -815,6 +830,11 @@
         "img": "/files/ns-shaft/favicon.png"
     },
     {
+        "name": "Neon Square Resurgence",
+        "url": "/files/nsresurgence/index.html",
+        "img": "/files/nsresurgence/neon.png"
+    },
+    {
         "name": "Offline Paradise",
         "url": "/files/OfflineParadise/index.html",
         "img": "/files/OfflineParadise/assets/icon.jpeg"
@@ -998,6 +1018,11 @@
         "name": "Shellshockers",
         "url": "/files/shellshockers/index.html",
         "img": "/files/shellshockers/img/favicon.jpg"
+    },
+    {
+        "name": "Shot in the Dark",
+        "url": "/files/shotinthedark/index.html",
+        "img": "/files/shotinthedark/shot.png"
     },
     {
         "name": "SHUTTLEDECK",

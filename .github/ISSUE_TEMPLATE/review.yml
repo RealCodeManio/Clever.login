@@ -25,9 +25,6 @@ body:
   - type: textarea
     attributes:
       label: Profile picture
-      description: >-
-        Please drag and drop, or click on the upload bar at the bottom of the
-        input and upload a photo you want to be the picture that represents you.
-      placeholder: Drag and drop a photo here!
+      placeholder: Drag and drop a photo here! You can use a gif if you want!
     validations:
       required: true
