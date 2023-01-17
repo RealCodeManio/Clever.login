@@ -48,4 +48,6 @@ function searchGames(query) {
 
         gamesElement.appendChild(newGame)
     }
+
+    document.querySelector(".spinner").style.display = "none"
 })()
