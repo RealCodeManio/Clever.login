@@ -368,10 +368,12 @@ footer {
 
 .spinner {
     display: inline-block;
-    color: black;
+    color: var(--theme);
     animation: 1.4s linear 0s infinite normal none running animation-61bdi0;
-    width:80px;
-    height:80px;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    margin-top: 2rem;
 }
 
 .spinnerSvg {
