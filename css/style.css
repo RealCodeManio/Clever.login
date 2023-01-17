@@ -366,6 +366,31 @@ footer {
     display: none;
 }
 
+.spinner {
+    display: inline-block;
+    color: black;
+    animation: 1.4s linear 0s infinite normal none running animation-61bdi0;
+    width:80px;
+    height:80px;
+}
+
+.spinnerSvg {
+    stroke: currentColor;
+    stroke-dasharray: 80px,200px;
+    stroke-dashoffset: 0;
+    -webkit-animation: animation-1p2h4ri 1.4s ease-in-out infinite;
+    animation: animation-1p2h4ri 1.4s ease-in-out infinite;
+}
+
+@keyframes animation-61bdi0 {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 ::-webkit-scrollbar-thumb {
     background: var(--theme);
 }
