@@ -34,6 +34,8 @@ async function setRandomSay() {
         var gamesFetch = await fetch(location.origin + "/assets/games.json")
         var games = await gamesFetch.json()
         randomSplash = "There are " + games.length + " games currently"
+    } else if (randomSplash == "%SPLASH_NUMBER%") {
+        randomSplash = "There are " + splashCacheAll.length + " of these messages!"
     }
 
     document.querySelector(".message").innerText = randomSplash
