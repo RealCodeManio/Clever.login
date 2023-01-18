@@ -21,7 +21,7 @@ var gamesElements = doc.body.children
 for (let game in gamesElements) {
 if (gamesElements[game] instanceof Element) {
 var name = gamesElements[game].querySelector(".game-title").innerText.trim().replaceAll(`\n             Hot`, "")
-var url = gamesElements[game].getAttribute("href").trim().replace("projects", "/files")
+var url = gamesElements[game].getAttribute("href").trim().replace("projects", "/projects")
 var img = gamesElements[game].querySelector(".game-icon").getAttribute("src").trim().replace("projects", "/projects")
 games.push({
     name: name,
