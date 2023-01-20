@@ -30,7 +30,6 @@
         <input onkeyup="searchGames(this.value.trim().toLowerCase())" class="searchbar" placeholder="Search">
     </center>
 
-    <div class="games"></div>
     <div class="saveItems">
         <button onclick="downloadMainSave()">Download Save</button>
         <button onclick="uploadMainSave()">Upload Save</button>
@@ -38,6 +37,8 @@
     </div>
         
     <input class="hiddenUpload" type="file" accept=".save">
+        
+    <div class="games"></div>
     <span class="spinner">
         <svg viewBox="22 22 44 44">
             <circle class="spinnerSvg" cx="44" cy="44" r="20.2" fill="none" stroke-width="3.6"></circle>
