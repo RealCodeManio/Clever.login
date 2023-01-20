@@ -422,4 +422,7 @@ footer {
 
 .uploadResult {
     display: none;
+    color: var(--theme);
+    display: flex;
+    align-items: center;
 }
