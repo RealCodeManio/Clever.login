@@ -11,8 +11,6 @@ navigator.serviceWorker.getRegistrations().then(function(registrations) {
 navigator.serviceWorker.register(location.origin + '/sw.js')
 .then(function(reg) {
     if (!hasInstalled) {
-        setTimeout(addGames, 2000)
-    } else {
-        addGames()
+        window.location.reload()
     }
 })
