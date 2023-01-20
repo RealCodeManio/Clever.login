@@ -20,7 +20,7 @@ self.addEventListener("fetch", function(e) {
     var path = new URL(e.request.url).pathname
 
     if (path.startsWith("/files/")) {
-        var fetchPath = "https://cdn.jsdelivr.net/gh/3kh0/3kh0-Assets/" + path.split("/files/")[1]
+        var fetchPath = "https://cdn.jsdelivr.net/gh/Nebelung-Dev/3kh0-Assets/" + path.split("/files/")[1]
 
         e.respondWith(handleRequest(fetchPath))
     }
