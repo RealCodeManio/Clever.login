@@ -409,3 +409,16 @@ footer {
         transform: rotate(360deg);
     }
 }
+
+.saveItems {
+    display: flex;
+    gap: 10px;
+}
+
+.hiddenUpload {
+    display: none;
+}
+
+.uploadResult {
+    display: none;
+}
