@@ -413,6 +413,7 @@ footer {
 .saveItems {
     display: flex;
     gap: 10px;
+    padding-left: 2rem;
 }
 
 .hiddenUpload {
