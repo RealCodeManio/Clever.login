@@ -55,7 +55,7 @@ function searchGames(query) {
 function getMainSave() {
 var mainSave = {}
 
-var localStorageDontSave = ["currentProject"]
+var localStorageDontSave = ["theme", "tab"]
 
 localStorageSave = Object.entries(localStorage)
 
