@@ -31,6 +31,13 @@
     </center>
 
     <div class="games"></div>
+    <div class="saveItems">
+        <button onclick="downloadMainSave()">Download Save</button>
+        <button onclick="uploadMainSave()">Upload Save</button>
+        <div class="uploadResult"></div>
+    </div>
+        
+    <input class="hiddenUpload" type="file" accept=".save">
     <span class="spinner">
         <svg viewBox="22 22 44 44">
             <circle class="spinnerSvg" cx="44" cy="44" r="20.2" fill="none" stroke-width="3.6"></circle>
@@ -40,6 +47,7 @@
 
     <footer>© 3kh0 2023</footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
     <script src="./js/games-server.js"></script>
     <script src="./js/games.js"></script>
     <script src="./js/index.js"></script>
