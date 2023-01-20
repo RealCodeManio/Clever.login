@@ -1,5 +1,5 @@
 //3kh0.github.io games on the projects page to json format
-//removes hot tag
+//changes path to /files removes hot tag
 //paste in console to generate json
 
 async function v3gamestojson() {
@@ -21,8 +21,8 @@ var gamesElements = doc.body.children
 for (let game in gamesElements) {
 if (gamesElements[game] instanceof Element) {
 var name = gamesElements[game].querySelector(".game-title").innerText.trim().replaceAll(`\n             Hot`, "")
-var url = gamesElements[game].getAttribute("href").trim().replace("projects", "/projects")
-var img = gamesElements[game].querySelector(".game-icon").getAttribute("src").trim().replace("projects", "/projects")
+var url = gamesElements[game].getAttribute("href").trim().replace("projects", "/files")
+var img = gamesElements[game].querySelector(".game-icon").getAttribute("src").trim().replace("projects", "/files")
 games.push({
     name: name,
     url: url,
