@@ -22,11 +22,14 @@ This is the GitHub repo which is used to host the website. If you want to use th
 > **Note**
 > If you have any problems please open an issue, so we can fix it ASAP!
 
+## Game Files
+Due to the amount of games, all of the games have been moved to a [new repo](https://github.com/3kh0/3kh0-Assets)
+
 ## Host the website
 
 You can host our website on a cloud hosting solution like Replit or Render here. If you're unsure on what this does, use our own site, or find one someone else is hosting. <br>
 
-[![Run on Replit](https://binbashbanana.github.io/deploy-buttons/buttons/remade/replit.svg)](https://github.com/3kh0/3kh0.github.io-replit)
+[![Run on Replit](https://binbashbanana.github.io/deploy-buttons/buttons/remade/replit.svg)](https://github.com/3kh0/3kh0.github.io)
 [![Remix on Glitch](https://binbashbanana.github.io/deploy-buttons/buttons/remade/glitch.svg)](https://glitch.com/edit/#!/import/github/3kh0/3kh0.github.io)
 [![Deploy to IBM Cloud](https://binbashbanana.github.io/deploy-buttons/buttons/remade/ibmcloud.svg)](https://cloud.ibm.com/devops/setup/deploy?repository=https://github.com/3kh0/3kh0.github.io)
 [![Deploy to Amplify Console](https://binbashbanana.github.io/deploy-buttons/buttons/remade/amplifyconsole.svg)](https://console.aws.amazon.com/amplify/home#/deploy?repo=https://github.com/3kh0/3kh0.github.io)
