@@ -8,7 +8,7 @@ navigator.serviceWorker.getRegistrations().then(function(registrations) {
     }
 })
 
-navigator.serviceWorker.register(location.origin + '/sw-files.js')
+navigator.serviceWorker.register(location.origin + '/sw.js')
 .then(function(reg) {
     if (!hasInstalled) {
         window.location.reload()
