@@ -23,7 +23,7 @@ function searchGames(query) {
     }
 }
 
-async function addGames() {
+(async () => {
     var gamesElement = document.querySelector(".games")
 
     var gamesData = await fetch(location.origin + "/assets/games.json")
@@ -50,4 +50,4 @@ async function addGames() {
     }
 
     document.querySelector(".spinner").style.display = "none"
-}
+})()
