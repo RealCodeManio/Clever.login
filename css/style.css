@@ -426,3 +426,21 @@ footer {
     display: flex;
     align-items: center;
 }
+
+added {
+    color: #aff5b4;
+    background: rgba(46,160,67,0.15);
+}
+
+added::before {
+    content: "+ ";
+}
+
+removed {
+    color: #ffdcd7;
+    background: #67060c;
+}
+
+removed::before {
+    content: "- "
+}
