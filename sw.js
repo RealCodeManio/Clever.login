@@ -23,5 +23,20 @@ self.addEventListener("fetch", function(e) {
         var fetchPath = "https://cdn.jsdelivr.net/gh/3kh0/3kh0-Assets/" + path.split("/files/")[1]
 
         e.respondWith(handleRequest(fetchPath))
+    } else {
+    e.respondWith(
+    caches.match(e.request).then(function(response) {
+      return response || fetch(e.request);
+    })
+    );    
     }
 })
+
+self.addEventListener('install', function(e) {
+  e.waitUntil(
+    caches.open("3kh0").then(function(cache) {
+      return cache.addAll(["/manifest.json");
+    })
+  );
+  self.skipWaiting();
+});
