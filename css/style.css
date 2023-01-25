@@ -446,8 +446,8 @@ footer {
 }
 
 .changelog-type[added] {
-    background: #0062ff;
-    color: white;
+    background: #4cf72a;
+    color: black;
 }
 
 .changelog-type[added]::before {
