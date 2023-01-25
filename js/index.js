@@ -18,3 +18,45 @@ if (tabData.icon) {
 var theme = localStorage.getItem("theme") || "default"
 
 document.body.setAttribute("theme", theme)
+
+class changelogAdded extends HTMLElement {
+    constructor() {
+        super()
+        this.innerHTML = `
+        <div class="changelog-item">
+        <div class="changelog-type" added></div>
+        ${this.innerText}
+        </div>
+        `
+    }
+}
+
+customElements.define("changelog-added", changelogAdded)
+
+class changelogRemoved extends HTMLElement {
+    constructor() {
+        super()
+        this.innerHTML = `
+        <div class="changelog-item">
+        <div class="changelog-type" removed></div>
+        ${this.innerText}
+        </div>
+        `
+    }
+}
+
+customElements.define("changelog-removed", changelogRemoved)
+
+class changelogChanged extends HTMLElement {
+    constructor() {
+        super()
+        this.innerHTML = `
+        <div class="changelog-item">
+        <div class="changelog-type" changed></div>
+        ${this.innerText}
+        </div>
+        `
+    }
+}
+
+customElements.define("changelog-changed", changelogChanged)
