@@ -427,53 +427,47 @@ footer {
     align-items: center;
 }
 
-added {
-    color: #aff5b4;
-    background: rgba(46,160,67,0.15);
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
+.changelog-item {
+    display: flex;
     width: fit-content;
     border-radius: 2.5px;
-    padding: 0 5px;
+    margin: 1em 0;
 }
 
-added::before {
-    content: "+\00a0";
+.changelog-type {
+    padding: 0 0.5rem;
+    border-radius: 30px;
+    margin-right: 0.5rem;
+    user-select: none;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-removed {
-    color: #ffdcd7;
-    background: #67060c;
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    width: fit-content;
-    border-radius: 2.5px;
-    padding: 0 5px;
+.changelog-type[added] {
+    background: #0062ff;
+    color: white;
 }
 
-removed::before {
-    content: "-\00a0"
+.changelog-type[added]::before {
+    content: "Added";
 }
 
-changed {
-    color: #ff7b00;
-    background: rgb(255 146 45 / 11%);
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    width: fit-content;
-    border-radius: 2.5px;
-    padding: 0 5px;
+.changelog-type[removed] {
+    background: #ff0000;
+    color: white;
 }
 
-changed::before {
-    content: "^\00a0"
+.changelog-type[removed]::before {
+    content: "Removed";
+}
+
+.changelog-type[changed] {
+    background: #ff7b00;
+    color: white;
+}
+
+.changelog-type[changed]::before {
+    content: "Changed";
 }
