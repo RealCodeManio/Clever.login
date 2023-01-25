@@ -17,13 +17,13 @@ changelogList = changelogList.filter(item => item)
 
 for (let item in changelogList) {
 if (changelogList[item].startsWith("+ ")) {
-    changelog = changelog + "<added>" + changelogList[item].replace("+ ", "") + "</added>\n"
+    changelog = changelog + "    <changelog-added>" + changelogList[item].replace("+ ", "") + "</changelog-added>\n"
 } else if (changelogList[item].startsWith("^ ")) {
-    changelog = changelog + "<changed>" + changelogList[item].replace("^ ", "") + "</changed>\n"
+    changelog = changelog + "    <changelog-changed>" + changelogList[item].replace("^ ", "") + "</changelog-changed>\n"
 } else if (changelogList[item].startsWith("- ")) {
-    changelog = changelog + "<removed>" + changelogList[item].replace("- ", "") + "</removed>\n"
+    changelog = changelog + "    <changelog-removed>" + changelogList[item].replace("- ", "") + "</changelog-removed>\n"
 } else {
-    changelog = changelog + "<p>" + changelogList[item] + "</p>\n"
+    changelog = changelog + "    <p>" + changelogList[item] + "</p>\n"
 }
 }
     
