@@ -460,3 +460,20 @@ removed {
 removed::before {
     content: "-\00a0"
 }
+
+changed {
+    color: #ff7b00;
+    background: rgb(255 146 45 / 11%);
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    width: fit-content;
+    border-radius: 2.5px;
+    padding: 0 5px;
+}
+
+changed::before {
+    content: "~\00a0"
+}
