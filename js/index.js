@@ -1,3 +1,5 @@
+navigator.serviceWorker.register(location.origin + '/sw.js')
+
 var tab = localStorage.getItem("tab")
 if (tab) {
     try {
