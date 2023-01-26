@@ -230,6 +230,10 @@ footer {
     margin: 0 1rem;
 }
 
+.section-text p {
+    font-size: 18px;
+}
+
 .buttons {
     display: flex;
     gap: 10px;
