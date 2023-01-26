@@ -22,13 +22,13 @@ self.addEventListener("fetch", function(e) {
     if (path.startsWith("/files/")) {
         var fetchPath = "https://cdn.jsdelivr.net/gh/3kh0/3kh0-Assets/" + path.split("/files/")[1]
 
-        e.respondWith(handleRequest(fetchPath))
+        return e.respondWith(handleRequest(fetchPath))
     } else {
-    e.respondWith(
+    return e.respondWith(
     caches.match(e.request).then(function(response) {
-      return response || fetch(e.request);
+    return response || fetch(e.request);
     })
-    );    
+    );  
     }
 })
 
