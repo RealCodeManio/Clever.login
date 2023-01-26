@@ -26,7 +26,7 @@ self.addEventListener("fetch", function(e) {
     } else {
         return e.respondWith(
             caches.match(e.request).then(function(response) {
-                return response || fetch(e.request, {mode: "no-cors"});
+                return response || fetch(e.request);
             })
         );  
     }
