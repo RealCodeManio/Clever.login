@@ -35,7 +35,7 @@ self.addEventListener("fetch", function(e) {
 self.addEventListener('install', function(e) {
   e.waitUntil(
     caches.open("3kh0").then(function(cache) {
-      return cache.addAll(["/manifest.json");
+      return cache.addAll(["/manifest.json"]);
     })
   );
   self.skipWaiting();
