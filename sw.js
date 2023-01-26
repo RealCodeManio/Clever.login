@@ -24,11 +24,14 @@ self.addEventListener("fetch", function(e) {
 
         return e.respondWith(handleRequest(fetchPath))
     } else {
-    return e.respondWith(
-    caches.match(e.request).then(function(response) {
-    return response || fetch(e.request);
-    })
-    );  
+        return e.respondWith(
+            caches.match(e.request).then(function(response) {
+                try {
+                return response || fetch(e.request);
+                } catch {
+                }
+            })
+        );  
     }
 })
 
