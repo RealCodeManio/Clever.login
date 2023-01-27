@@ -16,6 +16,8 @@
     <link rel="manifest" href="/manifest.json">
     <script src="./assets/webrtc-ip.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/keen-slider@6.8.5/keen-slider.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    
 </head>
 <body>
     <div class="navbar">
@@ -33,10 +35,10 @@
     <div class="title">3kh0</div>
     <center>
     <div class="message homemessage" onclick="setRandomSay()">&#xfeff;</div>
-        <a href="/projects" class="play-link"><button class="play">Play Now</button></a>
+        <a href="/projects" class="play-link" data-aos="fade-up"><button class="play">Play Now</button></a>
     </center>
 
-    <a href="#reviews"><button class="reviews-link">Reviews</button></a>
+    <a href="#reviews" data-aos="fade-up"><button class="reviews-link">Reviews</button></a>
 
     <div id="reviews"></div>
 
@@ -44,6 +46,10 @@
     
     <footer>© 3kh0 2023</footer>
 
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+    AOS.init();
+    </script>
     <script src="./assets/keen-slider.min.js"></script>
     <script src="./js/reviews.js"></script>
     <script src="./js/index.js"></script>
