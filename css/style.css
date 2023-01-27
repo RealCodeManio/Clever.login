@@ -53,6 +53,24 @@ body {
   }
 }
 
+@-webkit-keyframes breathing {
+  0% {
+    box-shadow: 0 5px 170px var(--theme);
+  }
+
+  25% {
+    box-shadow: 0 5px 200px var(--theme);
+  }
+
+  60% {
+    box-shadow: 0 5px 170px var(--theme);
+  }
+
+  100% {
+    box-shadow: 0 5px 170px var(--theme);
+  }
+}
+
 .navbar {
     height: 56px;
     box-shadow: 0 5px 200px var(--theme);
