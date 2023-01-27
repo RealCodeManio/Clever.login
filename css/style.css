@@ -35,12 +35,31 @@ body {
     background: var(--background);
 }
 
+@keyframes breathing {
+  0% {
+    box-shadow: 0 5px 170px var(--theme);
+  }
+
+  25% {
+    box-shadow: 0 5px 200px var(--theme);
+  }
+
+  60% {
+    box-shadow: 0 5px 170px var(--theme);
+  }
+
+  100% {
+    box-shadow: 0 5px 170px var(--theme);
+  }
+}
+
 .navbar {
     height: 56px;
-    box-shadow: 0 5px 1000px var(--theme);
+    box-shadow: 0 5px 200px var(--theme);
     position: sticky;
     top: 0;
     z-index: 9999;
+    animation: breathing 5s ease-out infinite normal;
 }
 
 .navitems {
