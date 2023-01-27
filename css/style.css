@@ -135,6 +135,11 @@ body {
     user-select: none;
     border: none;
     color: var(--text-secondary);
+    transition: transform 0.1s;
+}
+
+.play:hover {
+    transform: scaleX(1.4) scaleY(1.4) rotate(9deg);
 }
 
 a {
