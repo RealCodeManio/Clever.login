@@ -217,7 +217,7 @@ footer {
 }
 
 .game-image {
-    background: var(--url) 0% 0% / cover, var(--theme);
+    background: var(--url), url("/assets/globe.svg") 0% 0% / cover, var(--theme);
     background-position: center;
     background-size: cover;
     height: 200px;
