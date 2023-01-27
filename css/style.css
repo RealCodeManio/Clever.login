@@ -335,6 +335,8 @@ footer {
 
 #reviews {
     margin-top: 26rem;
+    visibility: hidden;
+    height: 382px;
 }
 
 .review-container {
