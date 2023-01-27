@@ -150,6 +150,7 @@ function navigation(slider) {
     slider.on("created", () => {
       markup()
       updateClasses()
+      document.getElementById("reviews").style.visibility = "initial"
     })
     slider.on("optionsChanged", () => {
       console.log(2)
@@ -166,5 +167,4 @@ function navigation(slider) {
   }
   
   var slider = new KeenSlider("#my-keen-slider", {}, [navigation])
-  
 })()
