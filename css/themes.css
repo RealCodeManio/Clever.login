@@ -5,6 +5,13 @@ body[theme=default] {
     --text-secondary: black;
 }
 
+body[theme=light] {
+    --background: #ffffff;
+    --theme: rgb(107, 107, 107);
+    --text: black;
+    --text-secondary: white;
+}
+
 body[theme=orchid] {
     --background: #1c1c1c;
     --theme: #b625cc;
