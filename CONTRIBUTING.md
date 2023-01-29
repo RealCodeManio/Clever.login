@@ -18,3 +18,5 @@ Someone may need to do a last minute fix, and they can't do that if they can't f
 Sometimes, we'll have a backlog of issues that need to be fixed. Do everyone a favor and start going through those. It's a quick way to make everyone like you a little bit more.
 
 That's it. And don't forget, <i>to have fun.</i>
+
+**This repository hosts the UI for 3kh0 v4! If you want to contibute a game, make a pull request on [https://github.com/3kh0/3kh0.github.io](https://github.com/3kh0/3kh0.github.io)!**
