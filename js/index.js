@@ -1,85 +1,85 @@
-navigator.serviceWorker.register(location.origin + '/sw.js')
+navigator.serviceWorker.register(location.origin + "/sw.js");
 
-var tab = localStorage.getItem("tab")
+var tab = localStorage.getItem("tab");
 if (tab) {
-    try {
-        var tabData = JSON.parse(tab)
-    } catch {
-        var tabData = {}
-    }
+  try {
+    var tabData = JSON.parse(tab);
+  } catch {
+    var tabData = {};
+  }
 } else {
-        var tabData = {}
+  var tabData = {};
 }
 if (tabData.title) {
-    document.title = tabData.title
+  document.title = tabData.title;
 }
 if (tabData.icon) {
-    document.querySelector("link[rel='icon']").href = tabData.icon
+  document.querySelector("link[rel='icon']").href = tabData.icon;
 }
 
-var theme = localStorage.getItem("theme") || "default"
+var theme = localStorage.getItem("theme") || "default";
 
-document.body.setAttribute("theme", theme)
+document.body.setAttribute("theme", theme);
 
 class changelogAdded extends HTMLElement {
-    constructor() {
-        super()
-        this.innerHTML = `
+  constructor() {
+    super();
+    this.innerHTML = `
         <div class="changelog-item">
         <div class="changelog-type" added></div>
         ${this.innerText}
         </div>
-        `
-    }
+        `;
+  }
 }
 
-customElements.define("changelog-added", changelogAdded)
+customElements.define("changelog-added", changelogAdded);
 
 class changelogRemoved extends HTMLElement {
-    constructor() {
-        super()
-        this.innerHTML = `
+  constructor() {
+    super();
+    this.innerHTML = `
         <div class="changelog-item">
         <div class="changelog-type" removed></div>
         ${this.innerText}
         </div>
-        `
-    }
+        `;
+  }
 }
 
-customElements.define("changelog-removed", changelogRemoved)
+customElements.define("changelog-removed", changelogRemoved);
 
 class changelogChanged extends HTMLElement {
-    constructor() {
-        super()
-        this.innerHTML = `
+  constructor() {
+    super();
+    this.innerHTML = `
         <div class="changelog-item">
         <div class="changelog-type" changed></div>
         ${this.innerText}
         </div>
-        `
-    }
+        `;
+  }
 }
 
-customElements.define("changelog-changed", changelogChanged)
+customElements.define("changelog-changed", changelogChanged);
 
-var pattern = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+var pattern = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a"];
 var current = 0;
 
-document.addEventListener('keydown', function(e) {
-	if (e.key !== pattern[current]) {
-		return current = 0;
-	}
+document.addEventListener("keydown", function (e) {
+  if (e.key !== pattern[current]) {
+    return (current = 0);
+  }
 
-	current++;
+  current++;
 
-	if (pattern.length == current) {
-		current = 0
-		document.body.setAttribute("theme", "nebelung")
-        	localStorage.setItem("theme", "nebelung")
-		localStorage.setItem("nebelung", "true")
-		if (document.querySelector(".nebelung")) {
-			document.querySelector(".nebelung").removeAttribute("hidden")
-		}
-	}
+  if (pattern.length == current) {
+    current = 0;
+    document.body.setAttribute("theme", "nebelung");
+    localStorage.setItem("theme", "nebelung");
+    localStorage.setItem("nebelung", "true");
+    if (document.querySelector(".nebelung")) {
+      document.querySelector(".nebelung").removeAttribute("hidden");
+    }
+  }
 });
