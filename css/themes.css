@@ -45,7 +45,7 @@ body[theme=nebelung] {
     --theme: linear-gradient(to right, #3d2d1e, #190f05);
 }
 
-body[theme=nebelung] .nabbar {
+body[theme=nebelung] .navbar {
     box-shadow: 0 5px 200px #3d2d1e;
 }
 
