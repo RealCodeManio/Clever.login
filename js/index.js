@@ -62,3 +62,24 @@ class changelogChanged extends HTMLElement {
 }
 
 customElements.define("changelog-changed", changelogChanged)
+
+var pattern = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+var current = 0;
+
+document.addEventListener('keydown', function(e) {
+	if (e.key !== pattern[current]) {
+		return current = 0;
+	}
+
+	current++;
+
+	if (pattern.length == current) {
+		current = 0
+		document.body.setAttribute("theme", "nebelung")
+        	localStorage.setItem("theme", "nebelung")
+		localStorage.setItem("nebelung", "true")
+		if (document.querySelector(".nebelung")) {
+			document.querySelector(".nebelung").removeAttribute("hidden")
+		}
+	}
+});

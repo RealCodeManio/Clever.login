@@ -82,3 +82,7 @@ function setTheme(theme) {
     localStorage.setItem("theme", theme)
     document.body.setAttribute("theme", theme)
 }
+
+if (localStorage.getItem("nebelung") == "true") {
+	document.querySelector(".nebelung").removeAttribute("hidden")
+}
