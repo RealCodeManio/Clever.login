@@ -76,6 +76,7 @@ document.addEventListener('keydown', function(e) {
 	if (pattern.length == current) {
 		current = 0
 		document.body.setAttribute("theme", "nebelung")
-        localStorage.setItem("theme", "nebelung")
+        	localStorage.setItem("theme", "nebelung")
+		localStorage.setItem("nebelung", "true")
 	}
 });
