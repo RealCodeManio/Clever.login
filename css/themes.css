@@ -52,36 +52,36 @@ body[theme=nebelung] .navbar {
 
 @keyframes nebelungBreathing {
   0% {
-    box-shadow: 0 5px 170px var(--theme);
+    box-shadow: 0 5px 170px #3d2d1e;
   }
 
   25% {
-    box-shadow: 0 5px 200px var(--theme);
+    box-shadow: 0 5px 200px #3d2d1e;
   }
 
   60% {
-    box-shadow: 0 5px 170px var(--theme);
+    box-shadow: 0 5px 170px #3d2d1e;
   }
 
   100% {
-    box-shadow: 0 5px 170px var(--theme);
+    box-shadow: 0 5px 170px #3d2d1e;
   }
 }
 
 @-webkit-keyframes nebelungBreathing {
   0% {
-    box-shadow: 0 5px 170px var(--theme);
+    box-shadow: 0 5px 170px #3d2d1e;
   }
 
   25% {
-    box-shadow: 0 5px 200px var(--theme);
+    box-shadow: 0 5px 200px #3d2d1e;
   }
 
   60% {
-    box-shadow: 0 5px 170px var(--theme);
+    box-shadow: 0 5px 170px #3d2d1e;
   }
 
   100% {
-    box-shadow: 0 5px 170px var(--theme);
+    box-shadow: 0 5px 170px #3d2d1e;
   }
 }
