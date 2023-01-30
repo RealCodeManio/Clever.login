@@ -78,5 +78,8 @@ document.addEventListener('keydown', function(e) {
 		document.body.setAttribute("theme", "nebelung")
         	localStorage.setItem("theme", "nebelung")
 		localStorage.setItem("nebelung", "true")
+		if (document.querySelector(".nebelung")) {
+			document.querySelector(".nebelung").removeAttribute("hidden")
+		}
 	}
 });
