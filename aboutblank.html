@@ -1,12 +1,12 @@
-
 <!DOCTYPE html>
 <html>
   <head>
-    <style>body {
+    <style>
+      body {
         background-color: black;
         color: white;
       }
-      
+
       @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
       .credit {
         font-family: "Montserrat", sans-serif;
@@ -25,31 +25,31 @@
         font-family: "Montserrat", sans-serif;
         font-size: inherit;
       }
-      
+
       ::placeholder {
         /* Chrome, Firefox, Opera, Safari 10.1+ */
         font-style: italic;
         color: white;
         opacity: 1; /* Firefox */
       }
-      
+
       :-ms-input-placeholder {
         /* Internet Explorer 10-11 */
         color: white;
       }
-      
+
       ::-ms-input-placeholder {
         /* Microsoft Edge */
         color: white;
       }
-      
+
       .console-container {
         margin: auto;
         font-family: "Montserrat", sans-serif;
         height: 40vh;
         margin-bottom: 10vh;
       }
-      
+
       .console {
         width: 100%;
         box-sizing: border-box;
@@ -57,18 +57,18 @@
         overflow: hidden;
         font-family: "Montserrat", sans-serif;
       }
-      
+
       .console-input {
         padding-bottom: 15%;
         font-family: "Montserrat", sans-serif;
       }
-      
+
       .console h1 {
         font-family: "Montserrat", sans-serif;
         text-align: center;
         color: #fff;
       }
-      
+
       .console .consolebody {
         box-sizing: border-box;
         font-family: "Montserrat", sans-serif;
@@ -77,21 +77,21 @@
         color: #63de00;
         border-radius: 15px;
       }
-      
+
       .consolebody {
         font-family: "Montserrat", sans-serif;
       }
-      
+
       .console .consolebody p {
         line-height: 1.5rem;
       }
-      
+
       .button-wrapper {
         padding-top: 2%;
         text-align: center;
         font-family: "Montserrat", sans-serif;
       }
-      
+
       .console-button {
         font-family: "Montserrat", sans-serif;
         font-weight: bold;
@@ -107,7 +107,7 @@
         border-radius: 10px;
         font-size: 20px;
       }
-      
+
       .console-button:before {
         content: "";
         background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
@@ -125,7 +125,7 @@
         border-radius: 10px;
         font-family: "Montserrat", sans-serif;
       }
-      
+
       @keyframes glowingbn5 {
         0% {
           background-position: 0 0;
@@ -137,19 +137,19 @@
           background-position: 0 0;
         }
       }
-      
+
       .console-button:active {
         color: black;
       }
-      
+
       .console-button:active:after {
         background: transparent;
       }
-      
+
       .console-button:hover:before {
         opacity: 1;
       }
-      
+
       .console-button:after {
         z-index: -1;
         content: "";
@@ -160,8 +160,9 @@
         left: 0;
         top: 0;
         border-radius: 10px;
-      }</style>
-    <link href="./images/logo.png" rel="icon">
+      }
+    </style>
+    <link href="./images/logo.png" rel="icon" />
     <title>about:blank | 3kh0</title>
   </head>
   <body>
@@ -179,17 +180,21 @@
         <button class="console-button" onclick="document.getElementById('url-target').value = ''">Clear input</button>
       </div>
       <p class="credit">Made by 3kh0, come visit my <a href="https://3kh0.github.io">website</a>.</p>
-      <button onclick="alert('Hello there!\n\nIf you clicked then you are wondering what this is, I can explain. So at our school, teachers have this tool called Dyknow that can screenshot the contents of the page and use it so the teacher knows what we are doing, by embedding a page into a system page (about:blank is counted as a system page), Dyknow can not screenshot or even tell the teacher what we are on! This will not unblock things but it is a start!');">What is this?</button>
+      <button
+        onclick="alert('Hello there!\n\nIf you clicked then you are wondering what this is, I can explain. So at our school, teachers have this tool called Dyknow that can screenshot the contents of the page and use it so the teacher knows what we are doing, by embedding a page into a system page (about:blank is counted as a system page), Dyknow can not screenshot or even tell the teacher what we are on! This will not unblock things but it is a start!');"
+      >
+        What is this?
+      </button>
     </div>
     <script>
       var url = document.getElementById("url-target");
       var urlObj = new window.URL(window.location.href);
       document.getElementById("create").onclick = function () {
-        if (url.value.substring(0, 8) !== 'https://' && url.value.substring(0, 7) !== 'http://') {
-    		url.value = 'https://' + url.value.split('https://').pop();
-        } else if (url.value.substring(0, 7) == 'http://'){
-        	url.value = 'https://' + url.value.split('http://').pop();
-        };
+        if (url.value.substring(0, 8) !== "https://" && url.value.substring(0, 7) !== "http://") {
+          url.value = "https://" + url.value.split("https://").pop();
+        } else if (url.value.substring(0, 7) == "http://") {
+          url.value = "https://" + url.value.split("http://").pop();
+        }
         win = window.open();
         win.document.body.style.margin = "0";
         win.document.body.style.height = "100vh";
@@ -202,9 +207,9 @@
         iframe.allow = "fullscreen";
         iframe.src = url.value;
         win.document.body.appendChild(iframe);
-        var script = win.document.createElement("script");
-        script.src = "https://3kh0.github.io/js/main.js";
-        win.document.body.appendChild(script);
+        //var script = win.document.createElement("script");
+        //script.src = "https://3kh0.github.io/js/main.js";
+        //win.document.body.appendChild(script);
       };
     </script>
   </body>

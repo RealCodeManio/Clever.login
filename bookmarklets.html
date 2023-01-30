@@ -8,29 +8,26 @@
     <link href="./css/index.css" rel="stylesheet">
 </head>
 <body>
-    <div class="navbar">
-        <div class="navitems">
-            <img onclick="location.href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'" src="./images/logo.png" class="navlogo" draggable="false"></img>
-            <a href="/"><div class="navitem">Home</div></a>
-            <a href="/projects"><div class="navitem">Projects</div></a>
-            <a href="/extras"><div class="navitem">Extras</div>
-            <a href="/blog"><div class="navitem">Blog</div>
-            <a href="/settings"><div class="navitem">Settings</div></a>
-            <a href="/about"><div class="navitem">About</div></a>
-        </div>
+  <div class="navbar">
+    <div class="navitems">
+      <img onclick="location.href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'" src="./images/logo.png" class="navlogo" draggable="false">
+      <a href="/"><div class="navitem">Home</div></a>
+      <a href="/projects"><div class="navitem">Projects</div></a>
+      <a href="/extras"><div class="navitem">Extras</div></a>
+      <a href="/blog"><div class="navitem">Blog</div></a>
+      <a href="/settings"><div class="navitem">Settings</div></a>
+      <a href="/about"><div class="navitem">About</div></a>
     </div>
-
+  </div>
     <!--
     Needs to be remade but I'm lazy. Below is just a quick color fix - Nebelung
     -->
     <style>
-        h1, h2, h3, p {
-            color: white;
-        }
+      h1, h2, h3, p {
+        color: white;
+      }
     </style>
-
     <h1>Bookmarklets</h1>
-
     <h2>
       <b>****How to add Bookmarklets</b> Click the bookmark button (star), a box will pop up. Click "more". Where it says URL, copy and paste the bookmarklet code. Then click save and your bookmarklet should appear with other bookmarks. It is
       that simple.
@@ -71,12 +68,6 @@
       javascript:if(document.body.contentEditable != 'true')void(document.body.contentEditable = 'true');else void(document.body.contentEditable = 'false');\
     </p>
 
-    <h3>UnblockedBookmarklet</h3>
-    <p>A bookmarklet with a collection of proxies (by lucky#9919)</p>
-    <p>
-      I can not put the code here because it will destroy the page, but here is a <a href="/assets/unblockedbookmarklet.js">link to the code</a>.
-    </p>
-
     <h3>Portable about:blank embedder</h3>
     <p>about:blank embedder in a bookmarklet</p>
     <p>
@@ -99,12 +90,6 @@
     <p>Adblocker (Note: You will have to click it every time you go to a website)</p>
     <p>
       javascript:var st = confirm("strict adblocker?"); if(st){var invisible = document.createElement("style"); invisible.innerHTML = "iframe{display:none} embed{display:none} object{display:none} frame{display:none}"; document.body.appendChild(invisible); setInterval(function(){var embeds = document.querySelectorAll("iframe, embed, frame, object"); for(i = 0; i < embeds.length; i++){embeds[i].remove()}}, 500)} else{var adblock = document.createElement("style"); adblock.innerHTML = "[src*=adserver] {display: none; } [src*=adlinks] {display: none;} [src*=adtech] {display:none;} [id*=google_ads] { display: none; } [src*=doubleclick.net] { display:none;} [src*=googlead] { display: none; } [href*=googlead] { display:none;} [src*=googlesyndication] { display: none;} [src*=ads.] { display: none; } [src*=.ad] {display: none; } [src*=ad.] {display:none;} [src*=adsmart] { display:none;}"; document.body.appendChild(adblock)} if(st){var elements = document.body.querySelectorAll("*"); for(i2 = 0; i2 < elements.length; i2++){if(elements[i2].id.includes("google_ads_iframe")){elements[i2].remove()}}} var x = document.getElementsByClassName("video-stream html5-main-video")[0]; function videoblock() { if(x.src.includes("pltype=adhost")) { x.currentTime = 999999999; }} setInterval(videoblock, 10)
-    </p>
-
-    <h3>Adblocker #2</h3>
-    <p>Adblocker (Note: You will have to click it every time you go to a website)</p>
-    <p>
-      I can not put the code here because it will destroy the page, but here is a <a href="/js/ad-b-gone.js">link to the code</a>.
     </p>
 
     <h3>Youtube Adblocker #2</h3>
