@@ -6,10 +6,10 @@ body[theme=default] {
 }
 
 body[theme=light] {
-    --background: #ffffff;
-    --theme: rgb(107, 107, 107);
+    --background: white;
+    --theme: #4CAF50;
     --text: black;
-    --text-secondary: white;
+    --text-secondary: black;
 }
 
 body[theme=orchid] {
