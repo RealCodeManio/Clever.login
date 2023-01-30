@@ -85,3 +85,10 @@ body[theme=nebelung] .navbar {
     box-shadow: 0 5px 170px #3d2d1e;
   }
 }
+
+body[theme=piplup] {
+    --background: #bee7eb;
+    --theme: #83c0dd;
+    --text: black;
+    --text-secondary: black;
+}
