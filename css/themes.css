@@ -47,9 +47,10 @@ body[theme=nebelung] {
 
 body[theme=nebelung] .navbar {
     box-shadow: 0 5px 200px #3d2d1e;
+    animation: nebelungBreathing 5s ease-out infinite normal;
 }
 
-body[theme=nebelung] @keyframes breathing {
+@keyframes nebelungBreathing {
   0% {
     box-shadow: 0 5px 170px var(--theme);
   }
@@ -67,7 +68,7 @@ body[theme=nebelung] @keyframes breathing {
   }
 }
 
-body[theme=nebelung] @-webkit-keyframes breathing {
+@-webkit-keyframes nebelungBreathing {
   0% {
     box-shadow: 0 5px 170px var(--theme);
   }
