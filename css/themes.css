@@ -1,53 +1,52 @@
-body[theme=default] {
-    --background: #1c1c1c;
-    --theme: #4CAF50;
-    --text: white;
-    --text-secondary: black;
+body[theme="default"] {
+  --background: #1c1c1c;
+  --theme: #4caf50;
+  --text: white;
+  --text-secondary: black;
 }
 
-body[theme=light] {
-    --background: white;
-    --theme: #4CAF50;
-    --text: black;
-    --text-secondary: black;
+body[theme="light"] {
+  --background: white;
+  --theme: #4caf50;
+  --text: black;
+  --text-secondary: black;
 }
 
-body[theme=orchid] {
-    --background: #1c1c1c;
-    --theme: #b625cc;
-    --text: white;
-    --text-secondary: white;
+body[theme="orchid"] {
+  --background: #1c1c1c;
+  --theme: #b625cc;
+  --text: white;
+  --text-secondary: white;
 }
 
-body[theme=sky] {
-    --background: #1c1c1c;
-    --theme: #0084ff;
-    --text: white;
-    --text-secondary: black;
+body[theme="sky"] {
+  --background: #1c1c1c;
+  --theme: #0084ff;
+  --text: white;
+  --text-secondary: black;
 }
 
-body[theme=winter] {
-    --background: linear-gradient(to right, #2377A4, #79C0D7), #79C0D7;
-    --theme: #3da341;
-    --text: white;
-    --text-secondary: white;
+body[theme="winter"] {
+  --background: linear-gradient(to right, #2377a4, #79c0d7), #79c0d7;
+  --theme: #3da341;
+  --text: white;
+  --text-secondary: white;
 }
 
-
-body[theme=winter] .navbar {
-    box-shadow: none;
+body[theme="winter"] .navbar {
+  box-shadow: none;
 }
 
-body[theme=nebelung] {
-    --background: #dabc9a;
-    --text: black;
-    --text-secondary: white;
-    --theme: linear-gradient(to right, #3d2d1e, #190f05);
+body[theme="nebelung"] {
+  --background: #dabc9a;
+  --text: black;
+  --text-secondary: white;
+  --theme: linear-gradient(to right, #3d2d1e, #190f05);
 }
 
-body[theme=nebelung] .navbar {
-    box-shadow: 0 5px 200px #3d2d1e;
-    animation: nebelungBreathing 5s ease-out infinite normal;
+body[theme="nebelung"] .navbar {
+  box-shadow: 0 5px 200px #3d2d1e;
+  animation: nebelungBreathing 5s ease-out infinite normal;
 }
 
 @keyframes nebelungBreathing {
@@ -86,9 +85,9 @@ body[theme=nebelung] .navbar {
   }
 }
 
-body[theme=piplup] {
-    --background: #bee7eb;
-    --theme: #83c0dd;
-    --text: black;
-    --text-secondary: black;
+body[theme="piplup"] {
+  --background: #bee7eb;
+  --theme: #83c0dd;
+  --text: black;
+  --text-secondary: black;
 }
