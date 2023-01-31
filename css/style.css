@@ -250,6 +250,11 @@ footer {
   -webkit-user-select: none;
   user-select: none;
   position: relative;
+  transition: transform 0.1s;
+}
+
+.game:hover {
+    transform: scale(0.9);
 }
 
 .game[hidden] {
