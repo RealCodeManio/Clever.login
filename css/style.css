@@ -306,6 +306,10 @@ footer {
   font-size: 18px;
 }
 
+.section-text a {
+  color: var(--theme);
+}
+
 .buttons {
   display: flex;
   gap: 10px;
