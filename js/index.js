@@ -84,18 +84,18 @@ document.addEventListener("keydown", function (e) {
   }
 });
 
-var pattern = ["p", "i", "p", "l", "u", "p", "i", "s", "c", "o", "o", "l"];
-var current = 0;
+var penguin = ["p", "i", "p", "l", "u", "p", "i", "s", "c", "o", "o", "l"];
+var stream = 0;
 
 document.addEventListener("keydown", function (amongusimpostor) {
-  if (amongusimpostor.key !== pattern[current]) {
-    return (current = 0);
+  if (amongusimpostor.key !== pattern[stream]) {
+    return (stream = 0);
   }
 
-  current++;
+  stream++;
 
-  if (pattern.length == current) {
-    current = 0;
+  if (penguin.length == stream) {
+    stream = 0;
     document.body.setAttribute("theme", "piplup");
     localStorage.setItem("theme", "piplup");
     localStorage.setItem("piplup", "true");
