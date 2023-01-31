@@ -98,9 +98,9 @@ document.addEventListener("keydown", function (amongusimpostor) {
     current = 0;
     document.body.setAttribute("theme", "piplup");
     localStorage.setItem("theme", "piplup");
-    localStorage.setItem("piplip", "true");
+    localStorage.setItem("piplup", "true");
     if (document.querySelector(".piplup")) {
-      document.querySelector(".piplip").removeAttribute("hidden");
+      document.querySelector(".piplup").removeAttribute("hidden");
     }
   }
 });
