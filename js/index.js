@@ -88,7 +88,7 @@ var penguin = ["p", "i", "p", "l", "u", "p", "i", "s", "c", "o", "o", "l"];
 var stream = 0;
 
 document.addEventListener("keydown", function (amongusimpostor) {
-  if (amongusimpostor.key !== pattern[stream]) {
+  if (amongusimpostor.key !== penguin[stream]) {
     return (stream = 0);
   }
 
