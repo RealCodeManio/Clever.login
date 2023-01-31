@@ -49,6 +49,13 @@ body[theme="nebelung"] .navbar {
   animation: nebelungBreathing 5s ease-out infinite normal;
 }
 
+body[theme="piplup"] {
+  --background: #5bacee;
+  --theme: #0026ff;
+  --text: white;
+  --text-secondary: black;
+}
+
 @keyframes nebelungBreathing {
   0% {
     box-shadow: 0 5px 170px #3d2d1e;

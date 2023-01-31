@@ -83,3 +83,24 @@ document.addEventListener("keydown", function (e) {
     }
   }
 });
+
+var pattern = ["p", "i", "p", "l", "u", "p", "i", "s", "c", "o", "o", "l"];
+var current = 0;
+
+document.addEventListener("keydown", function (amongusimpostor) {
+  if (amongusimpostor.key !== pattern[current]) {
+    return (current = 0);
+  }
+
+  current++;
+
+  if (pattern.length == current) {
+    current = 0;
+    document.body.setAttribute("theme", "piplup");
+    localStorage.setItem("theme", "piplup");
+    localStorage.setItem("piplip", "true");
+    if (document.querySelector(".piplup")) {
+      document.querySelector(".piplip").removeAttribute("hidden");
+    }
+  }
+});
