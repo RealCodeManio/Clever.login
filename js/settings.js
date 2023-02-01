@@ -86,3 +86,7 @@ function setTheme(theme) {
 if (localStorage.getItem("nebelung") == "true") {
   document.querySelector(".nebelung").removeAttribute("hidden");
 }
+
+if (localStorage.getItem("piplup") == "true") {
+  document.querySelector(".piplup").removeAttribute("hidden");
+}
