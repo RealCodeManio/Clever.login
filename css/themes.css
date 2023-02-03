@@ -128,3 +128,10 @@ body[theme="northernfish"] .navitems {
 body[theme="northernfish"]::-webkit-scrollbar {
   background: #0ec9f8;
 }
+
+body[theme="forgor"] {
+  --background: #efefef;
+  --theme: #d7d700;
+  --text: #d7d700;
+  --text-secondary: #efefef;
+]
