@@ -460,7 +460,7 @@ footer {
 }
 
 .version-warning {
-  color: red;
+  color: var(--theme);
   display: none;
 }
 
