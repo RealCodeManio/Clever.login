@@ -31,8 +31,22 @@
       version.innerText = "Cannot get current version.";
     }
   
+    var oldMessage = "Warning: You are on a older version. The current version is %VERSION%"
+    var betaMessage = "You are on a beta version! The current release is %VERSION%"
+    
     if (latestVersion && currentVersion !== latestVersion) {
-      versionWarning.innerText = versionWarning.innerText.replace("%VERSION%", latestVersion);
+      var latestVersionNumber = latestVersion.replace("v", "").replaceAll("-", ".")
+      var firstStr = latestVersionNumber.search(/\./) + 1
+      latestVersionNumber = latestVersionNumber.substr(0, firstStr) + latestVersionNumber.slice(firstStr).replace(/\./g, '')
+
+      var currentVersionNumber = currentVersion.replace("v", "").replaceAll("-", ".")
+      var firstStr = currentVersionNumber.search(/\./) + 1
+      currentVersionNumber = currentVersionNumber.substr(0, firstStr) + currentVersionNumber.slice(firstStr).replace(/\./g, '')
+
+      console.log(latestVersionNumber, currentVersionNumber)
+
+      var message;
+      versionWarning.innerText = betaMessage.innerText.replace("%VERSION%", latestVersion);
       versionWarning.style.display = "block";
     }
   })();
