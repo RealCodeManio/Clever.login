@@ -109,3 +109,10 @@ body[theme="forternish"] {
 body[theme="forternish"] * {
   font-family: Comic Sans MS;
 }
+
+body[theme="northernfish"] {
+  --background: linear-gradient(to bottom right, #91fa9e, #0ec9f8);
+  --theme: #3778ff;
+  --text: black;
+  --text-secondary: black;
+}
