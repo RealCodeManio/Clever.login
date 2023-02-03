@@ -142,3 +142,10 @@ body[theme="monotonium"] {
   --text: black;
   --text-secondary: white;
 }
+
+body[theme="sunset"] {
+  --background: #1c1c1c;
+  --theme: #e83141;
+  --text: white;
+  --text-secondary: black;
+}
