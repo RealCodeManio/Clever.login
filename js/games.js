@@ -136,3 +136,19 @@ function searchGames(query) {
       reader.readAsText(file);
     });
   }
+
+var hiiPattern = ["h", "i", "i"];
+var hiiCurrent = 0;
+
+document.addEventListener("keydown", function (e) {
+  if (e.key !== hiiPattern[hiiCurrent]) {
+    return (hiiCurrent = 0);
+  }
+
+  hiiCurrent++;
+
+  if (hiiPattern.length == hiiCurrent) {
+    hiiCurrent = 0;
+    document.querySelector(".hii").removeAttribute("hidden");
+  }
+});
