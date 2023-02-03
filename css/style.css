@@ -263,9 +263,7 @@ footer {
 
 .game-image {
   background: var(--theme);
-  object-fit: contain;
-  background-position: center;
-  background-size: cover;
+  object-fit: cover;
   height: 200px;
   width: 200px;
   border-radius: 15px 15px 0 0;
