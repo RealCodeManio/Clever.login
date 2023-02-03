@@ -116,3 +116,15 @@ body[theme="northernfish"] {
   --text: black;
   --text-secondary: black;
 }
+
+body[theme="northernfish"] .navbar {
+  box-shadow: none !important;
+}
+
+body[theme="northernfish"] .navitems {
+  background: transparent;
+}
+
+body[theme="northernfish"]::-webkit-scrollbar {
+  background: #0ec9f8;
+}
