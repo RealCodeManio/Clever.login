@@ -34,9 +34,10 @@ function searchGames(query) {
       newGame.className = "game";
       newGame.setAttribute("href", games[game].url);
   
-      var gameImage = document.createElement("div");
+      var gameImage = document.createElement("img");
       gameImage.className = "game-image";
-      gameImage.style.setProperty("--url", "url('" + games[game].img + "')");
+      gameImage.src = games[game].img
+      gameImage.setAttribute("onerror", "this.src='/assets/globe.svg'")
   
       newGame.appendChild(gameImage);
   
