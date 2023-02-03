@@ -40,13 +40,13 @@
       latestVersionNumber = latestVersionNumber.substr(0, firstStr) + latestVersionNumber.slice(firstStr).replace(/\./g, '')
 
       var currentVersionNumber = currentVersion.replace("v", "").replaceAll("-", ".")
-      var firstStr = currentVersionNumber.search(/\./) + 1
-      currentVersionNumber = currentVersionNumber.substr(0, firstStr) + currentVersionNumber.slice(firstStr).replace(/\./g, '')
+      var firstStr2 = currentVersionNumber.search(/\./) + 1
+      currentVersionNumber = currentVersionNumber.substr(0, firstStr2) + currentVersionNumber.slice(firstStr2).replace(/\./g, '')
 
       console.log(latestVersionNumber, currentVersionNumber)
 
       var message;
-      versionWarning.innerText = betaMessage.innerText.replace("%VERSION%", latestVersion);
+      versionWarning.innerText = betaMessage.replace("%VERSION%", latestVersion);
       versionWarning.style.display = "block";
     }
   })();
