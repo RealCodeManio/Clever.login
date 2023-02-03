@@ -33,17 +33,26 @@
   
     var oldMessage = "Warning: You are on a older version. The current version is %VERSION%"
     var betaMessage = "You are on a beta version! The current release is %VERSION%"
-    
+    var otherMessage = "You not on the currently released version. The current release is %VERSION%"
+
     if (latestVersion && currentVersion !== latestVersion) {
       var latestVersionNumber = latestVersion.replace("v", "").replaceAll("-", ".")
       var firstStr = latestVersionNumber.search(/\./) + 1
-      latestVersionNumber = latestVersionNumber.substr(0, firstStr) + latestVersionNumber.slice(firstStr).replace(/\./g, '')
+      latestVersionNumber = Number(latestVersionNumber.substr(0, firstStr) + latestVersionNumber.slice(firstStr).replace(/\./g, ''))
 
       var currentVersionNumber = currentVersion.replace("v", "").replaceAll("-", ".")
       var firstStr2 = currentVersionNumber.search(/\./) + 1
-      currentVersionNumber = currentVersionNumber.substr(0, firstStr2) + currentVersionNumber.slice(firstStr2).replace(/\./g, '')
+      currentVersionNumber = Number(currentVersionNumber.substr(0, firstStr2) + currentVersionNumber.slice(firstStr2).replace(/\./g, ''))
 
-      console.log(latestVersionNumber, currentVersionNumber)
+      if (isNaN(latestVersionNumber) || isNaN(currentVersionNumber)) {
+          message = otherMessage
+      } else {
+          if (currentVersionNumber > latestVersionNumber) {
+              message = betaMessage
+          } else {
+              message = oldMessage
+          }
+      }
 
       var message;
       versionWarning.innerText = betaMessage.replace("%VERSION%", latestVersion);
