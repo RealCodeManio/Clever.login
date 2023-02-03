@@ -552,3 +552,9 @@ footer {
 .changelog-type[changed]::before {
   content: "Changed";
 }
+
+.hii {
+  color: var(--theme);
+  margin: 1rem;
+  margin-left: 2rem;
+}
