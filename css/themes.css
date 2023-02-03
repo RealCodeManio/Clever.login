@@ -98,3 +98,14 @@ body[theme="piplup"] {
   --text: black;
   --text-secondary: black;
 }
+
+body[theme="forternish"] {
+  --background: #003443;
+  --theme: linear-gradient(15deg, #82c4e4, #60f108);
+  --text: white;
+  --text-secondary: black;
+}
+
+body[theme="forternish"] * {
+  font-family: Comic Sans MS;
+}
