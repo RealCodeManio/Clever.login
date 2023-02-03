@@ -135,3 +135,10 @@ body[theme="forgor"] {
   --text: #d7d700;
   --text-secondary: #efefef;
 ]
+
+body[theme="monotonium"] {
+  --background: white;
+  --theme: black;
+  --text: black;
+  --text-secondary: white;
+}
