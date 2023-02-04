@@ -23,7 +23,7 @@ This is the GitHub repo which is used to host the website. If you want to use th
 > If you have any problems please open an issue, so we can fix it ASAP!
 
 ## Game Files
-Due to the amount of games, all of the games have been moved to a [new repo](https://github.com/3kh0/3kh0-Assets)
+Due to the amount of games, all of the games have been moved to a [new repo](https://github.com/3kh0/3kh0-Assets).
 
 ## Host the website
 
@@ -65,6 +65,8 @@ Contributions are always welcome!
 See [`contributing.md`](https://github.com/3kh0/3kh0.github.io/blob/main/CONTRIBUTING.md) for ways to get started.
 
 Please adhere to this project's [Code of Conduct](https://github.com/3kh0/3kh0.github.io/blob/main/.github/CODE_OF_CONDUCT.md).
+
+If you would like to help add games, you can do that here: [3kh0/3kh0-Assets](https://github.com/3kh0/3kh0-Assets), this repo only has the UI and other things
 
 ## Run Locally
 
