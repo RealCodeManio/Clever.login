@@ -40,6 +40,11 @@
     "img": "/files/9007199254740992/logo-4.png"
   },
   {
+    "name": "A Dance of Fire and Ice",
+    "url": "/files/a-dance-of-fire-and-ice/index.html",
+    "img": "/files/a-dance-of-fire-and-ice/splash.png"
+  },
+  {
     "name": "Achievement Unlocked",
     "url": "/files/achievementunlocked/index.html",
     "img": "/files/achievementunlocked/achievementunlocked.png"
@@ -200,12 +205,12 @@
     "img": "/files/breakingthebank/breakingthebank.png"
   },
   {
-    "name": "Big Tower Tiny Square  Hot",
+    "name": "Big Tower Tiny Square",
     "url": "/files/btts/index.html",
     "img": "/files/btts/images.png"
   },
   {
-    "name": "Big NEON Tower Tiny Square  Hot",
+    "name": "Big NEON Tower Tiny Square",
     "url": "/files/bntts/index.html",
     "img": "/files/bntts/icons/icon-256.png"
   },
@@ -945,7 +950,7 @@
     "img": "/files/resent-client/splash.jpg"
   },
   {
-    "name": "Retro Bowl  Hot",
+    "name": "Retro Bowl",
     "url": "/files/retro-bowl/index.html",
     "img": "/files/retro-bowl/img/icon.jpg"
   },
@@ -1055,7 +1060,7 @@
     "img": "/files/slime-rush-td/splash.png"
   },
   {
-    "name": "Slope  Hot",
+    "name": "Slope",
     "url": "/files/slope/index.html",
     "img": "/files/slope/slope4.jpeg"
   },
@@ -1355,7 +1360,7 @@
     "img": "/files/vex5/vex.jpeg"
   },
   {
-    "name": "Vex 6  Hot",
+    "name": "Vex 6",
     "url": "/files/vex6/index.html",
     "img": "/files/vex6/assets/icon.jpeg"
   },
