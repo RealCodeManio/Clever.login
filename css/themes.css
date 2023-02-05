@@ -39,15 +39,14 @@ body[theme="winter"] .navbar {
 
 body[theme="coffee"] {
   --background: #dabc9a;
-  --text: white;
+  --text: black;
   --text-secondary: white;
-  --theme: #190f05);
+  --theme: linear-gradient(to right, #3d2d1e, #190f05);
 }
 
 body[theme="coffee"] .navbar {
   box-shadow: 0 5px 200px #3d2d1e;
 }
-
 
 body[theme="nebelung"] {
   --background: #dabc9a;
