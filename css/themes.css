@@ -143,7 +143,14 @@ body[theme="monotonium"] {
   --text-secondary: white;
 }
 
-body[theme="monotonium-but-better"] {
+body[theme="monotonium-black"] {
+  --background: black;
+  --theme: white;
+  --text: white;
+  --text-secondary: black;
+}
+
+body[theme="concrete"] {
   --background: gray;
   --theme: white;
   --text: white;
