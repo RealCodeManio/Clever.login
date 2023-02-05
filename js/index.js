@@ -108,3 +108,24 @@ document.addEventListener("keydown", function (amongusimpostor) {
     }
   }
 });
+
+var pattern2 = ["c", "o", "m", "i", "s", "a", "n", "s"];
+var current2 = 0;
+
+document.addEventListener("keydown", function (e) {
+  if (e.key !== pattern2[current2]) {
+    return (current2 = 0);
+  }
+
+  current2++;
+
+  if (pattern2.length == current2) {
+    current2 = 0;
+    document.body.setAttribute("theme", "forternish");
+    localStorage.setItem("theme", "forternish");
+    localStorage.setItem("forternish", "true");
+    if (document.querySelector(".forternish")) {
+      document.querySelector(".forternish").removeAttribute("hidden");
+    }
+  }
+});
