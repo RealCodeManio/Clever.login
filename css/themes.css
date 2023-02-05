@@ -46,6 +46,7 @@ body[theme="coffee"] {
 
 body[theme="coffee"] .navbar {
   box-shadow: 0 5px 200px #3d2d1e;
+  animation: nebelungBreathing 5s ease-out infinite normal;
 }
 
 body[theme="nebelung"] {
