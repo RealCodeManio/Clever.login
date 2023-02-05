@@ -147,8 +147,8 @@ body[theme="monotonium-dark"] {
 body[theme="concrete"] {
   --background: gray;
   --theme: white;
-  --text: gray;
-  --text-secondary: gray;
+  --text: white;
+  --text-secondary: grey;
 }
 
 body[theme="sunset"] {
