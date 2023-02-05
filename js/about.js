@@ -44,6 +44,8 @@
       var firstStr2 = currentVersionNumber.search(/\./) + 1
       currentVersionNumber = Number(currentVersionNumber.substr(0, firstStr2) + currentVersionNumber.slice(firstStr2).replace(/\./g, ''))
 
+      var message;
+
       if (isNaN(latestVersionNumber) || isNaN(currentVersionNumber)) {
           message = otherMessage
       } else {
@@ -54,7 +56,8 @@
           }
       }
 
-      var message;
+      console.log(latestVersion)
+
       versionWarning.innerText = betaMessage.replace("%VERSION%", latestVersion);
       versionWarning.style.display = "block";
     }
