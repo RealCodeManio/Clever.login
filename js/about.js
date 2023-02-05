@@ -56,8 +56,6 @@
           }
       }
 
-      console.log(latestVersion)
-
       versionWarning.innerText = betaMessage.replace("%VERSION%", latestVersion);
       versionWarning.style.display = "block";
     }
