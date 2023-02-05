@@ -558,3 +558,8 @@ footer {
   margin: 1rem;
   margin-left: 2rem;
 }
+
+.alien {
+  border: none;
+  margin: 1rem auto;
+}
