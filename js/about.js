@@ -16,7 +16,7 @@
     } catch {}
   
     try {
-      var infoFetch = await fetch("https://cdn.jsdelivr.net/gh/3kh0/3kh0.github.io@latest/info.json");
+      var infoFetch = await fetch("https://cdn.jsdelivr.net/gh/3kh0/3kh0.github.io/info.json");
       try {
         var infoResult = await infoFetch.json();
         if (infoResult.version) {
