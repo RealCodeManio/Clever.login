@@ -140,7 +140,7 @@ body[theme="monotonium"] {
 body[theme="monotonium-dark"] {
   --background: black;
   --theme: white;
-  --text: black;
+  --text: white;
   --text-secondary: black;
 }
 
