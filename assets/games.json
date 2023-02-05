@@ -135,6 +135,11 @@
     "img": "/files/ballistic-chickens/logo.png"
   },
   {
+    "name": "Basket Random",
+    "url": "/files/basket-random/index.html",
+    "img": "/files/basket-random/splash.jpeg"
+  },
+  {
     "name": "Basketball Stars",
     "url": "/files/basketball-stars/index.html",
     "img": "/files/basketball-stars/assets/images/basketball-stars.png"
