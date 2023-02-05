@@ -39,14 +39,26 @@ body[theme="winter"] .navbar {
 
 body[theme="coffee"] {
   --background: #dabc9a;
+  --text: white;
+  --text-secondary: white;
+  --theme: #190f05);
+}
+
+body[theme="coffee"] .navbar {
+  box-shadow: 0 5px 200px #3d2d1e;
+}
+
+
+body[theme="nebelung"] {
+  --background: #dabc9a;
   --text: black;
   --text-secondary: white;
   --theme: linear-gradient(to right, #3d2d1e, #190f05);
 }
 
-body[theme="coffee"] .navbar {
+body[theme="nebelung"] .navbar {
   box-shadow: 0 5px 200px #3d2d1e;
-  animation: CoffeeBreathing 5s ease-out infinite normal;
+  animation: nebelungBreathing 5s ease-out infinite normal;
 }
 
 body[theme="piplup"] {
@@ -56,7 +68,7 @@ body[theme="piplup"] {
   --text-secondary: black;
 }
 
-@keyframes CoffeeBreathing {
+@keyframes nebelungBreathing {
   0% {
     box-shadow: 0 5px 170px #3d2d1e;
   }
@@ -74,7 +86,7 @@ body[theme="piplup"] {
   }
 }
 
-@-webkit-keyframes CoffeeBreathing {
+@-webkit-keyframes nebelungBreathing {
   0% {
     box-shadow: 0 5px 170px #3d2d1e;
   }
@@ -92,12 +104,6 @@ body[theme="piplup"] {
   }
 }
 
-body[theme="piplup"] {
-  --background: #bee7eb;
-  --theme: #83c0dd;
-  --text: black;
-  --text-secondary: black;
-}
 
 body[theme="forternish"] {
   --background: #003443;
@@ -146,14 +152,14 @@ body[theme="monotonium"] {
 body[theme="monotonium-dark"] {
   --background: black;
   --theme: white;
-  --text: white;
+  --text: black;
   --text-secondary: black;
 }
 
 body[theme="concrete"] {
   --background: gray;
   --theme: white;
-  --text: white;
+  --text: gray;
   --text-secondary: gray;
 }
 
