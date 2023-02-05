@@ -143,6 +143,13 @@ body[theme="monotonium"] {
   --text-secondary: white;
 }
 
+body[theme="monotonium-but-better"] {
+  --background: gray;
+  --theme: white;
+  --text: white;
+  --text-secondary: gray;
+}
+
 body[theme="sunset"] {
   --background: #1c1c1c;
   --theme: #e83141;
