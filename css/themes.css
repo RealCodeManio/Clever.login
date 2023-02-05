@@ -37,18 +37,6 @@ body[theme="winter"] .navbar {
   box-shadow: none;
 }
 
-body[theme="coffee"] {
-  --background: #dabc9a;
-  --text: black;
-  --text-secondary: white;
-  --theme: linear-gradient(to right, #3d2d1e, #190f05);
-}
-
-body[theme="coffee"] .navbar {
-  box-shadow: 0 5px 200px #3d2d1e;
-  animation: nebelungBreathing 5s ease-out infinite normal;
-}
-
 body[theme="nebelung"] {
   --background: #dabc9a;
   --text: black;
