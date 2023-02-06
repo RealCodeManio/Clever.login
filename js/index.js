@@ -91,6 +91,12 @@ document.addEventListener("keydown", function (e) {
     }
   }
 });
+  
+if (localStorage.getItem(name) == "true") {
+  if (document.querySelector("." + name)) {
+    document.querySelector("." + name).removeAttribute("hidden");
+  }
+}
 }
 
 createSecretThemeType("nebelung", ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a"])
