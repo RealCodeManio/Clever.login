@@ -44,6 +44,9 @@ You can host our website on a cloud hosting solution like Replit or Render here.
 [![Deploy to Render](https://binbashbanana.github.io/deploy-buttons/buttons/remade/render.svg)](https://render.com/deploy?repo=https://github.com/3kh0/3kh0.github.io)
 [![Deploy to Cyclic](https://binbashbanana.github.io/deploy-buttons/buttons/remade/cyclic.svg)](https://app.cyclic.sh/api/app/deploy/3kh0/3kh0.github.io)
 
+## Docs
+The official 3kh0 docs can be found [here](https://github.com/3kh0/3kh0.github.io/wiki). If you want to make a theme this is the place!
+
 ## Contributors
 
 Thank you to all of these amazing people for helping work on this project!
