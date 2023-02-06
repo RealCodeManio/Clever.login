@@ -67,6 +67,23 @@ class changelogChanged extends HTMLElement {
 
 customElements.define("changelog-changed", changelogChanged);
 
+function foundSecretTheme(name) {
+  document.body.setAttribute("theme", name);
+  localStorage.setItem("theme", name);
+  localStorage.setItem(name, "true");
+  if (document.querySelector("." + name)) {
+    document.querySelector("." + name).removeAttribute("hidden");
+  }
+}
+
+function secretThemeButton(name) {
+  if (localStorage.getItem(name) == "true") {
+    if (document.querySelector("." + name)) {
+      document.querySelector("." + name).removeAttribute("hidden");
+    }
+  }
+}
+
 function createSecretThemeType(name, pattern) {
 window[name + "pattern"] = pattern;
 window[name + "current"] = 0;
@@ -83,20 +100,11 @@ document.addEventListener("keydown", function (e) {
 
   if (themePattern.length == themeCurrent) {
     themeCurrent = 0;
-    document.body.setAttribute("theme", name);
-    localStorage.setItem("theme", name);
-    localStorage.setItem(name, "true");
-    if (document.querySelector("." + name)) {
-      document.querySelector("." + name).removeAttribute("hidden");
-    }
+    foundSecretTheme(name);
   }
 });
   
-if (localStorage.getItem(name) == "true") {
-  if (document.querySelector("." + name)) {
-    document.querySelector("." + name).removeAttribute("hidden");
-  }
-}
+secretThemeButton(name)
 }
 
 createSecretThemeType("nebelung", ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a"])
