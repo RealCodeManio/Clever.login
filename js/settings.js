@@ -90,3 +90,7 @@ if (localStorage.getItem("nebelung") == "true") {
 if (localStorage.getItem("piplup") == "true") {
   document.querySelector(".piplup").removeAttribute("hidden");
 }
+
+if (localStorage.getItem("forternish") == "true") {
+  document.querySelector(".forternish").removeAttribute("hidden");
+}
