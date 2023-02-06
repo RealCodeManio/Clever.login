@@ -79,7 +79,7 @@ document.addEventListener("keydown", function (e) {
     return (themeCurrent = 0);
   }
 
-  current++;
+  themeCurrent++;
 
   if (themePattern.length == themeCurrent) {
     themeCurrent = 0;
