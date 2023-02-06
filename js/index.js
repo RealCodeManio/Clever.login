@@ -109,7 +109,7 @@ document.addEventListener("keydown", function (amongusimpostor) {
   }
 });
 
-var pattern2 = ["c", "o", "m", "i", "s", "a", "n", "s"];
+var pattern2 = ["c", "o", "m", "i", "c", "s", "a", "n", "s"];
 var current2 = 0;
 
 document.addEventListener("keydown", function (e) {
