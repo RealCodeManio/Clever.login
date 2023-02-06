@@ -314,6 +314,7 @@ footer {
   gap: 10px;
   margin: 0 1rem;
   user-select: none;
+  flex-wrap: wrap;
 }
 
 .button {
