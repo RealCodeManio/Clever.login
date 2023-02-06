@@ -75,7 +75,7 @@
     "img": "/files/alienhominid/alienhominid.jpg"
   },
   {
-    "name": "Alien Hominid",
+    "name": "Align 4",
     "url": "/files/align-4/index.html",
     "img": "/files/align-4/board.png"
   },
@@ -98,6 +98,11 @@
     "name": "Aquapark slides",
     "url": "/files/aquapark-slides/index.html",
     "img": "/files/aquapark-slides/splash.png"
+  },
+  {
+    "name": "Astray",
+    "url": "/files/astray/index.html",
+    "img": "/files/astray/splash.png"
   },
   {
     "name": "Avalanche",
