@@ -67,65 +67,32 @@ class changelogChanged extends HTMLElement {
 
 customElements.define("changelog-changed", changelogChanged);
 
-var pattern = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a"];
-var current = 0;
+function createSecretThemeType(name, pattern) {
+window[name + "pattern"] = pattern;
+window[name + "current"] = 0;
+  
+var themePattern = window[name + "pattern"]
+var themeCurrent = window[name + "current"]
 
 document.addEventListener("keydown", function (e) {
-  if (e.key !== pattern[current]) {
-    return (current = 0);
+  if (e.key !== themePattern[themeCurrent]) {
+    return (themeCurrent = 0);
   }
 
   current++;
 
-  if (pattern.length == current) {
-    current = 0;
-    document.body.setAttribute("theme", "nebelung");
-    localStorage.setItem("theme", "nebelung");
-    localStorage.setItem("nebelung", "true");
-    if (document.querySelector(".nebelung")) {
-      document.querySelector(".nebelung").removeAttribute("hidden");
+  if (themePattern.length == themeCurrent) {
+    themeCurrent = 0;
+    document.body.setAttribute("theme", name);
+    localStorage.setItem("theme", name);
+    localStorage.setItem(name, "true");
+    if (document.querySelector("." + name)) {
+      document.querySelector("." + name).removeAttribute("hidden");
     }
   }
 });
+}
 
-var penguin = ["p", "i", "p", "l", "u", "p", "i", "s", "c", "o", "o", "l"];
-var stream = 0;
-
-document.addEventListener("keydown", function (amongusimpostor) {
-  if (amongusimpostor.key !== penguin[stream]) {
-    return (stream = 0);
-  }
-
-  stream++;
-
-  if (penguin.length == stream) {
-    stream = 0;
-    document.body.setAttribute("theme", "piplup");
-    localStorage.setItem("theme", "piplup");
-    localStorage.setItem("piplup", "true");
-    if (document.querySelector(".piplup")) {
-      document.querySelector(".piplup").removeAttribute("hidden");
-    }
-  }
-});
-
-var pattern2 = ["c", "o", "m", "i", "c", "s", "a", "n", "s"];
-var current2 = 0;
-
-document.addEventListener("keydown", function (e) {
-  if (e.key !== pattern2[current2]) {
-    return (current2 = 0);
-  }
-
-  current2++;
-
-  if (pattern2.length == current2) {
-    current2 = 0;
-    document.body.setAttribute("theme", "forternish");
-    localStorage.setItem("theme", "forternish");
-    localStorage.setItem("forternish", "true");
-    if (document.querySelector(".forternish")) {
-      document.querySelector(".forternish").removeAttribute("hidden");
-    }
-  }
-});
+createSecretThemeType("nebelung", ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a"])
+createSecretThemeType("piplup", ["p", "i", "p", "l", "u", "p", "i", "s", "c", "o", "o", "l"])
+createSecretThemeType("forternish", ["c", "o", "m", "i", "c", "s", "a", "n", "s"])
