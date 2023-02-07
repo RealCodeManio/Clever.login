@@ -32,7 +32,7 @@
     }
   
     var oldMessage = "Warning: You are on a older version. The current version is %VERSION%"
-    var betaMessage = "You are on a beta version! The current release is %VERSION%"
+    var betaMessage = "You are on a pre-release version! The current release is %VERSION%"
     var otherMessage = "You not on the currently released version. The current release is %VERSION%"
 
     if (latestVersion && currentVersion !== latestVersion) {
