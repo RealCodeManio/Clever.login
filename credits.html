@@ -33,17 +33,17 @@
       <br>
       <p>Main devlopers</p>
       <ul>
-        <li>3kh0</li>
-        <li>Nebelung-Dev</li>
-        <li>Piplup7575</li>
+        <li data-github="3kh0"></li>
+        <li data-github="Nebelung-Dev"></li>
+        <li data-github="Piplup7575"></li>
       </ul>
       <p>Other Developers</p>
       <ul>
-        <li>RetroWonder</li>
-        <li>SipSup3314</li>
-        <li>u4pak</li>
-        <li>PenGuen01</li>
-        <li>Russell2259</li>
+        <li data-github="RetroWonder"></li>
+        <li data-github="SipSup3314"></li>
+        <li data-github="u4pak"></li>
+        <li data-github="PenGuen01"></li>
+        <li data-github="Russell2259">Russell2259</li>
       </ul>
     </div>
 
@@ -51,5 +51,10 @@
 
     <script src="./js/index.js"></script>
     <script src="./js/main.js"></script>
+    <script>
+        document.querySelectorAll('[data-github]').forEach(item => {
+            item.innerHTML = `<a href="https://github.com/${item.dataset.github}">${item.dataset.github}</a>`
+        });
+    </script>
   </body>
 </html>
