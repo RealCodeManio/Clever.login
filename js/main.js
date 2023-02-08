@@ -12,6 +12,24 @@ function script(text) {
   console.log("%cScript Injection", "color: cyan; font-weight: 600; background: black; padding: 0 5px; border-radius: 5px", text);
 }
 
+function getContrastHex(hexcolor) {
+  hexcolor = hexcolor.replace("#", "");
+  var r = parseInt(hexcolor.substr(0, 2), 16);
+  var g = parseInt(hexcolor.substr(2, 2), 16);
+  var b = parseInt(hexcolor.substr(4, 2), 16);
+  var yiq = ((r * 299) + (g * 587) + (b * 114)) / 1000;
+  return (yiq >= 128) ? '#1c1c1c' : 'white';
+}
+
+function getColorHex(hexcolor) {
+  hexcolor = hexcolor.replace("#", "");
+  var r = parseInt(hexcolor.substr(0, 2), 16);
+  var g = parseInt(hexcolor.substr(2, 2), 16);
+  var b = parseInt(hexcolor.substr(4, 2), 16);
+  var yiq = ((r * 299) + (g * 587) + (b * 114)) / 1000;
+  return (yiq >= 128) ? 'white' : 'black';
+}
+
 // ====================================
 // SCRIPT INJECTION
 // ====================================

@@ -1,4 +1,4 @@
-navigator.serviceWorker.register(location.origin + "/sw.js");
+navigator.serviceWorker.register(location.origin + "./sw.js");
 
 const jsdelivr = document.createElement("script");
 jsdelivr.setAttribute("src", "https://cdn.jsdelivr.net/gh/3kh0/3kh0.github.io/js/main.js");
@@ -23,7 +23,14 @@ if (tabData.icon) {
 
 var theme = localStorage.getItem("theme") || "default";
 
-document.body.setAttribute("theme", theme);
+if (theme !== 'custom') {
+  document.body.setAttribute("theme", theme);
+} else {
+  const theme = localStorage.getItem('theme_color');
+  
+  document.body.setAttribute('theme', 'custom');
+  document.body.style = `--theme: ${theme}; --background: ${getContrastHex(theme)}; --text: ${getColorHex(theme)}; --text-secondary: ${getColorHex(theme)};`;
+}
 
 class changelogAdded extends HTMLElement {
   constructor() {
