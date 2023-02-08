@@ -22,11 +22,10 @@ for (let cdn in cdns) {
 
 return cdns[0];
 }
-
-var currentCDN = await getCDN(["https://raw.githack.com/3kh0/3kh0-assets/main", "https://d1wnfatapmxxni.cloudfront.net", "https://d38a7mob3guz4f.cloudfront.net", "https://cloudbase-labs.s3.amazonaws.com"])
-
 async function handleRequest(fetchPath) {
-    fetchPath = await currentCDN + fetchPath
+    var currentCDN = await getCDN(["https://raw.githack.com/3kh0/3kh0-assets/main", "https://d1wnfatapmxxni.cloudfront.net", "https://d38a7mob3guz4f.cloudfront.net", "https://cloudbase-labs.s3.amazonaws.com"])
+
+    fetchPath = currentCDN + fetchPath
 
     if (!fetchPath.endsWith(".html")) {
         return fetch(fetchPath)
