@@ -81,6 +81,8 @@ function resetTab() {
 function setTheme(theme) {
   localStorage.setItem("theme", theme);
   document.body.setAttribute("theme", theme);
+  document.body.style = '';
+  localStorage.removeItem('theme_color');
 }
 
 function setThemeColor(theme) {
