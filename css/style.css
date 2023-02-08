@@ -587,3 +587,7 @@ input[type="color"] {
 .bookmarklets {
   margin-left: 50px;
 }
+
+.bookmarklets> a {
+  margin-bottom: 20px;
+}
