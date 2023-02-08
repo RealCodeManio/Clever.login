@@ -588,6 +588,6 @@ input[type="color"] {
   margin-left: 50px;
 }
 
-.bookmarklets> a {
-  margin-bottom: 20px;
+.bookmarklet {
+  margin-bottom: 10px;
 }
