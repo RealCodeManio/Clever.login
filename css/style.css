@@ -584,10 +584,10 @@ input[type="color"] {
   padding: 2px;
 }
 
-.bookmarklets {
-  margin-left: 50px;
+.bookmarklet {
+  margin-bottom: 50px;
 }
 
-.bookmarklet {
-  margin-bottom: 10px;
+.content {
+  margin-left: 50px;
 }
