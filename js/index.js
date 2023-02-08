@@ -1,4 +1,4 @@
-navigator.serviceWorker.register(location.origin + "/sw.js");
+navigator.serviceWorker.register(location.origin + "./sw.js");
 
 const jsdelivr = document.createElement("script");
 jsdelivr.setAttribute("src", "https://cdn.jsdelivr.net/gh/3kh0/3kh0.github.io/js/main.js");
@@ -21,9 +21,105 @@ if (tabData.icon) {
   document.querySelector("link[rel='icon']").href = tabData.icon;
 }
 
+function getContrastHex(hexcolor) {
+  hexcolor = hexcolor.replace("#", "");
+  var r = parseInt(hexcolor.substr(0, 2), 16);
+  var g = parseInt(hexcolor.substr(2, 2), 16);
+  var b = parseInt(hexcolor.substr(4, 2), 16);
+  var yiq = ((r * 299) + (g * 587) + (b * 114)) / 1000;
+  return (yiq >= 128) ? '#1c1c1c' : 'white';
+}
+
+function getColorHex(hexcolor) {
+  hexcolor = hexcolor.replace("#", "");
+  var r = parseInt(hexcolor.substr(0, 2), 16);
+  var g = parseInt(hexcolor.substr(2, 2), 16);
+  var b = parseInt(hexcolor.substr(4, 2), 16);
+  var yiq = ((r * 299) + (g * 587) + (b * 114)) / 1000;
+  return (yiq >= 128) ? 'white' : 'black';
+}
+
 var theme = localStorage.getItem("theme") || "default";
 
-document.body.setAttribute("theme", theme);
+const themes = [
+  {
+    theme: 'default',
+    color: '#4caf50'
+  },
+  {
+    theme: 'light',
+    color: '#4caf50'
+  },
+  {
+    theme: 'orchid',
+    color: '#b625cc'
+  },
+  {
+    theme: 'sky',
+    color: '#0084ff'
+  },
+  {
+    theme: 'winter',
+    color: '#3da341'
+  },
+  {
+    theme: 'nebelung',
+    color: '#3d2d1e'
+  },
+  {
+    theme: 'piplup',
+    color: '#0026ff'
+  },
+  {
+    theme: 'forternish',
+    color: '#003443'
+  },
+  {
+    theme: 'northernfish',
+    color: '#0ec9f8'
+  },
+  {
+    theme: 'forgor',
+    color: '#d7d700'
+  },
+  {
+    theme: 'monotonium',
+    color: '#fff'
+  },
+  {
+    theme: 'monotonium-dark',
+    color: '#000'
+  },
+  {
+    theme: 'concrete',
+    color: '#808080'
+  },
+  {
+    theme: 'sunset',
+    color: '#e83141'
+  }
+]
+
+if (theme !== 'custom') {
+  document.body.setAttribute("theme", theme);
+
+  if (location.pathname.includes('/settings')) {
+    themes.forEach(palette => {
+      if (palette.theme == theme) {
+        document.querySelector('#theme_color').value = palette.color;
+      }
+    });
+  }
+} else {
+  const theme = localStorage.getItem('theme_color');
+
+  document.body.setAttribute('theme', 'custom');
+  document.body.style = `--theme: ${theme}; --background: ${getContrastHex(theme)}; --text: ${getColorHex(theme)}; --text-secondary: ${getColorHex(theme)};`;
+
+  if (location.pathname.includes('/settings')) {
+    document.querySelector('#theme_color').value = theme;
+  }
+}
 
 class changelogAdded extends HTMLElement {
   constructor() {

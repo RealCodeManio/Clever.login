@@ -26,7 +26,7 @@ function searchGames(query) {
   (async () => {
     var gamesElement = document.querySelector(".games");
   
-    var gamesData = await fetch(location.origin + "/assets/games.json");
+    var gamesData = await fetch(location.origin + "./assets/games.json");
     var games = await gamesData.json();
   
     for (let game in games) {
@@ -37,7 +37,7 @@ function searchGames(query) {
       var gameImage = document.createElement("img");
       gameImage.className = "game-image";
       gameImage.src = games[game].img
-      gameImage.setAttribute("onerror", "this.src='/assets/globe.svg'")
+      gameImage.setAttribute("onerror", "this.src='./assets/globe.svg'")
   
       newGame.appendChild(gameImage);
   

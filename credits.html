@@ -8,8 +8,8 @@
     <meta name="author" content="3kh0" />
     <meta content="3kh0" property="og:title" />
     <meta content="The better unblocked games website." property="og:description" />
-    <meta content="/images/logo.png" property="og:image" />
-    <title>Projects | 3kh0</title>
+    <meta content="./images/logo.png" property="og:image" />
+    <title>About | 3kh0</title>
     <link href="./images/logo.png" rel="icon" />
     <link href="./css/index.css" rel="stylesheet" />
   </head>
@@ -18,7 +18,7 @@
       <div class="navitems">
         <img onclick="location.href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'" src="./images/logo.png" class="navlogo" draggable="false" />
         <a href="./"><div class="navitem">Home</div></a>
-        <a href="./projects"><div class="navitem" current>Projects</div></a>
+        <a href="./projects"><div class="navitem">Projects</div></a>
         <a href="./extras"><div class="navitem">Extras</div></a>
         <a href="./blog"><div class="navitem">Blog</div></a>
         <a href="./settings"><div class="navitem">Settings</div></a>
@@ -26,33 +26,35 @@
       </div>
     </div>
 
-    <center>
-      <input onkeyup="searchGames(this.value.trim().toLowerCase())" class="searchbar" placeholder="Search" />
-    </center>
-
-    <div class="saveItems">
-      <button class="button" onclick="downloadMainSave()">Download Save</button>
-      <button class="button" onclick="uploadMainSave()">Upload Save</button>
-      <div class="uploadResult"></div>
+    <div class="section-title">Credits</div>
+    <div class="section-text">
+      <p>3kh0 is an open source website with many contributing developers.</p>
+      <p>The website is owned and maintained by 3kh0 (Echo)</p>
+      <br>
+      <p>Main devlopers</p>
+      <ul>
+        <li data-github="3kh0"></li>
+        <li data-github="Nebelung-Dev"></li>
+        <li data-github="Piplup7575"></li>
+      </ul>
+      <p>Other Developers</p>
+      <ul>
+        <li data-github="RetroWonder"></li>
+        <li data-github="SipSup3314"></li>
+        <li data-github="u4pak"></li>
+        <li data-github="PenGuen01"></li>
+        <li data-github="Russell2259">Russell2259</li>
+      </ul>
     </div>
-
-    <input class="hiddenUpload" type="file" accept=".save" />
-    
-    <div class="hii" hidden>hi join discord.gg/3kh0 pls pls pls tysm ❤️</div>
-
-    <div class="games"></div>
-    <span class="spinner">
-      <svg viewBox="22 22 44 44">
-        <circle class="spinnerSvg" cx="44" cy="44" r="20.2" fill="none" stroke-width="3.6"></circle>
-      </svg>
-    </span>
-    <div class="nogames">No results found. If your want to add a game, please report to our <a href="https://github.com/3kh0/3kh0.github.io/issues">github</a></div>
 
     <footer>© 3kh0 2023</footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
-    <script src="./js/games-server.js"></script>
-    <script src="./js/games.js"></script>
     <script src="./js/index.js"></script>
+    <script src="./js/main.js"></script>
+    <script>
+        document.querySelectorAll('[data-github]').forEach(item => {
+            item.innerHTML = `<a href="https://github.com/${item.dataset.github}">${item.dataset.github}</a>`;
+        });
+    </script>
   </body>
 </html>

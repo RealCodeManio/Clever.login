@@ -157,3 +157,7 @@ body[theme="sunset"] {
   --text: white;
   --text-secondary: black;
 }
+
+html,body {
+  color: var(--text);
+}

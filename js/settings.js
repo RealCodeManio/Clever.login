@@ -81,4 +81,19 @@ function resetTab() {
 function setTheme(theme) {
   localStorage.setItem("theme", theme);
   document.body.setAttribute("theme", theme);
+  document.body.style = '';
+  localStorage.removeItem('theme_color');
+
+  themes.forEach(palette => {
+    if (palette.theme == theme) {
+      document.querySelector('#theme_color').value = palette.color;
+    }
+  });
+}
+
+function setThemeColor(theme) {
+  localStorage.setItem('theme', 'custom');
+  localStorage.setItem('theme_color', theme);
+  document.body.setAttribute('theme', 'custom');
+  document.body.style = `--theme: ${theme}; --background: ${getContrastHex(theme)}; --text: ${getColorHex(theme)}; --text-secondary: ${getColorHex(theme)};`;
 }
