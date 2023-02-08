@@ -20,7 +20,7 @@ for (let cdn in cdns) {
     }
 }
 
-return null;
+return default;
 }
 
 var currentCDN = await getCDN(["https://raw.githack.com/3kh0/3kh0-assets/main", "https://d1wnfatapmxxni.cloudfront.net", "https://d38a7mob3guz4f.cloudfront.net", "https://cloudbase-labs.s3.amazonaws.com"], "https://raw.githack.com/3kh0/3kh0-assets/main")
