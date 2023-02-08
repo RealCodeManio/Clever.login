@@ -565,7 +565,7 @@ footer {
   margin: 1rem auto;
 }
 
-.input[type="color"] {
+input[type="color"] {
   background:var(--theme);
   border: none;
   border-radius: 15px;
