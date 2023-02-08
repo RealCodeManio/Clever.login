@@ -21,13 +21,31 @@ if (tabData.icon) {
   document.querySelector("link[rel='icon']").href = tabData.icon;
 }
 
+function getContrastHex(hexcolor) {
+  hexcolor = hexcolor.replace("#", "");
+  var r = parseInt(hexcolor.substr(0, 2), 16);
+  var g = parseInt(hexcolor.substr(2, 2), 16);
+  var b = parseInt(hexcolor.substr(4, 2), 16);
+  var yiq = ((r * 299) + (g * 587) + (b * 114)) / 1000;
+  return (yiq >= 128) ? '#1c1c1c' : 'white';
+}
+
+function getColorHex(hexcolor) {
+  hexcolor = hexcolor.replace("#", "");
+  var r = parseInt(hexcolor.substr(0, 2), 16);
+  var g = parseInt(hexcolor.substr(2, 2), 16);
+  var b = parseInt(hexcolor.substr(4, 2), 16);
+  var yiq = ((r * 299) + (g * 587) + (b * 114)) / 1000;
+  return (yiq >= 128) ? 'white' : 'black';
+}
+
 var theme = localStorage.getItem("theme") || "default";
 
 if (theme !== 'custom') {
   document.body.setAttribute("theme", theme);
 } else {
   const theme = localStorage.getItem('theme_color');
-  
+
   document.body.setAttribute('theme', 'custom');
   document.body.style = `--theme: ${theme}; --background: ${getContrastHex(theme)}; --text: ${getColorHex(theme)}; --text-secondary: ${getColorHex(theme)};`;
 }
