@@ -583,3 +583,7 @@ input[type="color"] {
   outline: none;
   padding: 2px;
 }
+
+.bookmarklets {
+  margin-left: 50px;
+}
