@@ -83,6 +83,12 @@ function setTheme(theme) {
   document.body.setAttribute("theme", theme);
   document.body.style = '';
   localStorage.removeItem('theme_color');
+
+  themes.forEach(palette => {
+    if (palette.theme == theme) {
+      document.querySelector('#theme_color').value = palette.color;
+    }
+  });
 }
 
 function setThemeColor(theme) {
