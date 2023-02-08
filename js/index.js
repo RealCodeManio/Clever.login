@@ -41,8 +41,71 @@ function getColorHex(hexcolor) {
 
 var theme = localStorage.getItem("theme") || "default";
 
+const themes = [
+  {
+    theme: 'default',
+    color: '#4caf50'
+  },
+  {
+    theme: 'light',
+    color: '#4caf50'
+  },
+  {
+    theme: 'orchid',
+    color: '#b625cc'
+  },
+  {
+    theme: 'sky',
+    color: '#0084ff'
+  },
+  {
+    theme: 'winter',
+    color: '#3da341'
+  },
+  {
+    theme: 'nebelung',
+    color: '#3d2d1e'
+  },
+  {
+    theme: 'piplup',
+    color: '#0026ff'
+  },
+  {
+    theme: 'forternish',
+    color: '#003443'
+  },
+  {
+    theme: 'northernfish',
+    color: '#0ec9f8'
+  },
+  {
+    theme: 'forgor',
+    color: '#d7d700'
+  },
+  {
+    theme: 'monotonium',
+    color: '#fff'
+  },
+  {
+    theme: 'monotonium-dark',
+    color: '#000'
+  },
+  {
+    theme: 'concrete',
+    color: '#808080'
+  },
+  {
+    theme: 'sunset',
+    color: '#e83141'
+  }
+]
+
 if (theme !== 'custom') {
   document.body.setAttribute("theme", theme);
+
+  if (location.pathname.includes('/settings')) {
+    document.querySelector('#theme_color').value = themes[themes.indexOf(theme)].color;
+  }
 } else {
   const theme = localStorage.getItem('theme_color');
 
