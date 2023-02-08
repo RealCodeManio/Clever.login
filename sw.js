@@ -24,10 +24,8 @@ return cdns[0];
 }
 async function handleRequest(fetchPath) {
     var currentCDN = await getCDN(["https://raw.githack.com/3kh0/3kh0-assets/main", "https://d1wnfatapmxxni.cloudfront.net", "https://d38a7mob3guz4f.cloudfront.net", "https://cloudbase-labs.s3.amazonaws.com"])
-
-    console.log(currentCDN)
     
-    fetchPath = currentCDN + fetchPath
+    fetchPath = currentCDN + "/" + fetchPath
 
     if (!fetchPath.endsWith(".html")) {
         return fetch(fetchPath)
