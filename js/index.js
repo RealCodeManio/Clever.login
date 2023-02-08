@@ -48,6 +48,10 @@ if (theme !== 'custom') {
 
   document.body.setAttribute('theme', 'custom');
   document.body.style = `--theme: ${theme}; --background: ${getContrastHex(theme)}; --text: ${getColorHex(theme)}; --text-secondary: ${getColorHex(theme)};`;
+
+  if (location.pathname.includes('/settings')) {
+    document.querySelector('#theme_color').value = theme;
+  }
 }
 
 class changelogAdded extends HTMLElement {

@@ -564,3 +564,11 @@ footer {
   border: none;
   margin: 1rem auto;
 }
+
+.input[type="color"] {
+  background:var(--theme);
+  border: none;
+  border-radius: 15px;
+  outline: none;
+  padding: 10px;
+}
