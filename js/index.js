@@ -104,7 +104,11 @@ if (theme !== 'custom') {
   document.body.setAttribute("theme", theme);
 
   if (location.pathname.includes('/settings')) {
-    document.querySelector('#theme_color').value = themes[themes.indexOf(theme)].color;
+    themes.forEach(palette => {
+      if (palette.theme == theme) {
+        document.querySelector('#theme_color').value = palette.color;
+      }
+    });
   }
 } else {
   const theme = localStorage.getItem('theme_color');
