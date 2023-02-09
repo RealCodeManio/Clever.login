@@ -29,39 +29,14 @@
 // Overall, this code is part of a larger web page that implements various functionalities, including theme handling, custom elements, and secret themes.
 
 const path = location.pathname;
-var origin;
 
-fetch('./assets/pages.json')
-  .then(res => res.json())
-  .then(pages => {
-    var currentPage;
-
-    pages.forEach(page => {
-      if (path.slice(path.length - page.length) == page) {
-        currentPage = page;
-      }
-    });
-
-    if (path.charAt(path.length) === '/' && !path.includes('/blog/') || path.slice(path.length - currentPage.length) == currentPage) {
-      const instancePath = path.replace(path.slice(path.length - currentPage.length), '');
-
-      origin = location.origin + instancePath;
-
-      alert(origin);
-    }
-  }).catch(e => {
-    alert('Could not load necessary files. Please go to the homepage and try again');
-  });
-
-
-  try {
-    alert(origin)
-    navigator.serviceWorker.register(origin + 'sw.js');
-  } catch (e) {
-    alert(`Service Worker registration failed: ${e}`);
-    throw new Error(`Service Worker registration failed: ${e}`);
-    console.warn("Since the registration of the serivce worker failed, many things will also break.");
-  }
+try {
+  navigator.serviceWorker.register('sw.js');
+} catch (e) {
+  alert(`Service Worker registration failed: ${e}`);
+  throw new Error(`Service Worker registration failed: ${e}`);
+  console.warn("Since the registration of the serivce worker failed, many things will also break.");
+}
 
 window.onerror = (msg, url, line) => {
   alert(msg + line);
@@ -248,28 +223,55 @@ function secretThemeButton(name) {
 }
 
 function createSecretThemeType(name, pattern) {
-window[name + "pattern"] = pattern;
-window[name + "current"] = 0;
-  
-var themePattern = window[name + "pattern"]
-var themeCurrent = window[name + "current"]
+  window[name + "pattern"] = pattern;
+  window[name + "current"] = 0;
 
-document.addEventListener("keydown", function (e) {
-  if (e.key !== themePattern[themeCurrent]) {
-    return (themeCurrent = 0);
-  }
+  var themePattern = window[name + "pattern"]
+  var themeCurrent = window[name + "current"]
 
-  themeCurrent++;
+  document.addEventListener("keydown", function (e) {
+    if (e.key !== themePattern[themeCurrent]) {
+      return (themeCurrent = 0);
+    }
 
-  if (themePattern.length == themeCurrent) {
-    themeCurrent = 0;
-    foundSecretTheme(name);
-  }
-});
-  
-secretThemeButton(name)
+    themeCurrent++;
+
+    if (themePattern.length == themeCurrent) {
+      themeCurrent = 0;
+      foundSecretTheme(name);
+    }
+  });
+
+  secretThemeButton(name)
 }
 
 createSecretThemeType("nebelung", ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a"])
 createSecretThemeType("piplup", ["p", "i", "p", "l", "u", "p", "i", "s", "c", "o", "o", "l"])
 createSecretThemeType("forternish", ["c", "o", "m", "i", "c", "s", "a", "n", "s"])
+
+/*
+@Russell2259 was trying to register the service worker without absolute path's
+
+var origin;
+
+fetch('./assets/pages.json')
+  .then(res => res.json())
+  .then(pages => {
+    var currentPage;
+
+    pages.forEach(page => {
+      if (path.slice(path.length - page.length) == page) {
+        currentPage = page;
+      }
+    });
+
+    if (path.charAt(path.length) === '/' && !path.includes('/blog/') || path.slice(path.length - currentPage.length) == currentPage) {
+      const instancePath = path.replace(path.slice(path.length - currentPage.length), '');
+
+      origin = location.origin + instancePath;
+
+      alert(origin);
+    }
+  }).catch(e => {
+    alert('Could not load necessary files. Please go to the homepage and try again');
+  });*/
