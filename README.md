@@ -13,6 +13,8 @@ This is the GitHub repo which is used to host the website. If you want to use th
 > **Note**
 > **If you do fork this repo, please give the orginal repo a star! It helps out alot and only 30% of people who fork give me a star.**
 
+[![Stargazers repo roster for @3kh0/3kh0.github.io](https://reporoster.com/stars/dark/3kh0/3kh0.github.io)](https://github.com/3kh0/3kh0.github.io/stargazers)
+
 ## Features
 
 - Site-wide tab cloaking

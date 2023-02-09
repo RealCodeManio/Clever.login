@@ -15,33 +15,33 @@ function script(text) {
 // ====================================
 // SCRIPT INJECTION
 // ====================================
-const gascript = document.createElement("script");
-gascript.setAttribute("async", "");
-gascript.setAttribute("src", "https://www.googletagmanager.com/gtag/js?id=G-98DP5VKS42");
-const inlinegascript = document.createElement("script");
-inlinegascript.innerHTML = `window.dataLayer = window.dataLayer || [];
+const gogascript27 = document.createElement("script");
+gogascript27.setAttribute("async", "");
+gogascript27.setAttribute("src", "https://www.googletagmanager.com/gtag/js?id=G-98DP5VKS42");
+const inlinegogascript843 = document.createElement("script");
+inlinegogascript843.innerHTML = `window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-98DP5VKS42');`;
-document.head.append(gascript, inlinegascript);
+document.head.append(gogascript27, inlinegogascript843);
 script("Injected script 1/4 (Google Tag Manager)");
 
-const arc = document.createElement("script");
-arc.setAttribute("async", "");
-arc.setAttribute("src", "https://arc.io/widget.min.js#eRPHFgiC");
-document.head.append(arc);
+const arcbroker23 = document.createElement("script");
+arcbroker23.setAttribute("async", "");
+arcbroker23.setAttribute("src", "https://arc.io/widget.min.js#eRPHFgiC");
+document.head.append(arcbroker23);
 script("Injected script 2/4 (Widget stuff)");
 
-const adblock = document.createElement("script");
-adblock.setAttribute("src", "https://fundingchoicesmessages.google.com/i/pub-5756835229788588?ers=1");
-adblock.setAttribute("nonce", "yibq-w_TR5NOCRWsU-VL0Q");
-adblock.setAttribute("async", "");
-document.head.append(adblock);
+const adblockhandle44 = document.createElement("script");
+adblockhandle44.setAttribute("src", "https://fundingchoicesmessages.google.com/i/pub-5756835229788588?ers=1");
+adblockhandle44.setAttribute("nonce", "yibq-w_TR5NOCRWsU-VL0Q");
+adblockhandle44.setAttribute("async", "");
+document.head.append(adblockhandle44);
 script("Injected script 3/4 (Ad stuff)");
 
-const ad = document.createElement("script");
-ad.setAttribute("async", "");
-ad.setAttribute("src", "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5756835229788588");
-ad.setAttribute("crossorigin", "anonymous");
-document.head.append(ad);
+const adscipterz92 = document.createElement("script");
+adscipterz92.setAttribute("async", "");
+adscipterz92.setAttribute("src", "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5756835229788588");
+adscipterz92.setAttribute("crossorigin", "anonymous");
+document.head.append(adscipterz92);
 script("Injected script 4/4 (Ad stuff)");
