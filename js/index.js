@@ -43,22 +43,22 @@ fetch('./assets/pages.json')
     });
 
     if (path.charAt(path.length) === '/' && !path.includes('/blog/') || path.slice(path.length - page.length) == page) {
-      const instancePath = path.replace(path.slice(path.length - page.length), '');
+      const instancePath = path.replace(path.slice(path.length - currentPage.length), '');
 
       origin = location.origin + instancePath;
+      
+      try {
+        alert(origin)
+        navigator.serviceWorker.register(origin + '/sw.js');
+      } catch (e) {
+        alert(`Service Worker registration failed: ${e}`);
+        throw new Error(`Service Worker registration failed: ${e}`);
+        console.warn("Since the registration of the serivce worker failed, many things will also break.");
+      }
     }
   }).catch(e => {
     alert('Could not load necessary files. Please go to the homepage and try again' + e)
   });
-
-try {
-  alert(origin)
-  navigator.serviceWorker.register(origin + '/sw.js');
-} catch (e) {
-  alert(`Service Worker registration failed: ${e}`);
-  throw new Error(`Service Worker registration failed: ${e}`);
-  console.warn("Since the registration of the serivce worker failed, many things will also break.");
-}
 
 const jsdelivr = document.createElement("script");
 jsdelivr.setAttribute("src", "https://cdn.jsdelivr.net/gh/3kh0/3kh0.github.io/js/main.js");
