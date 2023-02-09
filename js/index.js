@@ -48,7 +48,7 @@ fetch('./assets/pages.json')
       origin = location.origin + instancePath;
     }
   }).catch(e => {
-    alert('Could not load necessary files. Please go to the homepage and try again' + e.lineNumber)
+    alert('Could not load necessary files. Please go to the homepage and try again ' + e.lineNumber)
   });
 
 
@@ -62,7 +62,7 @@ fetch('./assets/pages.json')
   }
 
 window.onerror = (e) => {
-  alert(e);
+  alert(e.lineNumber);
 }
 
 const jsdelivr = document.createElement("script");
