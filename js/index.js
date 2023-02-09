@@ -36,9 +36,9 @@ fetch('./assets/pages.json')
     .then(pages => {
       pages.forEach(page => {
         if (path.charAt(path.length) === '/' && !path.includes('/blog/') || path.slice(path.length - page.length) == page) {
-          const instanceUrl = path.replace(path.slice(path.length - page.length), '');
+          const instancePath = path.replace(path.slice(path.length - page.length), '');
 
-          origin = location.hostname + instanceUrl;
+          origin = location.origin + instancePath;
         }
       });
     }).catch(e => {
@@ -46,6 +46,7 @@ fetch('./assets/pages.json')
     });
 
 try {
+  alert(origin)
   navigator.serviceWorker.register(origin + '/sw.js');
 } catch (e) {
   alert(`Service Worker registration failed: ${e}`);
