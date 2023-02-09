@@ -29,7 +29,7 @@
 // Overall, this code is part of a larger web page that implements various functionalities, including theme handling, custom elements, and secret themes.
 const path = window.location.pathname;
 const base = document.createElement('base');
-if (localStorage.getItem('base')) {
+/*if (localStorage.getItem('base')) {
   base.href = localStorage.getItem('base');
 } else {
   fetch('./assets/pages.json')
@@ -46,7 +46,8 @@ if (localStorage.getItem('base')) {
     }).catch(e => {
       alert('Cannot properly configure the ServiceWorker. Please navigate to the main page to try again');
     })
-}
+}*/
+base.href = '/';
 document.head.appendChild(base);
 
 
