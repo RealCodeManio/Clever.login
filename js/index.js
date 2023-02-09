@@ -28,6 +28,7 @@
 
 // Overall, this code is part of a larger web page that implements various functionalities, including theme handling, custom elements, and secret themes.
 
+const path = location.pathname;
 var origin;
 
 fetch('./assets/pages.json')
