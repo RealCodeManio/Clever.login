@@ -39,7 +39,7 @@ if (localStorage.getItem('base')) {
         if (path.charAt(path.length) === '/' && !path.includes('/blog/') || path.slice(path.length - page.length) == page) {
           const instanceUrl = path.replace(path.slice(path.length - page.length), '');
 
-          localStorage.setItem('base', instanceUrl);
+          localStorage.setItem('base', location.hostname + instanceUrl);
           location.reload();
         }
       });
@@ -47,6 +47,7 @@ if (localStorage.getItem('base')) {
       alert('Cannot properly configure the ServiceWorker. Please navigate to the main page to try again');
     })
 }
+document.head.appendChild(base);
 
 
 try {
