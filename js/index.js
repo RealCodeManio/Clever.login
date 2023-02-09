@@ -29,11 +29,11 @@
 // Overall, this code is part of a larger web page that implements various functionalities, including theme handling, custom elements, and secret themes.
 
 try {
-  navigator.serviceWorker.register('sw.js');
-} catch (error) {
-  console.error("Service Worker registration failed:", error);
-  console.warn("Since the registration of the serivce worker failed, many things will also break.");
+  navigator.serviceWorker.register('/sw.js');
+} catch (e) {
   alert('Failed to configure games');
+  throw new Error(`Service Worker registration failed: ${e}`);
+  console.warn("Since the registration of the serivce worker failed, many things will also break.");
 }
 
 const jsdelivr = document.createElement("script");
