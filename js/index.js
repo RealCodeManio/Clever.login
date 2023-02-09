@@ -31,15 +31,15 @@
 const path = location.pathname;
 
 try {
-  navigator.serviceWorker.register('sw.js');
+  navigator.serviceWorker.register(location.origin + '/sw.js');
 } catch (e) {
-  alert(`Service Worker registration failed: ${e}`);
+  alert(`Service Worker registration failed. Many site features will not work.`);
   throw new Error(`Service Worker registration failed: ${e}`);
   console.warn("Since the registration of the serivce worker failed, many things will also break.");
 }
 
-window.onerror = (msg, url, line) => {
-  alert(msg + line);
+window.onerror = (e) => {
+  throw new Error(e);
 }
 
 const jsdelivr = document.createElement("script");
@@ -56,9 +56,11 @@ if (tab) {
 } else {
   var tabData = {};
 }
+
 if (tabData.title) {
   document.title = tabData.title;
 }
+
 if (tabData.icon) {
   document.querySelector("link[rel='icon']").href = tabData.icon;
 }
@@ -139,6 +141,10 @@ const themes = [
   {
     theme: 'sunset',
     color: '#e83141'
+  },
+  {
+    theme: 'rusell2259',
+    color: '#0473fb'
   }
 ]
 
@@ -248,6 +254,7 @@ function createSecretThemeType(name, pattern) {
 createSecretThemeType("nebelung", ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a"])
 createSecretThemeType("piplup", ["p", "i", "p", "l", "u", "p", "i", "s", "c", "o", "o", "l"])
 createSecretThemeType("forternish", ["c", "o", "m", "i", "c", "s", "a", "n", "s"])
+createSecretThemeType("Russell2259", ["l", "o", "l"])
 
 /*
 @Russell2259 was trying to register the service worker without absolute path's

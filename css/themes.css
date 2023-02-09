@@ -158,6 +158,13 @@ body[theme="sunset"] {
   --text-secondary: black;
 }
 
+body[theme="Russell2259"] {
+  --background: #111;
+  --theme: #0473fb;
+  --text: white;
+  --text-secondary: black;
+}
+
 html,body {
   color: var(--text);
 }
