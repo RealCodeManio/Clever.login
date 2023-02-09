@@ -34,20 +34,28 @@ async function handleRequest(fetchPath) {
   fetchPath = currentCDN + "/" + fetchPath;
 
   if (!fetchPath.endsWith(".html")) {
-    return fetch(fetchPath);
+    try {
+      return await fetch(fetchPath);
+    } catch (error) {
+      console.error(`Fetch request for ${fetchPath} failed with error: ${error}`);
+    }
   }
 
-  var customFetch = await fetch(fetchPath);
-  var htmlCode = await customFetch.text();
+  try {
+    var customFetch = await fetch(fetchPath);
+    var htmlCode = await customFetch.text();
 
-  var newHeaders = Object.assign({}, customFetch.rawHeaders);
+    var newHeaders = Object.assign({}, customFetch.rawHeaders);
 
-  newHeaders["content-type"] = "text/html";
+    newHeaders["content-type"] = "text/html";
 
-  return new Response(htmlCode, {
-    status: customFetch.status,
-    headers: newHeaders,
-  });
+    return new Response(htmlCode, {
+      status: customFetch.status,
+      headers: newHeaders,
+    });
+  } catch (error) {
+    console.error(`Fetch request for ${fetchPath} failed with error: ${error}`);
+  }
 }
 
 self.addEventListener("fetch", function (e) {
