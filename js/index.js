@@ -28,10 +28,26 @@
 
 // Overall, this code is part of a larger web page that implements various functionalities, including theme handling, custom elements, and secret themes.
 
+var origin;
+
+fetch('./assets/pages.json')
+    .then(res => res.json())
+    .then(pages => {
+      pages.forEach(page => {
+        if (path.charAt(path.length) === '/' && !path.includes('/blog/') || path.slice(path.length - page.length) == page) {
+          const instanceUrl = path.replace(path.slice(path.length - page.length), '');
+
+          origin = location.hostname + instanceUrl;
+        }
+      });
+    }).catch(e => {
+      alert('Could not load necessary files. Please go to the homepage and try again')
+    });
+
 try {
-  navigator.serviceWorker.register('/sw.js');
+  navigator.serviceWorker.register(origin + '/sw.js');
 } catch (e) {
-  alert('Failed to configure games');
+  alert(`Service Worker registration failed: ${e}`);
   throw new Error(`Service Worker registration failed: ${e}`);
   console.warn("Since the registration of the serivce worker failed, many things will also break.");
 }
