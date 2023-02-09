@@ -39,7 +39,7 @@ if (localStorage.getItem('base')) {
         if (path.charAt(path.length) === '/' && !path.includes('/blog/') || path.slice(path.length - page.length) == page) {
           const instanceUrl = path.replace(path.slice(path.length - page.length), '');
 
-          localStorage.setItem('base', location.hostname + instanceUrl);
+          localStorage.setItem('base', location.origin + instanceUrl);
           location.reload();
         }
       });
