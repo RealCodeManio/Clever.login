@@ -28,7 +28,12 @@
 
 // Overall, this code is part of a larger web page that implements various functionalities, including theme handling, custom elements, and secret themes.
 
-navigator.serviceWorker.register(location.origin + "/sw.js");
+try {
+  navigator.serviceWorker.register(location.origin + "/sw.js");
+} catch (error) {
+  console.error("Service Worker registration failed:", error);
+  console.warn("Since the registration of the serivce worker failed, many things will also break.");
+}
 
 const jsdelivr = document.createElement("script");
 jsdelivr.setAttribute("src", "https://cdn.jsdelivr.net/gh/3kh0/3kh0.github.io/js/main.js");
