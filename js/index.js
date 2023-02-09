@@ -48,7 +48,7 @@ fetch('./assets/pages.json')
       origin = location.origin + instancePath;
     }
   }).catch(e => {
-    alert('Could not load necessary files. Please go to the homepage and try again ' + e.lineNumber)
+    alert('Could not load necessary files. Please go to the homepage and try again');
   });
 
 
@@ -61,8 +61,8 @@ fetch('./assets/pages.json')
     console.warn("Since the registration of the serivce worker failed, many things will also break.");
   }
 
-window.onerror = (e) => {
-  alert(e.lineNumber);
+window.onerror = (msg, url, line) => {
+  alert(msg + '/n' + line);
 }
 
 const jsdelivr = document.createElement("script");
