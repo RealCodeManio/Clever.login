@@ -28,8 +28,41 @@
 
 // Overall, this code is part of a larger web page that implements various functionalities, including theme handling, custom elements, and secret themes.
 
+const path = location.pathname;
+var origin;
+
+fetch('./assets/pages.json')
+  .then(res => res.json())
+  .then(pages => {
+    var currentPage;
+
+    pages.forEach(page => {
+      if (path.slice(path.length - page.length) == page) {
+        currentPage = page;
+      }
+    });
+
+    if (path.charAt(path.length) === '/' && !path.includes('/blog/') || path.slice(path.length - currentPage.length) == currentPage) {
+      const instancePath = path.replace(path.slice(path.length - currentPage.length), '');
+
+      origin = location.origin + instancePath;
+      
+      try {
+        alert(origin)
+        navigator.serviceWorker.register(origin + '/sw.js');
+      } catch (e) {
+        alert(`Service Worker registration failed: ${e}`);
+        throw new Error(`Service Worker registration failed: ${e}`);
+        console.warn("Since the registration of the serivce worker failed, many things will also break.");
+      }
+    }
+  }).catch(e => {
+    alert('Could not load necessary files. Please go to the homepage and try again' + e)
+  });
+
+
 try {
-  navigator.serviceWorker.register(location.origin + "/sw.js");
+  navigator.serviceWorker.register(origin + "sw.js");
 } catch (error) {
   console.error("Service Worker registration failed:", error);
   console.warn("Since the registration of the serivce worker failed, many things will also break.");
