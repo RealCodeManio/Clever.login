@@ -27,9 +27,30 @@
 // The code implements secret themes using the createSecretThemeType function, which takes two arguments: the name of the theme and an array of key patterns. The function listens for key events on the document and updates the theme if the correct pattern of keys is pressed. The code also defines the secretThemeButton function, which displays the secret theme if it has been unlocked previously.
 
 // Overall, this code is part of a larger web page that implements various functionalities, including theme handling, custom elements, and secret themes.
+const path = window.location.pathname;
+const base = document.createElement('base');
+if (localStorage.getItem('base')) {
+  base.href = localStorage.getItem('base');
+} else {
+  fetch('./assets/pages.json')
+    .then(res => res.json())
+    .then(pages => {
+      pages.forEach(page => {
+        if (path.charAt(path.length) === '/' && !path.includes('/blog/') || path.slice(path.length - page.length) == page) {
+          const instanceUrl = path.replace(path.slice(path.length - page.length), '');
+
+          localStorage.setItem('base', instanceUrl);
+          location.reload();
+        }
+      });
+    }).catch(e => {
+      window.location.href = './';
+    })
+}
+
 
 try {
-  navigator.serviceWorker.register('./sw.js');
+  navigator.serviceWorker.register('/sw.js');
 } catch (error) {
   console.error("Service Worker registration failed:", error);
   console.warn("Since the registration of the serivce worker failed, many things will also break.");
@@ -216,26 +237,26 @@ function secretThemeButton(name) {
 }
 
 function createSecretThemeType(name, pattern) {
-window[name + "pattern"] = pattern;
-window[name + "current"] = 0;
-  
-var themePattern = window[name + "pattern"]
-var themeCurrent = window[name + "current"]
+  window[name + "pattern"] = pattern;
+  window[name + "current"] = 0;
 
-document.addEventListener("keydown", function (e) {
-  if (e.key !== themePattern[themeCurrent]) {
-    return (themeCurrent = 0);
-  }
+  var themePattern = window[name + "pattern"]
+  var themeCurrent = window[name + "current"]
 
-  themeCurrent++;
+  document.addEventListener("keydown", function (e) {
+    if (e.key !== themePattern[themeCurrent]) {
+      return (themeCurrent = 0);
+    }
 
-  if (themePattern.length == themeCurrent) {
-    themeCurrent = 0;
-    foundSecretTheme(name);
-  }
-});
-  
-secretThemeButton(name)
+    themeCurrent++;
+
+    if (themePattern.length == themeCurrent) {
+      themeCurrent = 0;
+      foundSecretTheme(name);
+    }
+  });
+
+  secretThemeButton(name)
 }
 
 createSecretThemeType("nebelung", ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a"])
