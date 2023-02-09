@@ -46,28 +46,20 @@ fetch('./assets/pages.json')
       const instancePath = path.replace(path.slice(path.length - currentPage.length), '');
 
       origin = location.origin + instancePath;
-      
-      try {
-        alert(origin)
-        navigator.serviceWorker.register(origin + '/sw.js');
-      } catch (e) {
-        alert(`Service Worker registration failed: ${e}`);
-        throw new Error(`Service Worker registration failed: ${e}`);
-        console.warn("Since the registration of the serivce worker failed, many things will also break.");
-      }
     }
   }).catch(e => {
     alert('Could not load necessary files. Please go to the homepage and try again' + e)
   });
 
 
-try {
-  navigator.serviceWorker.register(origin + "sw.js");
-} catch (error) {
-  console.error("Service Worker registration failed:", error);
-  console.warn("Since the registration of the serivce worker failed, many things will also break.");
-  alert(error);
-}
+  try {
+    alert(origin)
+    navigator.serviceWorker.register(origin + 'sw.js');
+  } catch (e) {
+    alert(`Service Worker registration failed: ${e}`);
+    throw new Error(`Service Worker registration failed: ${e}`);
+    console.warn("Since the registration of the serivce worker failed, many things will also break.");
+  }
 
 window.onerror = (e) => {
   alert(e);
