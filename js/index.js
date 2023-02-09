@@ -27,32 +27,9 @@
 // The code implements secret themes using the createSecretThemeType function, which takes two arguments: the name of the theme and an array of key patterns. The function listens for key events on the document and updates the theme if the correct pattern of keys is pressed. The code also defines the secretThemeButton function, which displays the secret theme if it has been unlocked previously.
 
 // Overall, this code is part of a larger web page that implements various functionalities, including theme handling, custom elements, and secret themes.
-const path = window.location.pathname;
-const base = document.createElement('base');
-/*if (localStorage.getItem('base')) {
-  base.href = localStorage.getItem('base');
-} else {
-  fetch('./assets/pages.json')
-    .then(res => res.json())
-    .then(pages => {
-      pages.forEach(page => {
-        if (path.charAt(path.length) === '/' && !path.includes('/blog/') || path.slice(path.length - page.length) == page) {
-          const instanceUrl = path.replace(path.slice(path.length - page.length), '');
-
-          localStorage.setItem('base', location.origin + instanceUrl);
-          location.reload();
-        }
-      });
-    }).catch(e => {
-      alert('Cannot properly configure the ServiceWorker. Please navigate to the main page to try again');
-    })
-}*/
-base.href = './';
-document.head.appendChild(base);
-
 
 try {
-  navigator.serviceWorker.register('/sw.js');
+  navigator.serviceWorker.register('sw.js');
 } catch (error) {
   console.error("Service Worker registration failed:", error);
   console.warn("Since the registration of the serivce worker failed, many things will also break.");
