@@ -41,7 +41,7 @@ fetch('./assets/pages.json')
         }
       });
     }).catch(e => {
-      alert('Could not load necessary files. Please go to the homepage and try again')
+      alert('Could not load necessary files. Please go to the homepage and try again' + e)
     });
 
 try {
