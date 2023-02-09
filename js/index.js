@@ -47,7 +47,7 @@ const base = document.createElement('base');
       alert('Cannot properly configure the ServiceWorker. Please navigate to the main page to try again');
     })
 }*/
-base.href = '/';
+base.href = './';
 document.head.appendChild(base);
 
 
