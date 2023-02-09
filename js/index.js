@@ -44,7 +44,7 @@ if (localStorage.getItem('base')) {
         }
       });
     }).catch(e => {
-      window.location.href = './';
+      alert('Cannot properly configure the ServiceWorker. Please navigate to the main page to try again');
     })
 }
 
