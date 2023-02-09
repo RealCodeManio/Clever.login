@@ -159,9 +159,9 @@ body[theme="sunset"] {
 }
 
 body[theme="Russell2259"] {
-  --background: #fff;
-  --theme: #0473fb;
-  --text: #111;
+  --background: #111;
+  --theme: linear-gradient(to bottom right, #0473fb, #fff);;
+  --text: #fff;
   --text-secondary: black;
 }
 
