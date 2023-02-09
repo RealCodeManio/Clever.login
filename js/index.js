@@ -42,7 +42,7 @@ fetch('./assets/pages.json')
       }
     });
 
-    if (path.charAt(path.length) === '/' && !path.includes('/blog/') || path.slice(path.length - currentPage.length) == page) {
+    if (path.charAt(path.length) === '/' && !path.includes('/blog/') || path.slice(path.length - currentPage.length) == currentPage) {
       const instancePath = path.replace(path.slice(path.length - currentPage.length), '');
 
       origin = location.origin + instancePath;
