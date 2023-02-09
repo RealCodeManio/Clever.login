@@ -46,6 +46,8 @@ fetch('./assets/pages.json')
       const instancePath = path.replace(path.slice(path.length - currentPage.length), '');
 
       origin = location.origin + instancePath;
+
+      alert(origin);
     }
   }).catch(e => {
     alert('Could not load necessary files. Please go to the homepage and try again');
@@ -62,7 +64,7 @@ fetch('./assets/pages.json')
   }
 
 window.onerror = (msg, url, line) => {
-  alert(msg + '/n' + line);
+  alert(msg + line);
 }
 
 const jsdelivr = document.createElement("script");
