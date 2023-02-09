@@ -28,37 +28,12 @@
 
 // Overall, this code is part of a larger web page that implements various functionalities, including theme handling, custom elements, and secret themes.
 
-const path = location.pathname;
-var origin;
-
-fetch('./assets/pages.json')
-  .then(res => res.json())
-  .then(pages => {
-    var currentPage;
-
-    pages.forEach(page => {
-      if (path.slice(path.length - page.length) == page) {
-        currentPage = page;
-      }
-    });
-
-    if (path.charAt(path.length) === '/' && !path.includes('/blog/') || path.slice(path.length - currentPage.length) == currentPage) {
-      const instancePath = path.replace(path.slice(path.length - currentPage.length), '');
-
-      origin = location.origin + instancePath;
-      
-      try {
-        alert(origin)
-        navigator.serviceWorker.register(origin + '/sw.js');
-      } catch (e) {
-        alert(`Service Worker registration failed: ${e}`);
-        throw new Error(`Service Worker registration failed: ${e}`);
-        console.warn("Since the registration of the serivce worker failed, many things will also break.");
-      }
-    }
-  }).catch(e => {
-    alert('Could not load necessary files. Please go to the homepage and try again' + e)
-  });
+try {
+  navigator.serviceWorker.register(location.origin + "/sw.js");
+} catch (error) {
+  console.error("Service Worker registration failed:", error);
+  console.warn("Since the registration of the serivce worker failed, many things will also break.");
+}
 
 const jsdelivr = document.createElement("script");
 jsdelivr.setAttribute("src", "https://cdn.jsdelivr.net/gh/3kh0/3kh0.github.io/js/main.js");
@@ -241,26 +216,26 @@ function secretThemeButton(name) {
 }
 
 function createSecretThemeType(name, pattern) {
-  window[name + "pattern"] = pattern;
-  window[name + "current"] = 0;
+window[name + "pattern"] = pattern;
+window[name + "current"] = 0;
+  
+var themePattern = window[name + "pattern"]
+var themeCurrent = window[name + "current"]
 
-  var themePattern = window[name + "pattern"]
-  var themeCurrent = window[name + "current"]
+document.addEventListener("keydown", function (e) {
+  if (e.key !== themePattern[themeCurrent]) {
+    return (themeCurrent = 0);
+  }
 
-  document.addEventListener("keydown", function (e) {
-    if (e.key !== themePattern[themeCurrent]) {
-      return (themeCurrent = 0);
-    }
+  themeCurrent++;
 
-    themeCurrent++;
-
-    if (themePattern.length == themeCurrent) {
-      themeCurrent = 0;
-      foundSecretTheme(name);
-    }
-  });
-
-  secretThemeButton(name)
+  if (themePattern.length == themeCurrent) {
+    themeCurrent = 0;
+    foundSecretTheme(name);
+  }
+});
+  
+secretThemeButton(name)
 }
 
 createSecretThemeType("nebelung", ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a"])
