@@ -106,7 +106,6 @@
         <p>Adblocker (Note: You will have to click it for every ad)</p>
         <a class="button" href="javascript:(function()%7Bdocument.querySelector('video').currentTime %3D document.querySelector('video').duration%7D)()%3B">Youtube AdBlocker</a>
       </div>
-    </div>
 
     <h2>Random Bookmarklets</h2>
 
@@ -147,7 +146,7 @@
         <a class="button" href="javascript:var DELAY = 1;var autoClickerStyleElement = document.createElement('style');autoClickerStyleElement.innerHTML='*{cursor: crosshair !important;}';document.body.appendChild(autoClickerStyleElement);function addClicker(e) {if(!e.isTrusted) {return;}if(e.target.classList.contains('auto-clicker-target')) {e.target.classList.remove('auto-clicker-target');} else {e.target.classList.add('auto-clicker-target');}document.body.removeChild(autoClickerStyleElement);document.body.removeEventListener('click', addClicker);e.preventDefault();autoClick(e.target);}function autoClick(element) {if(element.classList.contains('auto-clicker-target')) {element.click();setTimeout(function(){ autoClick(element); }, DELAY);}}document.body.addEventListener('click', addClicker, 1);">Activate AutoClicker</a>
       </div>
 
-      <div class="bookmarklet"></div>
+      <div class="bookmarklet">
         <h3>Dark Mode</h3>
         <p>Makes the background of the tab you are on dark.</p>
         <a class="button" href="javascript:(function(){var newSS, styles='* { background: black !important; color: #C0C0C0 !important; line-height:1.7em !important} :link, :link * { color: #0099FF !important } :visited, :visited * { color: #6666CC !important }'; if(document.createStyleSheet) { document.createStyleSheet(`javascript: ${styles}`); } else { newSS=document.createElement('link'); newSS.rel='stylesheet'; newSS.href='data:text/css,'+escape(styles); document.getElementsByTagName('head')[0].appendChild(newSS); } })();">Dark Mode</a>
@@ -160,6 +159,8 @@
       </div>
     </div>
   </div>
+
+  <footer>© 3kh0 2023</footer>
 
   <script src="./js/index.js"></script>
 </body>
