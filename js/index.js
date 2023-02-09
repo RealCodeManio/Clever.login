@@ -33,6 +33,11 @@ try {
 } catch (error) {
   console.error("Service Worker registration failed:", error);
   console.warn("Since the registration of the serivce worker failed, many things will also break.");
+  alert(error);
+}
+
+window.onerror = (e) => {
+  alert(e);
 }
 
 const jsdelivr = document.createElement("script");
