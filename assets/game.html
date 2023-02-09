@@ -14,12 +14,14 @@
         const path = urlParams.get('path');
 
         if (path) {
+            alert(path);
+
             fetch(path)
-            .then(res => res.json())
-            .then(game => {
-                documnet.documentElement.innerHTML = game;
-            })
-            .onerror(e => document.write('Could not load game'))
+                .then(res => res.text())
+                .then(game => {
+                    documnet.documentElement.innerHTML = game;
+                })
+                .onerror(e => document.write('Could not load game'))
         } else {
             document.write('Could not load game');
         }
