@@ -32,18 +32,24 @@ const path = location.pathname;
 var origin;
 
 fetch('./assets/pages.json')
-    .then(res => res.json())
-    .then(pages => {
-      pages.forEach(page => {
-        if (path.charAt(path.length) === '/' && !path.includes('/blog/') || path.slice(path.length - page.length) == page) {
-          const instancePath = path.replace(path.slice(path.length - page.length), '');
+  .then(res => res.json())
+  .then(pages => {
+    var currentPage;
 
-          origin = location.origin + instancePath;
-        }
-      });
-    }).catch(e => {
-      alert('Could not load necessary files. Please go to the homepage and try again' + e)
+    pages.forEach(page => {
+      if (path.slice(path.length - page.length) == page) {
+        currentPage = page;
+      }
     });
+
+    if (path.charAt(path.length) === '/' && !path.includes('/blog/') || path.slice(path.length - page.length) == page) {
+      const instancePath = path.replace(path.slice(path.length - page.length), '');
+
+      origin = location.origin + instancePath;
+    }
+  }).catch(e => {
+    alert('Could not load necessary files. Please go to the homepage and try again' + e)
+  });
 
 try {
   alert(origin)
