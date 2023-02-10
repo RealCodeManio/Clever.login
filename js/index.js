@@ -57,7 +57,7 @@ navigator.serviceWorker.getRegistrations()
         throw new Error(`Service Worker registration failed: ${e}`);
       }
     } else {
-      alert('registered');
+      console.log('sw.js is registered');
     }
   });
 
