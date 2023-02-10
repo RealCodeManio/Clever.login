@@ -56,7 +56,7 @@ async function handleRequest(fetchPath) {
       headers: newHeaders,
     });
   } catch (error) {
-    console.error(`Fetch request for ${fetchPath} failed with error: ${error}`);
+    throw new Error(`Fetch request for ${fetchPath} failed with error: ${error}`);
   }
 }
 
@@ -66,7 +66,8 @@ self.addEventListener("fetch", function (e) {
   if (path.startsWith(subpath + "files/")) {
     var fetchPath = path.split(subpath + "files/")[1];
 
-    return e.respondWith(handleRequest(fetchPath));
+    //return e.respondWith(handleRequest(fetchPath));
+    return subpath + "files/";
   } else {
     /*return e.respondWith(
       caches.match(e.request).then(function (response) {
