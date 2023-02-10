@@ -42,17 +42,22 @@ if (!origin) {
 
 const instance = encodeURIComponent(origin.replace(location.origin, ''));
 
-try {
-  if (origin) {
-    navigator.serviceWorker.register(`${origin}sw.js?instancepath=${instance}`);
-  } else {
-    throw 'No origin was provided';
-  }
-} catch (e) {
-  alert(`Service Worker registration failed. Many site features will not work.`);
-  console.warn("Since the registration of the serivce worker failed, many things will also break.");
-  throw new Error(`Service Worker registration failed: ${e}`);
-}
+navigator.serviceWorker.getRegistrations()
+  .then((registrations) => {
+    if (!registrations[0]) {
+      try {
+        if (origin) {
+          navigator.serviceWorker.register(`${origin}sw.js?instancepath=${instance}`);
+        } else {
+          throw 'No origin was provided';
+        }
+      } catch (e) {
+        alert(`Service Worker registration failed. Many site features will not work.`);
+        console.warn("Since the registration of the serivce worker failed, many things will also break.");
+        throw new Error(`Service Worker registration failed: ${e}`);
+      }
+    }
+  });
 
 window.onerror = (e) => {
   throw new Error(e);
