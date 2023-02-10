@@ -4,6 +4,8 @@
 // The install event is used to install the Service Worker, and it adds the manifest.json file to the cache.
 // The Service Worker acts as a caching layer between the web page and the network and ensures that the web page has fast, reliable access to the required resources, even when the network is slow or unavailable.
 
+let subpath = '/';
+
 async function isBlocked(url) {
   try {
     var README = await fetch(url + "/README.md");
@@ -61,8 +63,8 @@ async function handleRequest(fetchPath) {
 self.addEventListener("fetch", function (e) {
   var path = new URL(e.request.url).pathname;
 
-  if (path.startsWith("/files/")) {
-    var fetchPath = path.split("/files/")[1];
+  if (path.startsWith(subpath + "files/")) {
+    var fetchPath = path.split(subpath + "files/")[1];
 
     return e.respondWith(handleRequest(fetchPath));
   } else {
@@ -75,9 +77,11 @@ self.addEventListener("fetch", function (e) {
 });
 
 self.addEventListener("install", function (e) {
+  subpath = new URL(location).searchParams.get('instancepath').toString();
+
   e.waitUntil(
     caches.open("3kh0").then(function (cache) {
-      return cache.addAll(["/manifest.json"]);
+      return cache.addAll([subpath + "manifest.json"]);
     })
   );
   self.skipWaiting();

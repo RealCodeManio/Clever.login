@@ -204,7 +204,7 @@ body {
   user-select: none;
   border: none;
   color: var(--text-secondary);
-  transition: transform 0.1s;
+  transition: transform 0.5s;
 }
 
 .play:hover {

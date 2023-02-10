@@ -29,13 +29,29 @@
 // Overall, this code is part of a larger web page that implements various functionalities, including theme handling, custom elements, and secret themes.
 
 const path = location.pathname;
+const origin = localStorage.getItem('instance');
+
+const base = document.createElement('base');
+base.href = location.origin + path.replace(path.split('\\').pop().split('/').pop(), '');
+document.head.appendChild(base);
+
+if (!origin) {
+  localStorage.setItem('instance', base.href);
+  location.reload();
+}
+
+const instance = encodeURIComponent(origin.replace(location.origin, ''));
 
 try {
-  navigator.serviceWorker.register(location.origin + '/sw.js');
+  if (origin) {
+    navigator.serviceWorker.register(`${origin}sw.js?instancepath=${instance}`);
+  } else {
+    throw 'No origin was provided';
+  }
 } catch (e) {
   alert(`Service Worker registration failed. Many site features will not work.`);
-  throw new Error(`Service Worker registration failed: ${e}`);
   console.warn("Since the registration of the serivce worker failed, many things will also break.");
+  throw new Error(`Service Worker registration failed: ${e}`);
 }
 
 window.onerror = (e) => {
@@ -255,30 +271,3 @@ createSecretThemeType("nebelung", ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown
 createSecretThemeType("piplup", ["p", "i", "p", "l", "u", "p", "i", "s", "c", "o", "o", "l"])
 createSecretThemeType("forternish", ["c", "o", "m", "i", "c", "s", "a", "n", "s"])
 createSecretThemeType("Russell2259", ["l", "o", "l"])
-
-/*
-@Russell2259 was trying to register the service worker without absolute path's
-
-var origin;
-
-fetch('./assets/pages.json')
-  .then(res => res.json())
-  .then(pages => {
-    var currentPage;
-
-    pages.forEach(page => {
-      if (path.slice(path.length - page.length) == page) {
-        currentPage = page;
-      }
-    });
-
-    if (path.charAt(path.length) === '/' && !path.includes('/blog/') || path.slice(path.length - currentPage.length) == currentPage) {
-      const instancePath = path.replace(path.slice(path.length - currentPage.length), '');
-
-      origin = location.origin + instancePath;
-
-      alert(origin);
-    }
-  }).catch(e => {
-    alert('Could not load necessary files. Please go to the homepage and try again');
-  });*/
