@@ -56,6 +56,8 @@ navigator.serviceWorker.getRegistrations()
         console.warn("Since the registration of the serivce worker failed, many things will also break.");
         throw new Error(`Service Worker registration failed: ${e}`);
       }
+    } else {
+      alert('registered');
     }
   });
 
