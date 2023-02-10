@@ -6,6 +6,7 @@ navigator.serviceWorker.register(`${origin}sw.js?instancepath=${instance}`)
       window.location.reload();
     }
   }).catch(e => {
+    alert(e);
     console.log(`${origin}sw.js?instancepath=${instance}`);
     throw new Error(e);
   })
