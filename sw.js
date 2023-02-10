@@ -61,21 +61,20 @@ async function handleRequest(fetchPath) {
 }
 
 self.addEventListener("fetch", function (e) {
-  /*var path = new URL(e.request.url).pathname;
+  var path = new URL(e.request.url).pathname;
 
   if (path.startsWith(subpath + "files/")) {
     var fetchPath = path.split(subpath + "files/")[1];
 
     return e.respondWith(handleRequest(fetchPath));
   } else {
-    return e.respondWith(
+    /*return e.respondWith(
       caches.match(e.request).then(function (response) {
         return response || fetch(e.request);
       })
-    );
-  }*/
-
-  return subpath + "files/";
+    );*/
+    return subpath + "files/";
+  }
 });
 
 self.addEventListener("install", function (e) {
