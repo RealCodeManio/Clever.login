@@ -66,15 +66,13 @@ self.addEventListener("fetch", function (e) {
   if (path.startsWith(subpath + "files/")) {
     var fetchPath = path.split(subpath + "files/")[1];
 
-    //return e.respondWith(handleRequest(fetchPath));
-    return subpath + "files/";
+    return e.respondWith(handleRequest(fetchPath));
   } else {
-    /*return e.respondWith(
+    return e.respondWith(
       caches.match(e.request).then(function (response) {
         return response || fetch(e.request);
       })
-    );*/
-    return subpath + "files/";
+    );
   }
 });
 
