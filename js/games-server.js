@@ -1,6 +1,6 @@
 var hasInstalled = false;
 
-navigator.serviceWorker.register(`${origin}sw.js?instancepath=${instance}`)
+navigator.serviceWorker.register()
   .then((reg) => {
     if (!hasInstalled) {
       window.location.reload();
@@ -15,7 +15,7 @@ navigator.serviceWorker.register(`${origin}sw.js?instancepath=${instance}`)
 navigator.serviceWorker.getRegistrations()
   .then((registrations) => {
     for (let registration of registrations) {
-      if (registration.active.scriptURL == `${origin}sw.js?instancepath=${instance}`) {
+      if (registration.active.scriptURL == `${location.origin}/sw.js`) {
         hasInstalled = true;
       }
     }
