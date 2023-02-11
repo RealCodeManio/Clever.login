@@ -168,6 +168,14 @@ const themes = [
   {
     theme: 'rusell2259',
     color: '#0473fb'
+  },
+  {
+    theme: 'fracital',
+    color: '#f971e4'
+  },
+  {
+    theme: 'hacker',
+    color: '#72dc83'
   }
 ]
 
