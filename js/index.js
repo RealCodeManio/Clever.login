@@ -249,3 +249,9 @@ secretThemeButton(name)
 createSecretThemeType("nebelung", ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a"])
 createSecretThemeType("piplup", ["p", "i", "p", "l", "u", "p", "i", "s", "c", "o", "o", "l"])
 createSecretThemeType("forternish", ["c", "o", "m", "i", "c", "s", "a", "n", "s"])
+
+secretThemeButton("hacker")
+
+window.nebelung_the_hacker = function() {
+  foundSecretTheme("hacker")
+}
