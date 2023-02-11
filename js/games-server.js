@@ -1,6 +1,6 @@
 var hasInstalled = false;
 
-navigator.serviceWorker.register()
+navigator.serviceWorker.register(`${origin}sw.js?instancepath=${instance}`)
   .then((reg) => {
     if (!hasInstalled) {
       window.location.reload();
