@@ -158,6 +158,31 @@ body[theme="sunset"] {
   --text-secondary: black;
 }
 
+body[theme="russell2259"] {
+  --background: rgba(17, 17, 17, 0.777);
+  --theme: #0473fb;
+  --text: #fff;
+  --text-secondary: black;
+}
+
 html,body {
   color: var(--text);
+}
+
+body[theme="fracital"] {
+  --background: #222;
+  --theme: #f971e4;
+  --text: white;
+  --text-secondary: black;
+}
+
+body[theme="hacker"] {
+  --background: black;
+  --theme: #72dc83;
+  --text: white;
+  --text-secondary: black;
+}
+
+body[theme="hacker"] * {
+  font-family: "JetBrains Mono";
 }
