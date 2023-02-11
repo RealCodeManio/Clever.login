@@ -1,13 +1,13 @@
 var hasInstalled = false;
 
-navigator.serviceWorker.register(`${origin}sw.js?instancepath=${instance}`)
+navigator.serviceWorker.register(`${location.origin}/sw.js`)
   .then((reg) => {
     if (!hasInstalled) {
       window.location.reload();
     }
   }).catch(e => {
     alert(e);
-    console.log(`${origin}sw.js?instancepath=${instance}`);
+    console.log(`${location.origin}/sw.js`);
     throw new Error(e);
   })
 
