@@ -132,6 +132,14 @@ const themes = [
   {
     theme: 'sunset',
     color: '#e83141'
+  },
+  {
+    theme: 'fracital',
+    color: '#f971e4'
+  },
+  {
+    theme: 'hacker',
+    color: '#72dc83'
   }
 ]
 
