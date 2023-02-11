@@ -285,7 +285,7 @@ function createSecretThemeType(name, pattern) {
 createSecretThemeType("nebelung", ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a"])
 createSecretThemeType("piplup", ["p", "i", "p", "l", "u", "p", "i", "s", "c", "o", "o", "l"])
 createSecretThemeType("forternish", ["c", "o", "m", "i", "c", "s", "a", "n", "s"])
-createSecretThemeType("Russell2259", ["l", "o", "l"]);
+createSecretThemeType("russell2259", ["l", "o", "l"]);
 
 secretThemeButton("hacker")
 
