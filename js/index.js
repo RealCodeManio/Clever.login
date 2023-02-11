@@ -28,11 +28,41 @@
 
 // Overall, this code is part of a larger web page that implements various functionalities, including theme handling, custom elements, and secret themes.
 
-try {
-  navigator.serviceWorker.register(location.origin + "/sw.js");
-} catch (error) {
-  console.error("Service Worker registration failed:", error);
-  console.warn("Since the registration of the serivce worker failed, many things will also break.");
+const path = location.pathname;
+const origin = localStorage.getItem('instance');
+
+const base = document.createElement('base');
+base.href = location.origin + path.replace(path.split('\\').pop().split('/').pop(), '');
+document.head.appendChild(base);
+
+if (!origin) {
+  localStorage.setItem('instance', base.href);
+  location.reload();
+}
+
+const instance = encodeURIComponent(origin.replace(location.origin, ''));
+
+navigator.serviceWorker.getRegistrations()
+  .then((registrations) => {
+    if (!registrations[0]) {
+      try {
+        if (origin) {
+          navigator.serviceWorker.register(`${origin}sw.js?instancepath=${instance}`);
+        } else {
+          throw 'No origin was provided';
+        }
+      } catch (e) {
+        alert(`Service Worker registration failed. Many site features will not work.`);
+        console.warn("Since the registration of the serivce worker failed, many things will also break.");
+        throw new Error(`Service Worker registration failed: ${e}`);
+      }
+    } else {
+      console.log('sw.js is registered');
+    }
+  });
+
+window.onerror = (e) => {
+  throw new Error(e);
 }
 
 const jsdelivr = document.createElement("script");
@@ -49,9 +79,11 @@ if (tab) {
 } else {
   var tabData = {};
 }
+
 if (tabData.title) {
   document.title = tabData.title;
 }
+
 if (tabData.icon) {
   document.querySelector("link[rel='icon']").href = tabData.icon;
 }
@@ -132,6 +164,10 @@ const themes = [
   {
     theme: 'sunset',
     color: '#e83141'
+  },
+  {
+    theme: 'rusell2259',
+    color: '#0473fb'
   },
   {
     theme: 'fracital',
@@ -224,31 +260,32 @@ function secretThemeButton(name) {
 }
 
 function createSecretThemeType(name, pattern) {
-window[name + "pattern"] = pattern;
-window[name + "current"] = 0;
-  
-var themePattern = window[name + "pattern"]
-var themeCurrent = window[name + "current"]
+  window[name + "pattern"] = pattern;
+  window[name + "current"] = 0;
 
-document.addEventListener("keydown", function (e) {
-  if (e.key !== themePattern[themeCurrent]) {
-    return (themeCurrent = 0);
-  }
+  var themePattern = window[name + "pattern"]
+  var themeCurrent = window[name + "current"]
 
-  themeCurrent++;
+  document.addEventListener("keydown", function (e) {
+    if (e.key !== themePattern[themeCurrent]) {
+      return (themeCurrent = 0);
+    }
 
-  if (themePattern.length == themeCurrent) {
-    themeCurrent = 0;
-    foundSecretTheme(name);
-  }
-});
-  
-secretThemeButton(name)
+    themeCurrent++;
+
+    if (themePattern.length == themeCurrent) {
+      themeCurrent = 0;
+      foundSecretTheme(name);
+    }
+  });
+
+  secretThemeButton(name)
 }
 
 createSecretThemeType("nebelung", ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a"])
 createSecretThemeType("piplup", ["p", "i", "p", "l", "u", "p", "i", "s", "c", "o", "o", "l"])
 createSecretThemeType("forternish", ["c", "o", "m", "i", "c", "s", "a", "n", "s"])
+createSecretThemeType("russell2259", ["l", "o", "l"]);
 
 secretThemeButton("hacker")
 

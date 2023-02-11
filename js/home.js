@@ -8,7 +8,7 @@ async function randomSay() {
     }
     var says = splashCache;
   } else {
-    var say = await fetch(location.origin + "/assets/say.json");
+    var say = await fetch("./assets/say.json");
     var says = await say.json();
     splashCacheAll = says;
     splashCache = says;

@@ -1,15 +1,22 @@
 var hasInstalled = false;
 
-navigator.serviceWorker.getRegistrations().then(function (registrations) {
-  for (let registration of registrations) {
-    if (registration.active.scriptURL == location.origin + "/sw.js") {
-      hasInstalled = true;
+navigator.serviceWorker.register(`${origin}sw.js?instancepath=${instance}`)
+  .then((reg) => {
+    if (!hasInstalled) {
+      window.location.reload();
     }
-  }
-});
+  }).catch(e => {
+    alert(e);
+    console.log(`${origin}sw.js?instancepath=${instance}`);
+    throw new Error(e);
+  })
 
-navigator.serviceWorker.register(location.origin + "/sw.js").then(function (reg) {
-  if (!hasInstalled) {
-    window.location.reload();
-  }
-});
+
+navigator.serviceWorker.getRegistrations()
+  .then((registrations) => {
+    for (let registration of registrations) {
+      if (registration.active.scriptURL == `${origin}sw.js?instancepath=${instance}`) {
+        hasInstalled = true;
+      }
+    }
+  });
