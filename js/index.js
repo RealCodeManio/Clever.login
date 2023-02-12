@@ -46,11 +46,11 @@ navigator.serviceWorker.getRegistrations()
   .then((registrations) => {
     if (!registrations[0]) {
       try {
-        if (origin) {
-          navigator.serviceWorker.register(`${origin}sw.js?instancepath=${instance}`);
-        } else {
+        //if (origin) {
+          navigator.serviceWorker.register(`${location.origin}/sw.js`);
+        /*} else {
           throw 'No origin was provided';
-        }
+        }*/
       } catch (e) {
         alert(`Service Worker registration failed. Many site features will not work.`);
         console.warn("Since the registration of the serivce worker failed, many things will also break.");
@@ -289,6 +289,6 @@ createSecretThemeType("russell2259", ["l", "o", "l"]);
 
 secretThemeButton("hacker")
 
-window.nebelung_the_hacker = function() {
+window.nebelung_the_hacker = function () {
   foundSecretTheme("hacker")
 }
