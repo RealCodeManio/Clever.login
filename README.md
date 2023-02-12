@@ -32,6 +32,9 @@ This is the GitHub repo which is used to host the website. If you want to use th
 ## Game Files
 Due to the amount of games, all of the games have been moved to a [new repo](https://github.com/3kh0/3kh0-Assets).
 
+## Host the CDN
+Thanks to [@Russell2259](https://github.com/Russell2259/) you can host your own 3kh0 CDN, the source code is located [here](https://github.com/Russell2259/3kh0-CDN).
+
 ## Host the website
 
 You can host our website on a cloud hosting solution like Replit or Render here. If you're unsure on what this does, use our own site, or find one someone else is hosting. <br>
