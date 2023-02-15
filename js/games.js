@@ -1,16 +1,3 @@
-const indexedDb = window.indexedDB || window.webkitIndexedDB || window.msIndexedDB;
-const compiledDatabases = []
-
-indexedDb.databases()
-  .then(databases => {
-    databases.forEach((rawDatabase) => {
-      const database = indexedDB.open(rawDatabase.name);
-      database.onsuccess = () => {
-        compiledDatabases.push(database.result.objectStoreNames);
-      }
-    });
-  })
-
 function searchGames(query) {
   var gamesElement = document.querySelector(".games");
 
