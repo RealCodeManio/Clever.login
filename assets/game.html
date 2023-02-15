@@ -94,7 +94,7 @@
 
           window.history.pushState({}, '', `${origin}games/${game}`);
           document.querySelector('#game').textContent = gameName;
-          //document.body.innerHTML = `<iframe frameborder="0" src="${cdn}/${game}/index.html" onerror="document.write('Could not load game');"></iframe>`;
+          document.body.innerHTML = `<iframe frameborder="0" src="${cdn}/${game}/index.html" onerror="document.write('Could not load game');"></iframe>`;
         })
 
       /*navigator.serviceWorker.getRegistrations()
