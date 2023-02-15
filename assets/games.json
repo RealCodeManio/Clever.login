@@ -650,7 +650,7 @@
     "img": "./files/helicopter/helicopter.png"
   },
   {
-    "name": "Hex Empire",
+    "name": "Empire",
     "url": "./files/hexempire/index.html",
     "img": "./files/hexempire/hexempire.jpg"
   },
@@ -663,6 +663,11 @@
     "name": "Hextris",
     "url": "./files/hextris/index.html",
     "img": "./files/hextris/images/hextris-logo.png"
+  },
+  {
+    "name": "Hill Climb Racing",
+    "url": "./files/hill-climb-racing/index.html",
+    "img": "./files/hill-climb-racing/splash.jpeg"
   },
   {
     "name": "Hungry Lamu",
