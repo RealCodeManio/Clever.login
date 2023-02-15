@@ -14,6 +14,7 @@
       width: 100%;
       height: 100%;
       overflow: hidden;
+
     }
 
     iframe {
@@ -32,20 +33,36 @@
       transform: translate(-50%, -50%);
       z-index: 999999999999999999999999999999999999999999999999999999999999999999999999999999;
     }
+
+    .hidden {
+      display: none;
+    }
+
+    .loader {
+      margin: 20px;
+    }
+
+    .game_img {
+      border-radius: 9999999999;
+      width: 50px;
+      height: 50px;
+    }
   </style>
 </head>
 
-<body>
-  <div class=""></div>
-
+<body theme="default">
   <div class="playgame">
-    <span class="spinner">
-      <svg viewBox="22 22 44 44">
-        <circle class="spinnerSvg" cx="44" cy="44" r="20.2" fill="none" stroke-width="3.6"></circle>
-      </svg>
-    </span>
+    <div class="loader">
+      <span class="spinner">
+        <svg viewBox="22 22 44 44">
+          <circle class="spinnerSvg" cx="44" cy="44" r="20.2" fill="none" stroke-width="3.6"></circle>
+        </svg>
+      </span>
+    </div>
     <br>
     <span id="game">Loading...</span>
+    <br>
+    <button class="play hidden" id="startgame" data-aos="fade-up">Play</button>
   </div>
 
   <script>
@@ -58,9 +75,9 @@
 
     async function isBlocked(url) {
       try {
-        var README = await fetch(url + "/README.md");
+        var README = await fetch(url + '/README.md');
         var content = await README.text();
-        if (content.startsWith("# 3kh0 Assets")) {
+        if (content.startsWith('# 3kh0 Assets')) {
           return false;
         } else {
           return true;
@@ -95,7 +112,11 @@
 
           window.history.pushState({}, '', `${origin}games/${game}`);
           document.querySelector('#game').textContent = gameName;
-          document.body.innerHTML = `<iframe frameborder="0" src="${cdn}/${game}/index.html" onerror="document.write('Could not load game');"></iframe>`;
+          document.querySelector('.loader').innerHTML = `<img src="../images/logo.png" class="game_img"/>`;
+          document.querySelector('#startgame').classList.remove('hidden');
+          document.querySelector('#startgame').addEventListener('click', (e) => {
+            document.body.innerHTML = `<iframe frameborder="0" src="${cdn}/${game}/index.html" onerror="document.write('Could not load game');"></iframe>`;
+          });
         })
 
       /*navigator.serviceWorker.getRegistrations()
