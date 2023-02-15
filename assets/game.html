@@ -20,20 +20,38 @@
       width: 100%;
       height: 100%;
     }
+
+    .spinner {
+      margin: 0px;
+    }
+
+    .playgame {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 999999999999999999999999999999999999999999999999999999999999999999999999999999;
+    }
   </style>
 </head>
 
 <body>
-  <span class="spinner">
-    <svg viewBox="22 22 44 44">
-      <circle class="spinnerSvg" cx="44" cy="44" r="20.2" fill="none" stroke-width="3.6"></circle>
-    </svg>
-  </span>
+  <div class=""></div>
+
+  <div class="playgame">
+    <span class="spinner">
+      <svg viewBox="22 22 44 44">
+        <circle class="spinnerSvg" cx="44" cy="44" r="20.2" fill="none" stroke-width="3.6"></circle>
+      </svg>
+    </span>
+    <span id="game">Loading...</span>
+  </div>
 
   <script>
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     const game = urlParams.get('game');
+    const gameName = urlParams.get('gamename');
     const path = location.pathname;
     const origin = localStorage.getItem('instance');
 
@@ -68,14 +86,15 @@
 
     const instance = origin.replace(location.origin, '');
 
-    if (game && origin) {
+    if (game && origin && gameName) {
       fetch('./JSON/cdns.json')
         .then(res => res.json())
         .then(async cdns => {
           const cdn = await getCDN(cdns);
 
-          document.body.innerHTML = `<iframe frameborder="0" src="${cdn}/${game}/index.html" onerror="document.write('Could not load game');"></iframe>`;
           window.history.pushState({}, '', `${origin}games/${game}`);
+          document.querySelector('#game').textContent = gameName;
+          //document.body.innerHTML = `<iframe frameborder="0" src="${cdn}/${game}/index.html" onerror="document.write('Could not load game');"></iframe>`;
         })
 
       /*navigator.serviceWorker.getRegistrations()
