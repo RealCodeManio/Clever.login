@@ -39,7 +39,7 @@ function searchGames(query) {
 (async () => {
   var gamesElement = document.querySelector(".games");
 
-  var gamesData = await fetch('./assets/games.json');
+  var gamesData = await fetch('./assets/JSON/games.json');
   var games = await gamesData.json();
 
   for (let game in games) {

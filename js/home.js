@@ -8,7 +8,7 @@ async function randomSay() {
     }
     var says = splashCache;
   } else {
-    var say = await fetch("./assets/say.json");
+    var say = await fetch("./assets/JSON/say.json");
     var says = await say.json();
     splashCacheAll = says;
     splashCache = says;
@@ -31,7 +31,7 @@ async function setRandomSay() {
       randomSplash = "Cannot get your real IP :(";
     }
   } else if (randomSplash == "%GAMES_NUMBER%") {
-    var gamesFetch = await fetch(location.origin + "/assets/games.json");
+    var gamesFetch = await fetch(location.origin + "/assets/JSON/games.json");
     var games = await gamesFetch.json();
     randomSplash = "There are " + games.length + " games currently";
   } else if (randomSplash == "%SPLASH_NUMBER%") {
