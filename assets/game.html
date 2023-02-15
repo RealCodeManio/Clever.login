@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../css/index.css">
 
   <style>
     html,
@@ -23,12 +24,43 @@
 </head>
 
 <body>
+  <span class="spinner">
+    <svg viewBox="22 22 44 44">
+      <circle class="spinnerSvg" cx="44" cy="44" r="20.2" fill="none" stroke-width="3.6"></circle>
+    </svg>
+  </span>
+
   <script>
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     const game = urlParams.get('game');
     const path = location.pathname;
     const origin = localStorage.getItem('instance');
+
+    async function isBlocked(url) {
+      try {
+        var README = await fetch(url + "/README.md");
+        var content = await README.text();
+        if (content.startsWith("# 3kh0 Assets")) {
+          return false;
+        } else {
+          return true;
+        }
+      } catch {
+        return true;
+      }
+    }
+
+    async function getCDN(cdns) {
+      for (let cdn in cdns) {
+        var blocked = await isBlocked(cdns[cdn]);
+        if (!blocked) {
+          return cdns[cdn];
+        }
+      }
+
+      return cdns[0];
+    }
 
     if (!origin) {
       window.location.href = `../?onload=window.location.href='${path}${queryString}'`;
@@ -37,10 +69,16 @@
     const instance = origin.replace(location.origin, '');
 
     if (game && origin) {
-      window.history.pushState({}, '', `${origin}games${game.replace('/index.html', '')}`);
+      fetch('./JSON/cdns.json')
+        .then(res => res.json())
+        .then(async cdns => {
+          const cdn = await getCDN(cdns);
 
-      document.body.innerHTML = `<iframe frameborder="0" src="${ + path.slice(1)}" onerror="document.write('Could not load game');"></iframe>`;
-      navigator.serviceWorker.getRegistrations()
+          document.body.innerHTML = `<iframe frameborder="0" src="${cdn}/${game}/index.html" onerror="document.write('Could not load game');"></iframe>`;
+          window.history.pushState({}, '', `${origin}games/${game}`);
+        })
+
+      /*navigator.serviceWorker.getRegistrations()
         .then((registrations) => {
           if (!registrations[0]) {
             try {
@@ -51,9 +89,9 @@
           }
         }).catch(e => {
           throw new Error(`Service Worker registration failed: ${e}`);
-        })
+        })*/
     } else {
-      document.write("Could not load game");
+      document.documentElement.innerText = 'Could not load game';
     }
   </script>
 </body>

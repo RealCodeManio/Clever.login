@@ -7,16 +7,16 @@ self.addEventListener('fetch', async (e) => {
 
   if (path.startsWith(subpath + 'games/')) {
     const gameData = await fetch(`http://10.82.7.62:9000${path.replace(subpath, '').replace('', '')}/index.html`);
-    /*return e.respondWith(new Response(`<script>window.location.href = '${subpath}/assets/game?game=${path.replace(subpath, '').replace('game/', '')}'</script>`, {
+    return e.respondWith(new Response(`<script>window.location.href = '${subpath}/assets/game?game=${path.replace(subpath, '').replace('game/', '')}'</script>`, {
       status: gameData.status,
       headers: gameData.headers,
-    }));*/
+    }));
     console.log('Service worker activated');
     console.log(subpath);
   } else {
-    /*return e.respondWith(new Response('', {
+    return e.respondWith(new Response('nooo', {
       status: 404
-    }));*/
+    }));
   }
 });
 
