@@ -1165,6 +1165,11 @@
     "img": "./files/spacegarden/spl.png"
   },
   {
+    "name": "Spelunky",
+    "url": "./files/spelunky/index.html",
+    "img": "./files/spelunky/assets/icon.png"
+  },
+  {
     "name": "Stack",
     "url": "./files/stack/index.html",
     "img": "./files/stack/stack.png"
