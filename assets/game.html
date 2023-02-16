@@ -161,6 +161,7 @@
         .then(res => res.json())
         .then(games => {
           games.forEach(game => {
+            console.log(game.name)
             if (game.name && game.url && game.img) {
               const root = game.url.replace('./files/', '').replace('/index.html', '');
 
