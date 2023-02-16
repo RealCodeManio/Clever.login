@@ -96,6 +96,12 @@
         "img": "alienhominid.jpg"
     },
     {
+        "name": "Amazing rope police",
+        "root": "amazing-rope-police",
+        "url": "index.html",
+        "file": "splash.jpg"
+    },
+    {
         "name": "Amidst the Clouds",
         "root": "amidst-the-clouds",
         "file": "index.html",
