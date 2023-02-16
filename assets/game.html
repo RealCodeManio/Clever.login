@@ -15,6 +15,7 @@
       height: 100%;
       overflow: hidden;
       text-align: center;
+      user-select: none;
     }
 
     iframe {
@@ -31,7 +32,8 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      z-index: 999999999999999999999999999999999999999999999999999999999999999999999999999999;
+      width: 500px;
+      height: 500px;
     }
 
     .hidden {
@@ -42,10 +44,33 @@
       margin: 20px;
     }
 
+    .loader.center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .overlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 99999999999;
+      top: 0;
+      left: 0;
+      background: var(--background);
+    }
+
     .game_img {
       border-radius: 10%;
       width: 200px;
       height: 200px;
+    }
+
+    .spinner {
+      height: 150px;
+      width: 150px;
+      margin: 50px;
     }
   </style>
 </head>
@@ -59,9 +84,7 @@
         </svg>
       </span>
     </div>
-    <br>
-    <span id="game">Loading...</span>
-    <br>
+    <h1 id="game">Loading...</h1>
     <button class="play hidden" id="startgame" data-aos="fade-up">Play</button>
   </center>
 
@@ -115,7 +138,18 @@
           document.querySelector('.loader').innerHTML = `<img src="../images/logo.png" class="game_img"/>`;
           document.querySelector('#startgame').classList.remove('hidden');
           document.querySelector('#startgame').addEventListener('click', (e) => {
-            document.body.innerHTML = `<iframe frameborder="0" src="${cdn}/${game}/index.html" onerror="document.write('Could not load game');"></iframe>`;
+            document.body.innerHTML = `
+            <iframe frameborder="0" src="${cdn}/${game}/index.html" onerror="document.write('Could not load game');" onload="document.querySelector('.overlay').remove();"></iframe>
+            <div class="overlay">
+              <div class="loader center">
+                <span class="spinner">
+                  <svg viewBox="22 22 44 44">
+                    <circle class="spinnerSvg" cx="44" cy="44" r="20.2" fill="none" stroke-width="3.6"></circle>
+                  </svg>
+                </span>
+              </div>
+            </div>
+            `;
           });
         })
 

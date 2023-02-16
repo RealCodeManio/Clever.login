@@ -1,4 +1,4 @@
-let subpath;
+/*let subpath;
 
 self.addEventListener('fetch', async (e) => {
   const path = new URL(e.request.url).pathname;
@@ -31,4 +31,4 @@ self.addEventListener('install', (e) => {
   if (!subpath) {
     throw new Error('Value subpath could not be found');
   }
-});
+});*/
