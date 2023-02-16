@@ -130,7 +130,7 @@
     const instance = origin.replace(location.origin, '');
 
     if (game && origin && gameName) {
-      fetch('./JSON/cdns.json')
+      /*fetch('./JSON/cdns.json')
         .then(res => res.json())
         .then(async cdns => {
           const cdn = await getCDN(cdns);
@@ -154,7 +154,7 @@
             </div>
             `;
           });
-        })
+        })*/
 
       fetch('./JSON/games.json')
         .then(res => res.json())
