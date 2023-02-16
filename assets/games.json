@@ -80,6 +80,11 @@
     "img": "./files/alienhominid/alienhominid.jpg"
   },
   {
+    "name": "Amazing rope police",
+    "url": "./files/amazing-rope-police/index.html",
+    "img": "./files/amazing-rope-police/splash.jpg"
+  },
+  {
     "name": "Amidst the Clouds",
     "url": "./files/amidst-the-clouds/index.html",
     "img": "./files/amidst-the-clouds/splash.png"
