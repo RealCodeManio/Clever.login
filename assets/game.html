@@ -160,7 +160,6 @@
       fetch('../assets/JSON/games.json')
         .then(res => res.json())
         .then(games => {
-          alert(games.length)
 
           games.forEach(game => {
             if (game.name && game.url && game.img) {
@@ -169,14 +168,14 @@
               compiledGames.push({
                 name: game.name,
                 root: root,
-                file: game.url.replace('./files/' + root, ''),
-                img: game.img.replace('./files/' + root, '')
+                file: game.url.replace('./files/' + root, '').slice(1),
+                img: game.img.replace('./files/' + root, '').slice(1)
               })
               alert(JSON.stringify({
                 name: game.name,
                 root: root,
-                file: game.url.replace('./files/' + root, ''),
-                img: game.img.replace('./files/' + root, '')
+                file: game.url.replace('./files/' + root, '').slice(1),
+                img: game.img.replace('./files/' + root, '').slice(1)
               }))
             }
           })
