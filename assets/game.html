@@ -157,9 +157,11 @@
         })*/
 
       const compiledGames = [];
-      fetch('./JSON/games.json')
+      fetch('../assets/JSON/games.json')
         .then(res => res.json())
         .then(games => {
+          alert(games.length)
+
           games.forEach(game => {
             console.log(game.name)
             if (game.name && game.url && game.img) {
