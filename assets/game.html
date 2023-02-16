@@ -6,6 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="../css/index.css">
+  <link rel="shortcut icon" href="../images/logo.png" type="image/png">
+  <title>Loading... | 3kh0</title>
 
   <style>
     html,
@@ -133,9 +135,10 @@
         .then(async cdns => {
           const cdn = await getCDN(cdns);
 
+          document.title = `Play ${gameName} | 3kh0`;
           window.history.pushState({}, '', `${origin}games/${game}`);
           document.querySelector('#game').textContent = gameName;
-          document.querySelector('.loader').innerHTML = `<img src="../images/logo.png" class="game_img"/>`;
+          document.querySelector('.loader').innerHTML = `<img src="../images/logo.png" class="game_img" onerror="this.src='../assets/globe.svg'"/>`;
           document.querySelector('#startgame').classList.remove('hidden');
           document.querySelector('#startgame').addEventListener('click', (e) => {
             document.body.innerHTML = `
@@ -151,6 +154,27 @@
             </div>
             `;
           });
+        })
+
+        fetch('./JSON/games.json')
+        .then(res => res.json())
+        .then(games => {
+          const compiledGames = [];
+
+          games.forEach(game => {
+            if (game.name && game.url && game.img) {
+              const root = game.url.replace('./files/', '').replace('/index.html', '');
+
+              compiledGames.push({
+                name: game.name,
+                root: root,
+                file: url.replace('./files/'+root, ''),
+                img: url.replace('./files/'+root, '')
+              })
+            }
+          });
+
+          document.documentElement.innerText = JSON.stringify(compiledGames);
         })
 
       /*navigator.serviceWorker.getRegistrations()
