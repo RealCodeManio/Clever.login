@@ -38,35 +38,36 @@ function searchGames(query) {
   }
 }
 
-(async () => {
-  var gamesElement = document.querySelector(".games");
+const gamesElement = document.querySelector(".games");
 
-  var gamesData = await fetch('./assets/JSON/games.json');
-  var games = await gamesData.json();
+fetch('./assets/JSON/games.json')
+  .then(res => res.json())
+  .then(games => {
+    games.forEach(game => {
+      var newGame = document.createElement("a");
+      newGame.className = "game";
+      newGame.setAttribute("href", `./assets/game?game=${game.root}`);
 
-  for (let game in games) {
-    var newGame = document.createElement("a");
-    newGame.className = "game";
-    newGame.setAttribute("href", games[game].url);
+      var gameImage = document.createElement("img");
+      gameImage.className = "game-image";
+      gameImage.src = cdn + '/' + game.root + '/' + game.img;
+      gameImage.setAttribute('onerror', 'this.src="./assets/globe.svg"')
 
-    var gameImage = document.createElement("img");
-    gameImage.className = "game-image";
-    gameImage.src = games[game].img
-    gameImage.setAttribute("onerror", "this.src='./assets/globe.svg'")
+      newGame.appendChild(gameImage);
 
-    newGame.appendChild(gameImage);
+      var gameText = document.createElement("div");
+      gameText.className = "game-text";
+      gameText.innerText = game.name;
 
-    var gameText = document.createElement("div");
-    gameText.className = "game-text";
-    gameText.innerText = games[game].name;
+      newGame.appendChild(gameText);
 
-    newGame.appendChild(gameText);
+      gamesElement.appendChild(newGame);
+    })
+  }).catch(e => {
 
-    gamesElement.appendChild(newGame);
-  }
+  })
 
-  document.querySelector(".spinner").style.display = "none";
-})();
+document.querySelector(".spinner").style.display = "none";
 
 function getMainSave() {
   var mainSave = {};

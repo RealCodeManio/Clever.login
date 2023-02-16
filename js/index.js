@@ -28,8 +28,34 @@
 
 // Overall, this code is part of a larger web page that implements various functionalities, including theme handling, custom elements, and secret themes.
 
+async function isBlocked(url) {
+  try {
+    var README = await fetch(url + '/README.md');
+    var content = await README.text();
+    if (content.startsWith('# 3kh0 Assets')) {
+      return false;
+    } else {
+      return true;
+    }
+  } catch {
+    return true;
+  }
+}
+
+async function getCDN(cdns) {
+  for (let cdn in cdns) {
+    var blocked = await isBlocked(cdns[cdn]);
+    if (!blocked) {
+      return cdns[cdn];
+    }
+  }
+
+  return cdns[0];
+}
+
 const path = location.pathname;
 const origin = localStorage.getItem('instance');
+const cdn = localStorage.getItem('cdn');
 const queryString = window.location.search;
 window.history.pushState({}, '', path);
 const urlParams = new URLSearchParams(queryString);
@@ -42,6 +68,15 @@ document.head.appendChild(base);
 if (!origin) {
   localStorage.setItem('instance', base.href);
   location.reload();
+}
+
+if (!cdn) {
+  fetch('./JSON/cdns.json')
+  .then(res => res.json())
+  .then(async cdns => {
+    localStorage.setItem('cdn', await getCDN(cdns));
+    location.reload();
+  });
 }
 
 const instance = encodeURIComponent(origin.replace(location.origin, ''));

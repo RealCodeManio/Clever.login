@@ -96,66 +96,37 @@
     const gameSubpath = urlParams.get('game');
     const path = location.pathname;
     const origin = localStorage.getItem('instance');
+    const cdn = localStorage.getItem('cdn');
 
-    async function isBlocked(url) {
-      try {
-        var README = await fetch(url + '/README.md');
-        var content = await README.text();
-        if (content.startsWith('# 3kh0 Assets')) {
-          return false;
-        } else {
-          return true;
-        }
-      } catch {
-        return true;
-      }
-    }
-
-    async function getCDN(cdns) {
-      for (let cdn in cdns) {
-        var blocked = await isBlocked(cdns[cdn]);
-        if (!blocked) {
-          return cdns[cdn];
-        }
-      }
-
-      return cdns[0];
-    }
-
-    if (!origin) {
+    if (!origin || !cdn) {
       window.location.href = `../?onload=window.location.href='${path}${queryString}'`;
     }
 
     const instance = origin.replace(location.origin, '');
 
     if (game && origin) {
-      fetch('./JSON/cdns.json')
+      fetch('./JSON/games.json')
         .then(res => res.json())
-        .then(async cdns => {
-          const cdn = await getCDN(cdns);
+        .then(games => {
+          const gameRoots = [];
 
-          fetch('./JSON/games.json')
-            .then(res => res.json())
-            .then(games => {
-              const gameRoots = [];
+          for (let i = 0; i < games.length; i++) {
+            gameRoots.push(games[i].root);
+          }
 
-              for (let i = 0; i < games.length; i++) {
-                gameRoots.push(games[i].root);
-              }
+          if (!gameRoots.indexOf(gameSubpath)) {
+            document.documentElement.innerText = 'Could not load game';
+          }
 
-              if (!gameRoots.indexOf(gameSubpath)) {
-                document.documentElement.innerText = 'Could not load game';
-              }
-              
-              const game = games[gameRoots.indexOf(gameSubpath)];
-              document.title = `Play ${game.name} | 3kh0`;
-              window.history.pushState({}, '', `${origin}games/${gameSubpath}`);
-              document.querySelector('#game').textContent = game.name;
-              document.querySelector('.loader').innerHTML = `<img src="${cdn + '/' + game.root + '/' + game.img}" class="game_img" onerror="this.src='../assets/globe.svg'"/>`;
-              document.querySelector('#startgame').classList.remove('hidden');
+          const game = games[gameRoots.indexOf(gameSubpath)];
+          document.title = `Play ${game.name} | 3kh0`;
+          window.history.pushState({}, '', `${origin}games/${gameSubpath}`);
+          document.querySelector('#game').textContent = game.name;
+          document.querySelector('.loader').innerHTML = `<img src="${cdn + '/' + game.root + '/' + game.img}" class="game_img" onerror="this.src='../assets/globe.svg'"/>`;
+          document.querySelector('#startgame').classList.remove('hidden');
 
-              document.querySelector('#startgame').addEventListener('click', (e) => {
-                document.body.innerHTML = `
+          document.querySelector('#startgame').addEventListener('click', (e) => {
+            document.body.innerHTML = `
                 <iframe frameborder="0" src="${cdn + '/' + game.root + '/' + game.file}" onerror="document.write('Could not load game');" onload="document.querySelector('.overlay').remove();"></iframe>
                 <div class="overlay">
                   <div class="loader center">
@@ -167,8 +138,7 @@
                   </div>
                 </div>
                 `;
-              })
-            });
+          })
         })
         .catch(e => {
           document.documentElement.innerText = 'Could not load game';
