@@ -15,9 +15,9 @@
       margin: 0px;
       width: 100%;
       height: 100%;
-      /*overflow: hidden;
+      overflow: hidden;
       text-align: center;
-      user-select: none;*/
+      user-select: none;
     }
 
     iframe {
@@ -93,8 +93,7 @@
   <script>
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
-    const game = urlParams.get('game');
-    const gameName = urlParams.get('gamename');
+    const gameSubpath = urlParams.get('game');
     const path = location.pathname;
     const origin = localStorage.getItem('instance');
 
@@ -129,31 +128,43 @@
 
     const instance = origin.replace(location.origin, '');
 
-    if (game && origin && gameName) {
+    if (game && origin) {
       fetch('./JSON/cdns.json')
         .then(res => res.json())
         .then(async cdns => {
           const cdn = await getCDN(cdns);
 
-          document.title = `Play ${gameName} | 3kh0`;
-          window.history.pushState({}, '', `${origin}games/${game}`);
-          document.querySelector('#game').textContent = gameName;
-          document.querySelector('.loader').innerHTML = `<img src="../images/logo.png" class="game_img" onerror="this.src='../assets/globe.svg'"/>`;
-          document.querySelector('#startgame').classList.remove('hidden');
-          document.querySelector('#startgame').addEventListener('click', (e) => {
-            document.body.innerHTML = `
-            <iframe frameborder="0" src="${cdn}/${game}/index.html" onerror="document.write('Could not load game');" onload="document.querySelector('.overlay').remove();"></iframe>
-            <div class="overlay">
-              <div class="loader center">
-                <span class="spinner">
-                  <svg viewBox="22 22 44 44">
-                    <circle class="spinnerSvg" cx="44" cy="44" r="20.2" fill="none" stroke-width="3.6"></circle>
-                  </svg>
-                </span>
-              </div>
-            </div>
-            `;
-          });
+          fetch('./JSON/games.json')
+            .then(res => res.json())
+            .then(games => {
+              const gameRoots = [];
+
+              for (let i = 0; i < games.length; i++) {
+                gameRoots.push(games[i].root);
+              }
+              
+              const game = games[gameRoots.indexOf(gameSubpath)];
+              document.title = `Play ${game.name} | 3kh0`;
+              window.history.pushState({}, '', `${origin}games/${gameSubpath}`);
+              document.querySelector('#game').textContent = game.name;
+              document.querySelector('.loader').innerHTML = `<img src="${cdn + '/' + game.root + '/' + game.img}" class="game_img" onerror="this.src='../assets/globe.svg'"/>`;
+              document.querySelector('#startgame').classList.remove('hidden');
+
+              document.querySelector('#startgame').addEventListener('click', (e) => {
+                document.body.innerHTML = `
+                <iframe frameborder="0" src="${cdn + '/' + game.root + '/' + game.file}" onerror="document.write('Could not load game');" onload="document.querySelector('.overlay').remove();"></iframe>
+                <div class="overlay">
+                  <div class="loader center">
+                    <span class="spinner">
+                      <svg viewBox="22 22 44 44">
+                        <circle class="spinnerSvg" cx="44" cy="44" r="20.2" fill="none" stroke-width="3.6"></circle>
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+                `;
+              })
+            });
         })
 
       const compiledGames = [];
@@ -171,16 +182,8 @@
                 file: game.url.replace('./files/' + root, '').slice(1),
                 img: game.img.replace('./files/' + root, '').slice(1)
               })
-              alert(JSON.stringify({
-                name: game.name,
-                root: root,
-                file: game.url.replace('./files/' + root, '').slice(1),
-                img: game.img.replace('./files/' + root, '').slice(1)
-              }))
             }
           })
-
-          document.body.textContent = JSON.stringify(compiledGames);
         }).catch(e => { alert(e) })
 
       /*navigator.serviceWorker.getRegistrations()
