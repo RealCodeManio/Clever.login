@@ -31,6 +31,7 @@
 const path = location.pathname;
 const origin = localStorage.getItem('instance');
 const queryString = window.location.search;
+window.history.pushState({}, '', path);
 const urlParams = new URLSearchParams(queryString);
 const onLoadData = urlParams.get('onload');
 
@@ -48,7 +49,6 @@ const instance = encodeURIComponent(origin.replace(location.origin, ''));
 window.onload = () => {
   if (onLoadData) {
     eval(onLoadData);
-    window.history.pushState({}, '', path);
   }
 }
 

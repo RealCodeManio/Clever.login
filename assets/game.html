@@ -168,6 +168,10 @@
     } else {
       document.documentElement.innerText = 'Could not load game';
     }
+
+    if (window.top === window.self) {
+      window.location.href = origin;
+    }
   </script>
 </body>
 

@@ -1,8 +1,9 @@
 [
     {
         "name": "1",
-        "url": "./files/1/index.html",
-        "img": "./files/1/meta/apple-touch-icon.png"
+        "root": "1",
+        "file": "index.html",
+        "img": "apple-touch-icon.png"
     },
     {
         "name": "1v1.lol",
