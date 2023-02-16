@@ -114,10 +114,6 @@
             gameRoots.push(games[i].root);
           }
 
-          if (!gameRoots.indexOf(gameSubpath)) {
-            document.documentElement.innerText = 'Could not load game';
-          }
-
           const game = games[gameRoots.indexOf(gameSubpath)];
           document.title = `Play ${game.name} | 3kh0`;
           window.history.pushState({}, '', `${origin}games/${gameSubpath}`);

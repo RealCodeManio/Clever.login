@@ -71,12 +71,12 @@ if (!origin) {
 }
 
 if (!cdn) {
-  fetch('./JSON/cdns.json')
-  .then(res => res.json())
-  .then(async cdns => {
-    localStorage.setItem('cdn', await getCDN(cdns));
-    location.reload();
-  });
+  fetch('./assets/JSON/cdns.json')
+    .then(res => res.json())
+    .then(async cdns => {
+      localStorage.setItem('cdn', await getCDN(cdns));
+      location.reload();
+    });
 }
 
 const instance = encodeURIComponent(origin.replace(location.origin, ''));
@@ -161,7 +161,7 @@ fetch(origin + 'assets/JSON/themes.json')
 
     if (theme !== 'custom') {
       document.body.setAttribute("theme", theme);
-    
+
       if (location.pathname.includes('/settings')) {
         themes.forEach(palette => {
           if (palette.theme == theme) {
@@ -172,10 +172,10 @@ fetch(origin + 'assets/JSON/themes.json')
       }
     } else {
       const theme = localStorage.getItem('theme_color');
-    
+
       document.body.setAttribute('theme', 'custom');
       document.body.style = `--theme: ${theme}; --background: ${getContrastHex(theme)}; --text: ${getColorHex(theme)}; --text-secondary: ${getColorHex(theme)};`;
-    
+
       if (location.pathname.includes('/settings')) {
         document.querySelector('#theme_color').value = theme;
       }
