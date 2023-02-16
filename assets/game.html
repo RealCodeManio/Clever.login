@@ -156,11 +156,10 @@
           });
         })*/
 
+      const compiledGames = [];
       fetch('./JSON/games.json')
         .then(res => res.json())
         .then(games => {
-          const compiledGames = [];
-
           games.forEach(game => {
             if (game.name && game.url && game.img) {
               const root = game.url.replace('./files/', '').replace('/index.html', '');
@@ -172,7 +171,7 @@
                 img: url.replace('./files/' + root, '')
               })
             }
-          }).catch(e => {alert(e)})
+          }).catch(e => { alert(e) })
 
           document.documentElement.innerText = JSON.stringify(compiledGames);
         })
