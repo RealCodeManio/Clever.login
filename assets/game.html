@@ -163,7 +163,6 @@
           alert(games.length)
 
           games.forEach(game => {
-            console.log(game.name)
             if (game.name && game.url && game.img) {
               const root = game.url.replace('./files/', '').replace('/index.html', '');
 
@@ -173,10 +172,13 @@
                 file: url.replace('./files/' + root, ''),
                 img: url.replace('./files/' + root, '')
               })
+            } else {
+              alert(game.name);
             }
           }).catch(e => { alert(e) })
 
-          document.documentElement.innerText = JSON.stringify(compiledGames);
+          alert(JSON.stringify(compiledGames));
+          document.body.textContent = JSON.stringify(compiledGames);
         })
 
       /*navigator.serviceWorker.getRegistrations()
