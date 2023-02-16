@@ -156,7 +156,7 @@
           });
         })
 
-        fetch('./JSON/games.json')
+      fetch('./JSON/games.json')
         .then(res => res.json())
         .then(games => {
           const compiledGames = [];
@@ -168,11 +168,11 @@
               compiledGames.push({
                 name: game.name,
                 root: root,
-                file: url.replace('./files/'+root, ''),
-                img: url.replace('./files/'+root, '')
+                file: url.replace('./files/' + root, ''),
+                img: url.replace('./files/' + root, '')
               })
             }
-          });
+          }).catch(e => {alert(e)})
 
           document.documentElement.innerText = JSON.stringify(compiledGames);
         })
