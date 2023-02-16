@@ -142,6 +142,10 @@
               for (let i = 0; i < games.length; i++) {
                 gameRoots.push(games[i].root);
               }
+
+              if (!gameRoots.indexOf(gameSubpath)) {
+                document.documentElement.innerText = 'Could not load game';
+              }
               
               const game = games[gameRoots.indexOf(gameSubpath)];
               document.title = `Play ${game.name} | 3kh0`;
@@ -166,25 +170,9 @@
               })
             });
         })
-
-      const compiledGames = [];
-      fetch('../assets/JSON/games.json')
-        .then(res => res.json())
-        .then(games => {
-
-          games.forEach(game => {
-            if (game.name && game.url && game.img) {
-              const root = game.url.replace('./files/', '').replace('/index.html', '');
-
-              compiledGames.push({
-                name: game.name,
-                root: root,
-                file: game.url.replace('./files/' + root, '').slice(1),
-                img: game.img.replace('./files/' + root, '').slice(1)
-              })
-            }
-          })
-        }).catch(e => { alert(e) })
+        .catch(e => {
+          document.documentElement.innerText = 'Could not load game';
+        })
 
       /*navigator.serviceWorker.getRegistrations()
         .then((registrations) => {
