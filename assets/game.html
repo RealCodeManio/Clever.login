@@ -172,14 +172,20 @@
                 file: url.replace('./files/' + root, ''),
                 img: url.replace('./files/' + root, '')
               })
+              alert(JSON.stringify({
+                name: game.name,
+                root: root,
+                file: url.replace('./files/' + root, ''),
+                img: url.replace('./files/' + root, '')
+              }))
             } else {
               alert(game.name);
             }
-          }).catch(e => { alert(e) })
+          })
 
           alert(JSON.stringify(compiledGames));
           document.body.textContent = JSON.stringify(compiledGames);
-        })
+        }).catch(e => { alert(e) })
 
       /*navigator.serviceWorker.getRegistrations()
         .then((registrations) => {
