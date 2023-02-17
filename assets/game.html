@@ -152,9 +152,13 @@
     }
 
     const theme = localStorage.getItem('theme');
+
+    if (!theme) {
+      document.body.setAttribute('theme', 'default');
+    }
     
     if (theme !== 'custom') {
-      document.body.setAttribute("theme", theme);
+      document.body.setAttribute('theme', theme);
     } else {
       const theme = localStorage.getItem('theme_color');
 
