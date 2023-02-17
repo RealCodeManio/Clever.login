@@ -28,8 +28,38 @@
 
 // Overall, this code is part of a larger web page that implements various functionalities, including theme handling, custom elements, and secret themes.
 
+async function isBlocked(url) {
+  try {
+    var README = await fetch(url + '/README.md');
+    var content = await README.text();
+    if (content.startsWith('# 3kh0 Assets')) {
+      return false;
+    } else {
+      return true;
+    }
+  } catch {
+    return true;
+  }
+}
+
+async function getCDN(cdns) {
+  for (let cdn in cdns) {
+    var blocked = await isBlocked(cdns[cdn]);
+    if (!blocked) {
+      return cdns[cdn];
+    }
+  }
+
+  return cdns[0];
+}
+
 const path = location.pathname;
 const origin = localStorage.getItem('instance');
+const cdn = localStorage.getItem('cdn');
+const queryString = window.location.search;
+window.history.pushState({}, '', path);
+const urlParams = new URLSearchParams(queryString);
+const onLoadData = urlParams.get('onload');
 
 const base = document.createElement('base');
 base.href = location.origin + path.replace(path.split('\\').pop().split('/').pop(), '');
@@ -40,17 +70,32 @@ if (!origin) {
   location.reload();
 }
 
+if (!cdn) {
+  fetch('./assets/json/cdns.json')
+    .then(res => res.json())
+    .then(async cdns => {
+      localStorage.setItem('cdn', await getCDN(cdns));
+      location.reload();
+    });
+}
+
 const instance = encodeURIComponent(origin.replace(location.origin, ''));
 
-navigator.serviceWorker.getRegistrations()
+window.onload = () => {
+  if (onLoadData) {
+    eval(onLoadData);
+  }
+}
+
+/*navigator.serviceWorker.getRegistrations()
   .then((registrations) => {
     if (!registrations[0]) {
       try {
         //if (origin) {
-          navigator.serviceWorker.register(`${location.origin}/sw.js`);
-        /*} else {
+        navigator.serviceWorker.register(`${location.origin}/sw.js`);
+        } else {
           throw 'No origin was provided';
-        }*/
+        }
       } catch (e) {
         alert(`Service Worker registration failed. Many site features will not work.`);
         console.warn("Since the registration of the serivce worker failed, many things will also break.");
@@ -59,7 +104,7 @@ navigator.serviceWorker.getRegistrations()
     } else {
       console.log('sw.js is registered');
     }
-  });
+  });*/
 
 window.onerror = (e) => {
   throw new Error(e);
@@ -107,98 +152,38 @@ function getColorHex(hexcolor) {
 }
 
 var theme = localStorage.getItem("theme") || "default";
+let themes;
 
-const themes = [
-  {
-    theme: 'default',
-    color: '#4caf50'
-  },
-  {
-    theme: 'light',
-    color: '#4caf50'
-  },
-  {
-    theme: 'orchid',
-    color: '#b625cc'
-  },
-  {
-    theme: 'sky',
-    color: '#0084ff'
-  },
-  {
-    theme: 'winter',
-    color: '#3da341'
-  },
-  {
-    theme: 'nebelung',
-    color: '#3d2d1e'
-  },
-  {
-    theme: 'piplup',
-    color: '#0026ff'
-  },
-  {
-    theme: 'forternish',
-    color: '#003443'
-  },
-  {
-    theme: 'northernfish',
-    color: '#0ec9f8'
-  },
-  {
-    theme: 'forgor',
-    color: '#d7d700'
-  },
-  {
-    theme: 'monotonium',
-    color: '#fff'
-  },
-  {
-    theme: 'monotonium-dark',
-    color: '#000'
-  },
-  {
-    theme: 'concrete',
-    color: '#808080'
-  },
-  {
-    theme: 'sunset',
-    color: '#e83141'
-  },
-  {
-    theme: 'rusell2259',
-    color: '#0473fb'
-  },
-  {
-    theme: 'fracital',
-    color: '#f971e4'
-  },
-  {
-    theme: 'hacker',
-    color: '#72dc83'
-  }
-]
+fetch(origin + 'assets/json/themes.json')
+  .then(res => res.json())
+  .then(data_themes => {
+    themes = data_themes;
 
-if (theme !== 'custom') {
-  document.body.setAttribute("theme", theme);
+    if (theme !== 'custom') {
+      document.body.setAttribute("theme", theme);
 
-  if (location.pathname.includes('/settings')) {
-    themes.forEach(palette => {
-      if (palette.theme == theme) {
-        document.querySelector('#theme_color').value = palette.color;
+      if (location.pathname.includes('/settings')) {
+        themes.forEach(palette => {
+          if (palette.theme == theme) {
+            console.log(palette.theme);
+            document.querySelector('#theme_color').value = palette.color;
+          }
+        });
       }
-    });
-  }
-} else {
-  const theme = localStorage.getItem('theme_color');
+    } else {
+      const theme = localStorage.getItem('theme_color');
 
-  document.body.setAttribute('theme', 'custom');
-  document.body.style = `--theme: ${theme}; --background: ${getContrastHex(theme)}; --text: ${getColorHex(theme)}; --text-secondary: ${getColorHex(theme)};`;
+      document.body.setAttribute('theme', 'custom');
+      document.body.style = `--theme: ${theme}; --background: ${getContrastHex(theme)}; --text: ${getColorHex(theme)}; --text-secondary: ${getColorHex(theme)};`;
 
-  if (location.pathname.includes('/settings')) {
-    document.querySelector('#theme_color').value = theme;
-  }
-}
+      if (location.pathname.includes('/settings')) {
+        document.querySelector('#theme_color').value = theme;
+      }
+    }
+  }).catch(e => {
+    console.error(e);
+    throw new Error('Failed to load themes');
+  })
 
 class changelogAdded extends HTMLElement {
   constructor() {
