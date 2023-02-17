@@ -143,17 +143,28 @@
       document.documentElement.innerText = 'Could not load game';
     }
 
-    /*if (window.top === window.self) {
+    if (window.top === window.self) {
       if (document.referrer) {
         window.location.href = document.referrer;
       } else {
         window.location.href = '../';
       }
-    }*/
+    }
 
-    onbeforeunload = (event) => {
-      return event;
-    };
+    const theme = localStorage.getItem('theme');
+    
+    if (theme !== 'custom') {
+      document.body.setAttribute("theme", theme);
+    } else {
+      const theme = localStorage.getItem('theme_color');
+
+      document.body.setAttribute('theme', 'custom');
+      document.body.style = `--theme: ${theme}; --background: ${getContrastHex(theme)}; --text: ${getColorHex(theme)}; --text-secondary: ${getColorHex(theme)};`;
+
+      if (location.pathname.includes('/settings')) {
+        document.querySelector('#theme_color').value = theme;
+      }
+    }
   </script>
 </body>
 

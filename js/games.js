@@ -13,66 +13,80 @@ indexedDb.databases()
   })
 */
 
-function searchGames(query) {
-  var gamesElement = document.querySelector(".games");
+const gamesContainer = document.querySelector('.games');
+const searchBar = document.querySelector('.searchbar');
+const gameContainer = document.querySelector('.gamecontainer');
+const gameFrame = gameContainer.querySelector('.frame');
+const gameNav = gameContainer.querySelector('.nav');
 
-  for (let game in gamesElement.children) {
-    if (gamesElement.children[game] instanceof Element) {
+searchBar.addEventListener('input', (e) => {
+  const query = searchBar.value.trim().toLowerCase();
+
+  for (let game in gamesContainer.children) {
+    if (gamesContainer.children[game] instanceof Element) {
       if (query) {
-        var gameName = gamesElement.children[game].querySelector(".game-text").innerText.trim().toLowerCase();
+        const gameName = gamesContainer.children[game].querySelector('span').innerText.trim().toLowerCase();
         if (gameName.includes(query)) {
-          gamesElement.children[game].removeAttribute("hidden");
+          gamesContainer.children[game].removeAttribute('hidden');
         } else {
-          gamesElement.children[game].setAttribute("hidden", "");
+          gamesContainer.children[game].setAttribute('hidden', '');
         }
       } else {
-        gamesElement.children[game].removeAttribute("hidden");
+        gamesContainer.children[game].removeAttribute('hidden');
       }
     }
   }
 
-  if (document.querySelectorAll(".game:not([hidden])").length == 0) {
-    document.querySelector(".nogames").style.display = "initial";
+  if (document.querySelectorAll('.game:not([hidden])').length == 0) {
+    document.querySelector('.nogames').style.display = 'initial';
   } else {
-    document.querySelector(".nogames").style.display = "none";
+    document.querySelector('.nogames').style.display = 'none';
   }
-}
-
-const gamesElement = document.querySelector(".games");
+})
 
 fetch('./assets/JSON/games.json')
   .then(res => res.json())
   .then(games => {
     games.forEach(game => {
-      var newGame = document.createElement("a");
-      newGame.className = "game";
-      newGame.setAttribute("href", `./assets/game?game=${game.root}`);
+      const gameEl = document.createElement('div');
+      gameEl.className = 'game';
+      gameEl.innerHTML = `<img src="${cdn+'/'+game.root+'/'+game.img}" onerror="this.src='./assets/globe.svg'"/><span>${game.name}</span>`
+      gamesContainer.appendChild(gameEl);
 
-      var gameImage = document.createElement("img");
-      gameImage.className = "game-image";
-      gameImage.src = cdn + '/' + game.root + '/' + game.img;
-      gameImage.setAttribute('onerror', 'this.src="./assets/globe.svg"')
+      gameEl.onclick = (e) => {
+        gamesContainer.classList.add('hidden');
+        searchBar.classList.add('hidden');
+        gameContainer.classList.remove('hidden');
+        document.querySelector('.saveItems').classList.add('hidden');
+        document.querySelector('.navbar').classList.add('noshadow');
+        gameFrame.querySelector('iframe').src = `./assets/game?game=${game.root}`;
+      }
 
-      newGame.appendChild(gameImage);
+      gameNav.querySelector('#back').addEventListener('click', (e) => {
+        gamesContainer.classList.remove('hidden');
+        searchBar.classList.remove('hidden');
+        gameContainer.classList.add('hidden');
+        document.querySelector('.saveItems').classList.remove('hidden');
+        document.querySelector('.navbar').classList.remove('noshadow');
+      })
 
-      var gameText = document.createElement("div");
-      gameText.className = "game-text";
-      gameText.innerText = game.name;
-
-      newGame.appendChild(gameText);
-
-      gamesElement.appendChild(newGame);
+      gameNav.querySelector('#fullscreen').addEventListener('click', (e) => {
+        if (!document.fullscreenElement) {
+          gameFrame.requestFullscreen();
+        }
+      })
     })
   }).catch(e => {
-
+    alert('Could not load games');
+    alert(e)
   })
 
-document.querySelector(".spinner").style.display = "none";
+document.querySelector('.spinner').style.display = 'none';
 
 function getMainSave() {
   var mainSave = {};
 
-  var localStorageDontSave = ["theme", "tab", "nebelung"];
+  var localStorageDontSave = ['theme', 'tab', 'nebelung'];
 
   localStorageSave = Object.entries(localStorage);
 
@@ -94,7 +108,7 @@ function getMainSave() {
 
   mainSave = btoa(JSON.stringify(mainSave));
 
-  mainSave = CryptoJS.AES.encrypt(mainSave, "save").toString();
+  mainSave = CryptoJS.AES.encrypt(mainSave, 'save').toString();
 
   return mainSave;
 }
@@ -103,15 +117,15 @@ function downloadMainSave() {
   var data = new Blob([getMainSave()]);
   var dataURL = URL.createObjectURL(data);
 
-  var fakeElement = document.createElement("a");
+  var fakeElement = document.createElement('a');
   fakeElement.href = dataURL;
-  fakeElement.download = "games.save";
+  fakeElement.download = 'games.save';
   fakeElement.click();
   URL.revokeObjectURL(dataURL);
 }
 
 function getMainSaveFromUpload(data) {
-  data = CryptoJS.AES.decrypt(data, "save").toString(CryptoJS.enc.Utf8);
+  data = CryptoJS.AES.decrypt(data, 'save').toString(CryptoJS.enc.Utf8);
 
   var mainSave = JSON.parse(atob(data));
   var mainLocalStorageSave = JSON.parse(atob(mainSave.localStorage));
@@ -125,10 +139,10 @@ function getMainSaveFromUpload(data) {
 }
 
 function uploadMainSave() {
-  var hiddenUpload = document.querySelector(".hiddenUpload");
+  var hiddenUpload = document.querySelector('.hiddenUpload');
   hiddenUpload.click();
 
-  hiddenUpload.addEventListener("change", function (e) {
+  hiddenUpload.addEventListener('change', function (e) {
     var files = e.target.files;
     var file = files[0];
 
@@ -141,11 +155,11 @@ function uploadMainSave() {
     reader.onload = function (e) {
       getMainSaveFromUpload(e.target.result);
 
-      var uploadResult = document.querySelector(".uploadResult");
-      uploadResult.innerText = "Uploaded save!";
-      uploadResult.style.display = "initial";
+      var uploadResult = document.querySelector('.uploadResult');
+      uploadResult.innerText = 'Uploaded save!';
+      uploadResult.style.display = 'initial';
       setTimeout(function () {
-        uploadResult.style.display = "none";
+        uploadResult.style.display = 'none';
       }, 3000);
     };
 
@@ -153,10 +167,10 @@ function uploadMainSave() {
   });
 }
 
-var hiiPattern = ["h", "i", "i"];
+var hiiPattern = ['h', 'i', 'i'];
 var hiiCurrent = 0;
 
-document.addEventListener("keydown", function (e) {
+document.addEventListener('keydown', function (e) {
   if (e.key !== hiiPattern[hiiCurrent]) {
     return (hiiCurrent = 0);
   }
@@ -165,6 +179,6 @@ document.addEventListener("keydown", function (e) {
 
   if (hiiPattern.length == hiiCurrent) {
     hiiCurrent = 0;
-    document.querySelector(".hii").removeAttribute("hidden");
+    document.querySelector('.hii').removeAttribute('hidden');
   }
 });
