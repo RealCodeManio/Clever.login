@@ -139,26 +139,21 @@
         .catch(e => {
           document.documentElement.innerText = 'Could not load game';
         })
-
-      /*navigator.serviceWorker.getRegistrations()
-        .then((registrations) => {
-          if (!registrations[0]) {
-            try {
-              navigator.serviceWorker.register(`${origin}gamesw.js?instancepath=${instance}`);
-            } catch (e) {
-              throw new Error(`Service Worker registration failed: ${e}`);
-            }
-          }
-        }).catch(e => {
-          throw new Error(`Service Worker registration failed: ${e}`);
-        })*/
     } else {
       document.documentElement.innerText = 'Could not load game';
     }
 
-    if (window.top === window.self) {
-      //window.location.href = origin;
-    }
+    /*if (window.top === window.self) {
+      if (document.referrer) {
+        window.location.href = document.referrer;
+      } else {
+        window.location.href = '../';
+      }
+    }*/
+
+    onbeforeunload = (event) => {
+      return event;
+    };
   </script>
 </body>
 

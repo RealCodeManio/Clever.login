@@ -87,15 +87,15 @@ window.onload = () => {
   }
 }
 
-navigator.serviceWorker.getRegistrations()
+/*navigator.serviceWorker.getRegistrations()
   .then((registrations) => {
     if (!registrations[0]) {
       try {
         //if (origin) {
         navigator.serviceWorker.register(`${location.origin}/sw.js`);
-        /*} else {
+        } else {
           throw 'No origin was provided';
-        }*/
+        }
       } catch (e) {
         alert(`Service Worker registration failed. Many site features will not work.`);
         console.warn("Since the registration of the serivce worker failed, many things will also break.");
@@ -104,7 +104,7 @@ navigator.serviceWorker.getRegistrations()
     } else {
       console.log('sw.js is registered');
     }
-  });
+  });*/
 
 window.onerror = (e) => {
   throw new Error(e);

@@ -99,7 +99,7 @@
         "name": "Amazing rope police",
         "root": "amazing-rope-police",
         "url": "index.html",
-        "file": "splash.jpg"
+        "file": "splash.jpeg"
     },
     {
         "name": "Amidst the Clouds",
@@ -1396,6 +1396,12 @@
         "root": "spacegarden",
         "file": "index.html",
         "img": "spl.png"
+    },
+    {
+      "name": "Spelunky",
+      "root": "spelunky",
+      "file": "index.html",
+      "img": "assets/icon.png"
     },
     {
         "name": "Stack",

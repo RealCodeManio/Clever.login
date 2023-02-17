@@ -1,5 +1,6 @@
 * {
   font-family: "Roboto";
+  user-select: none;
 }
 
 html {
