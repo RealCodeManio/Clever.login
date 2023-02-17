@@ -6,7 +6,7 @@
     var latestVersion;
   
     try {
-      var infoFetch = await fetch(location.origin + "/assets/JSON/info.json");
+      var infoFetch = await fetch(location.origin + "/assets/json/info.json");
       try {
         var infoResult = await infoFetch.json();
         if (infoResult.version) {
@@ -16,7 +16,7 @@
     } catch {}
   
     try {
-      var infoFetch = await fetch("https://raw.githack.com/3kh0/3kh0.github.io/main/assets/JSON/info.json");
+      var infoFetch = await fetch("https://raw.githack.com/3kh0/3kh0.github.io/main/assets/json/info.json");
       try {
         var infoResult = await infoFetch.json();
         if (infoResult.version) {

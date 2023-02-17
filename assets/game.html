@@ -105,7 +105,7 @@
     const instance = origin.replace(location.origin, '');
 
     if (game && origin) {
-      fetch('./JSON/games.json')
+      fetch('./json/games.json')
         .then(res => res.json())
         .then(games => {
           const gameRoots = [];

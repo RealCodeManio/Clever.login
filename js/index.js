@@ -71,7 +71,7 @@ if (!origin) {
 }
 
 if (!cdn) {
-  fetch('./assets/JSON/cdns.json')
+  fetch('./assets/json/cdns.json')
     .then(res => res.json())
     .then(async cdns => {
       localStorage.setItem('cdn', await getCDN(cdns));
@@ -154,7 +154,7 @@ function getColorHex(hexcolor) {
 var theme = localStorage.getItem("theme") || "default";
 let themes;
 
-fetch(origin + 'assets/JSON/themes.json')
+fetch(origin + 'assets/json/themes.json')
   .then(res => res.json())
   .then(data_themes => {
     themes = data_themes;

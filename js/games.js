@@ -44,7 +44,7 @@ searchBar.addEventListener('input', (e) => {
   }
 })
 
-fetch('./assets/JSON/games.json')
+fetch('./assets/json/games.json')
   .then(res => res.json())
   .then(games => {
     games.forEach(game => {
