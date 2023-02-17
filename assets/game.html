@@ -157,9 +157,9 @@
       document.body.setAttribute('theme', 'default');
     }
     
-    if (theme !== 'custom') {
+    if (theme != 'custom' && theme) {
       document.body.setAttribute('theme', theme);
-    } else {
+    } else if (theme == 'custom') {
       const theme = localStorage.getItem('theme_color');
 
       document.body.setAttribute('theme', 'custom');
@@ -168,6 +168,7 @@
       if (location.pathname.includes('/settings')) {
         document.querySelector('#theme_color').value = theme;
       }
+      alert('.')
     }
   </script>
 </body>
