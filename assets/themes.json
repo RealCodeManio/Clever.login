@@ -21,18 +21,15 @@
     },
     {
       "theme": "nebelung",
-      "color": "#3d2d1e",
-      "hidden": true
+      "color": "#3d2d1e"
     },
     {
       "theme": "piplup",
-      "color": "#0026ff",
-      "hidden": true
+      "color": "#0026ff"
     },
     {
       "theme": "forternish",
-      "color": "#003443",
-      "hidden": true
+      "color": "#003443"
     },
     {
       "theme": "northernfish",
@@ -40,8 +37,7 @@
     },
     {
       "theme": "forgor",
-      "color": "#d7d700",
-      "hidden": true
+      "color": "#d7d700"
     },
     {
       "theme": "monotonium",
@@ -58,19 +54,5 @@
     {
       "theme": "sunset",
       "color": "#e83141"
-    },
-    {
-      "theme": "rusell2259",
-      "color": "#0473fb",
-      "hidden": true
-    },
-    {
-      "theme": "fracital",
-      "color": "#f971e4"
-    },
-    {
-      "theme": "hacker",
-      "color": "#72dc83",
-      "hidden": true
     }
   ]
