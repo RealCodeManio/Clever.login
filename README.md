@@ -6,7 +6,7 @@
 <h1 align="center">3kh0</h1>
 <p align="center">The better unblocked games website.</p>
 
-This is the GitHub repo which is used to host the website. If you want to use the games on here on your website, please message me on discord at `3kh0_#6969` and we can talk! If you're looking for the link, click [here.](https://3kh0.github.io)
+This is the GitHub repo which is used to host the website. If you want to use the games on here on your website, please message me on discord at `3kh0_#6969` and we can talk! If you're looking for the link, click [here](https://3kh0.github.io).
 
 <img src="https://invidget.switchblade.xyz/wv6huJAwEv?theme=dark)](https://discord.gg/wv6huJAwEv" alt="discord"></img>
 
@@ -32,6 +32,9 @@ This is the GitHub repo which is used to host the website. If you want to use th
 ## Game Files
 Due to the amount of games, all of the games have been moved to a [new repo](https://github.com/3kh0/3kh0-Assets).
 
+## Host the CDN
+Thanks to [@Russell2259](https://github.com/Russell2259/) you can host your own 3kh0 CDN, the source code is located [here](https://github.com/Russell2259/3kh0-CDN).
+
 ## Host the website
 
 You can host our website on a cloud hosting solution like Replit or Render here. If you're unsure on what this does, use our own site, or find one someone else is hosting. <br>
@@ -54,19 +57,19 @@ The official 3kh0 docs can be found [here](https://github.com/3kh0/3kh0.github.i
 
 Thank you to all of these amazing people for helping work on this project!
 
-![Contrib](https://contrib.rocks/image?repo=3kh0/3kh0.github.io#)
+[![Contrib](https://contrib.rocks/image?repo=3kh0/3kh0.github.io#)](https://github.com/3kh0/3kh0.github.io/graphs/contributors)
 
 And the people who worked on v3!
 
-![Contrib](https://contrib.rocks/image?repo=3kh0/website-v3#)
+[![Contrib](https://contrib.rocks/image?repo=3kh0/website-v3#)](https://github.com/3kh0/website-v3/graphs/contributors)
 
 And the people who worked on v2!
 
-![Contrib](https://contrib.rocks/image?repo=3kh0/website-v2#)
+[![Contrib](https://contrib.rocks/image?repo=3kh0/website-v2#)](https://github.com/3kh0/website-v2/graphs/contributors)
 
 And the people who worked on v1!
 
-![Contrib](https://contrib.rocks/image?repo=3kh0/website-v1#)
+[![Contrib](https://contrib.rocks/image?repo=3kh0/website-v1#)](https://github.com/3kh0/website-v1/graphs/contributors)
 
 ## Contributing
 
