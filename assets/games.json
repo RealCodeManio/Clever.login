@@ -519,6 +519,12 @@
     "url": "./files/flappy-2048/index.html",
     "img": "./files/flappy-2048/meta/apple-touch-icon.png"
   },
+  
+  {
+    "name": "Flappy Plane",
+    "url": "./files/flappy%20plane/index.html",
+    "img": "./files/flappy%20plane/assets/thumb.png"
+  },
   {
     "name": "Flappy Bird",
     "url": "./files/flappy-bird/index.html",
