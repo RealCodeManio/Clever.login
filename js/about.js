@@ -6,7 +6,7 @@
     var latestVersion;
   
     try {
-      var infoFetch = await fetch(location.origin + "/assets/json/info.json");
+      var infoFetch = await fetch(location.origin + "./assets/json/info.json");
       try {
         var infoResult = await infoFetch.json();
         if (infoResult.version) {
