@@ -624,6 +624,12 @@
         "img": "meta/apple-touch-icon.png"
     },
     {
+        "name": "Flappy Plane",
+        "root": "flappy plane",
+        "file": "index.html",
+        "img": "assets/thumb.png"
+    },
+    {
         "name": "Flappy Bird",
         "root": "flappy-bird",
         "file": "index.html",
