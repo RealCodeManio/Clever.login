@@ -33,7 +33,7 @@ This is the GitHub repo which is used to host the website. If you want to use th
 Due to the amount of games, all of the games have been moved to a [new repo](https://github.com/3kh0/3kh0-Assets).
 
 ## Host the CDN
-Thanks to [@Russell2259](https://github.com/Russell2259/) you can host your own 3kh0 CDN, the source code is located [here](https://github.com/Russell2259/3kh0-CDN).
+Thanks to [@Russell2259](https://github.com/Russell2259/) you can host your own 3kh0 CDN, instructions are located [here](https://github.com/3kh0/3kh0.github.io/wiki/Create-A-CDN-Server).
 
 ## Host the website
 
@@ -48,7 +48,6 @@ You can host our website on a cloud hosting solution like Replit or Render here.
 [![Deploy with Vercel](https://binbashbanana.github.io/deploy-buttons/buttons/remade/vercel.svg)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2F3kh0%2F3kh0.github.io) 
 [![Deploy with Netlify](https://binbashbanana.github.io/deploy-buttons/buttons/remade/netlify.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/3kh0/3kh0.github.io)
 [![Deploy to Render](https://binbashbanana.github.io/deploy-buttons/buttons/remade/render.svg)](https://render.com/deploy?repo=https://github.com/3kh0/3kh0.github.io)
-[![Deploy to Cyclic](https://binbashbanana.github.io/deploy-buttons/buttons/remade/cyclic.svg)](https://app.cyclic.sh/api/app/deploy/3kh0/3kh0.github.io)
 
 ## Docs
 The official 3kh0 docs can be found [here](https://github.com/3kh0/3kh0.github.io/wiki). If you want to make a theme this is the place!
