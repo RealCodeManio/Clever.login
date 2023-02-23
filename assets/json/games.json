@@ -1169,6 +1169,12 @@
         "file": "index.html",
         "img": "splash.png"
     },
+     {
+        "name": "Rocket Soccer",
+        "root": "rocket-league",
+        "file": "index.html",
+        "img": "image.png"
+    },
     {
         "name": "Resent Client (Eaglercraft)",
         "root": "resent-client",
