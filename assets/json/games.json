@@ -1127,6 +1127,12 @@
         "file": "index.html",
         "img": "splash.png"
     },
+        {
+        "name": "Plants VS Zombies",
+        "root": "plants%20vs%20zombies%201",
+        "file": "index.html",
+        "img": "image_proxy.png"
+    },
     {
         "name": "Portal (Flash)",
         "root": "portalflash",
