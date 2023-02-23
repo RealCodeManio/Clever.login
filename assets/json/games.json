@@ -462,10 +462,16 @@
         "img": "meta/apple-touch-icon.png"
     },
     {
-        "name": "Doge Miner",
+        "name": "DogeMiner",
         "root": "DogeMiner",
         "file": "index.html",
         "img": "img/dogeminer_300x300.png"
+    },
+    {
+        "name": "DogeMiner 2",
+        "root": "Dogeminer2",
+        "file": "index.html",
+        "img": "thumb.jpg"
     },
     {
         "name": "Doodle Jump",
@@ -894,6 +900,12 @@
         "img": "learn-to-fly-2.jpg"
     },
     {
+        "name": "Level 13",
+        "root": "level13",
+        "file": "index.html",
+        "img": "thumb.png"
+    },
+    {
         "name": "Madalin Stunt Cars 2",
         "root": "madalin-stunt-cars-2",
         "file": "index.html",
@@ -982,6 +994,12 @@
         "root": "missiles",
         "file": "index.html",
         "img": "miss.png"
+    },
+    {
+        "name": "Monster Tracks",
+        "root": "monster-tracks",
+        "file": "index.html",
+        "img": "thumb.jpg"
     },
     {
         "name": "MotoX3M",
@@ -1588,6 +1606,12 @@
         "root": "the-final-earth",
         "file": "index.html",
         "img": "images.png"
+    },
+    {
+        "name": "The Final Earth 2",
+        "root": "the-final-earth-2",
+        "file": "index.html",
+        "img": "thumb.png"
     },
     {
         "name": "The Hotel",
