@@ -810,6 +810,12 @@
         "img": "Hexgl-image-1.jpg"
     },
     {
+        "name": "Ice Age Baby",
+        "root": "iceagebaby",
+        "file": "index.html",
+        "img": "thumb.png"
+    },
+    {
         "name": "Hextris",
         "root": "hextris",
         "file": "index.html",
