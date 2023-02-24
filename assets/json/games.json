@@ -98,8 +98,8 @@
     {
         "name": "Amazing rope police",
         "root": "amazing-rope-police",
-        "url": "index.html",
-        "file": "splash.jpeg"
+        "file": "index.html",
+        "img": "splash.jpeg"
     },
     {
         "name": "Amidst the Clouds",
@@ -498,12 +498,6 @@
         "img": "icons/icon-512.png"
     },
     {
-        "name": "Drift Boss",
-        "root": "drift-boss",
-        "file": "index.html",
-        "img": "drift-boss.png"
-    },
-    {
         "name": "Drift Hunters",
         "root": "drift-hunters",
         "file": "index.html",
@@ -822,6 +816,12 @@
         "img": "images/hextris-logo.png"
     },
     {
+        "name": "Hill Climb Racing (Scratch)",
+        "root": "hill-climb-racing",
+        "file": "index.html",
+        "img": "splash.jpeg"
+    },
+    {
         "name": "Hungry Lamu",
         "root": "hungry-lamu",
         "file": "index.html",
@@ -1017,7 +1017,7 @@
         "name": "MotoX3M 2",
         "root": "motox3m2",
         "file": "index.html",
-        "img": "/files/motox3m/splash.jpg"
+        "img": "splash.jpg"
     },
     {
         "name": "MotoX3M Pool",
@@ -1201,9 +1201,9 @@
     },
      {
         "name": "Rocket Soccer",
-        "root": "rocket-league",
+        "root": "Rocket-League",
         "file": "index.html",
-        "img": "image.png"
+        "img": "splash.png"
     },
     {
         "name": "Resent Client (Eaglercraft)",
@@ -1759,9 +1759,9 @@
     },
     {
         "name": "Webretro",
-        "root": "webretro/roms.html",
-        "file": "",
-        "img": "/files/webretro/assets/icons/icon204.png"
+        "root": "webretro",
+        "file": "roms.html",
+        "img": "webretro/assets/icons/icon204.png"
     },
     {
         "name": "Win the Whitehouse",
