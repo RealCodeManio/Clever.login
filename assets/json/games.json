@@ -816,6 +816,12 @@
         "img": "images/hextris-logo.png"
     },
     {
+        "name": "Hill Climb Racing (Scratch)",
+        "root": "hill-climb-racing",
+        "file": "index.html",
+        "img": "splash.jpeg"
+    },
+    {
         "name": "Hungry Lamu",
         "root": "hungry-lamu",
         "file": "index.html",
