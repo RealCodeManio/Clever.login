@@ -1314,6 +1314,12 @@
         "img": "img/splash.png"
     },
     {
+        "name": "Scratcharia",
+        "root": "scratcharia",
+        "file": "index.html",
+        "img": "splash.png"
+    },
+    {
         "name": "Shellshockers",
         "root": "shellshockers",
         "file": "index.html",
