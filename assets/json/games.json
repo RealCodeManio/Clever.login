@@ -810,6 +810,12 @@
         "img": "thumb.png"
     },
     {
+        "name": "Ice Age Baby 2",
+        "root": "iceagebaby2",
+        "file": "index.html",
+        "img": "pinky.jpg"
+    },
+    {
         "name": "Hextris",
         "root": "hextris",
         "file": "index.html",
