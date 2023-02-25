@@ -1146,6 +1146,12 @@
         "img": "512x512.png"
     },
     {
+        "name": "Planet Life",
+        "root": "planetlife",
+        "file": "index.html",
+        "img": "images/super-planetlife.gif"
+    },
+    {
         "name": "PolyBranch",
         "root": "polybranch",
         "file": "index.html",
