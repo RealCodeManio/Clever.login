@@ -240,6 +240,12 @@
         "img": "bloonstd2.png"
     },
     {
+        "name": "Bloons TD 5",
+        "root": "btd5",
+        "file": "index.html",
+        "img": "BT5_Deluxe_logo.png"
+    },
+    {
         "name": "Bloxors",
         "root": "bloxors",
         "file": "index.html",
@@ -810,6 +816,12 @@
         "img": "thumb.png"
     },
     {
+        "name": "Ice Age Baby 2",
+        "root": "iceagebaby2",
+        "file": "index.html",
+        "img": "pinky.jpg"
+    },
+    {
         "name": "Hextris",
         "root": "hextris",
         "file": "index.html",
@@ -1138,6 +1150,12 @@
         "root": "pixel-gun-survival",
         "file": "index.html",
         "img": "512x512.png"
+    },
+    {
+        "name": "Planet Life",
+        "root": "planetlife",
+        "file": "index.html",
+        "img": "images/super-planetlife.gif"
     },
     {
         "name": "PolyBranch",
