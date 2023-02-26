@@ -240,6 +240,12 @@
         "img": "bloonstd2.png"
     },
     {
+        "name": "Bloons TD 5",
+        "root": "btd5",
+        "file": "index.html",
+        "img": "BT5_Deluxe_logo.png"
+    },
+    {
         "name": "Bloxors",
         "root": "bloxors",
         "file": "index.html",
