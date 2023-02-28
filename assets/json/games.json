@@ -1301,6 +1301,12 @@
         "file": "index.html",
         "img": "img/preview.png"
     },
+     {
+        "name": "Run 3",
+        "root": "run 3",
+        "file": "Run 3.html",
+        "img": "image_proxy.png"
+    },
     {
         "name": "Ruffle Emulator",
         "root": "ruffle",
