@@ -1852,5 +1852,23 @@
         "root": "zombs-royale",
         "file": "index.html",
         "img": "zomb.png"
+    },
+    {
+        "name": "Learn To Fly 3",
+        "root": "ltf3",
+        "file": "index.html",
+        "img": "logo.png"
+    },
+    {
+        "name": "Learn To Fly IDLE",
+        "root": "ltf-idle",
+        "file": "index.html",
+        "img": "thumbnail.jpg"
+    },
+    {
+        "name": "Throw Rocks at Shit",
+        "root": "throwrocks",
+        "file": "index.html",
+        "img": "card.png"
     }
 ]
