@@ -1870,5 +1870,17 @@
         "root": "throwrocks",
         "file": "index.html",
         "img": "card.png"
+    },
+    {
+        "name": "Unfair Mario",
+        "root": "Unfair Mario",
+        "file": "index.html",
+        "img": "sus.jpg"
+    },
+    {
+        "name": "Trimps",
+        "root": "Trimps",
+        "file": "index.html",
+        "img": "trimp.jpg"
     }
 ]
