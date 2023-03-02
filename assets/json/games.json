@@ -1301,6 +1301,12 @@
         "file": "index.html",
         "img": "img/preview.png"
     },
+    {
+        "name": "Run 2",
+        "root": "Run 2",
+        "file": "index.html",
+        "img": "run-2-logo.jpg"
+    },
      {
         "name": "Run 3",
         "root": "run 3",
