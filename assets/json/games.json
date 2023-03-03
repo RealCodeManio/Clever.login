@@ -1891,7 +1891,7 @@
     },
     {
         "name": "Unfair Mario",
-        "root": "Unfair Mario",
+        "root": "unfairmario",
         "file": "index.html",
         "img": "sus.jpg"
     },
