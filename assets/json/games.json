@@ -545,6 +545,12 @@
         "file": "index.html",
         "img": "splash.png"
     },
+        {
+        "name": "eggycar",
+        "root": "eggycar",
+        "file": "index.html",
+        "img": "favicon.ico"
+    },
     {
         "name": "Edge Not Found",
         "root": "edgenotfound",
@@ -907,18 +913,12 @@
     },
     {
         "name": "Learn To Fly",
-        "root": "lets-surf-ms-edge",
+        "root": "learntofly",
         "file": "index.html",
-        "img": "favicon.svg"
+        "img": "learntofly.png"
     },
     {
         "name": "Learn to fly 2",
-        "root": "learntofly2",
-        "file": "index.html",
-        "img": "learn-to-fly-2.jpg"
-    },
-        {
-        "name": "Lets Surf",
         "root": "learntofly2",
         "file": "index.html",
         "img": "learn-to-fly-2.jpg"
