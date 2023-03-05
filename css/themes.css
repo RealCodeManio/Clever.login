@@ -1,3 +1,5 @@
+/*-------------------- Themes --------------------*/
+
 body[theme="default"] {
   --background: #1c1c1c;
   --theme: #4caf50;
@@ -92,7 +94,6 @@ body[theme="piplup"] {
   }
 }
 
-
 body[theme="forternish"] {
   --background: #003443;
   --theme: linear-gradient(15deg, #82c4e4, #60f108);
@@ -165,7 +166,8 @@ body[theme="russell2259"] {
   --text-secondary: black;
 }
 
-html,body {
+html,
+body {
   color: var(--text);
 }
 

@@ -187,6 +187,7 @@
       </button>
     </div>
     <script>
+      // For all the skids, this is how you create a about:blank page, it is just that simple.
       var url = document.getElementById("url-target");
       var urlObj = new window.URL(window.location.href);
       document.getElementById("create").onclick = function () {
@@ -207,17 +208,14 @@
         iframe.allow = "fullscreen";
         iframe.src = url.value;
         win.document.body.appendChild(iframe);
-        //var script = win.document.createElement("script");
-        //script.src = "https://3kh0.github.io/js/main.js";
-        //win.document.body.appendChild(script);
       };
     </script>
-    <script src='https://cdn.jsdelivr.net/npm/@widgetbot/crate@3' async defer>
-    new Crate({
-        server: '971769908205604864', // EchoDev
-        channel: '1017203047388160050', // #guest-chat
-        notifications: false,
-    })
+    <script src="https://cdn.jsdelivr.net/npm/@widgetbot/crate@3" async defer>
+      new Crate({
+          server: '971769908205604864', // EchoDev
+          channel: '1017203047388160050', // #guest-chat
+          notifications: false,
+      })
     </script>
   </body>
 </html>
