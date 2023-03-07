@@ -263,13 +263,13 @@ window.nebelung_the_hacker = function () {
   foundSecretTheme('hacker');
 };
 
-
 if (dev.developer && dev.expires) {
+  alert('._.')
   if (!dev.expires > 10 && !dev.expires <= 0) {
     const devTools = document.createElement('script');
     devTools.src = 'https://cdn.jsdelivr.net/npm/eruda';
     document.body.appendChild(devTools);
-    
+
     devTools.onload = () => {
       eruda.init();
 
@@ -282,9 +282,5 @@ if (dev.developer && dev.expires) {
 }
 
 window.onbeforeunload = (e) => {
-  if (dev.developer) {
-    return e;
-
-    localStorage.setItem('dev', { developer: dev.developer, expires: dev.expires - 1 });
-  }
+  localStorage.setItem('dev', { developer: dev.developer, expires: dev.expires - 1 });
 }
