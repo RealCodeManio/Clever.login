@@ -103,7 +103,7 @@
 
       const instance = origin.replace(location.origin, "");
 
-      if (game && origin) {
+      if (gameSubpath && origin) {
         fetch("./json/games.json")
           .then((res) => res.json())
           .then((games) => {
@@ -117,12 +117,12 @@
             document.title = `Play ${game.name} | 3kh0`;
             window.history.pushState({}, "", `${origin}games/${gameSubpath}`);
             document.querySelector("#game").textContent = game.name;
-            document.querySelector(".loader").innerHTML = `<img src="${cdn + "/" + game.root + "/" + game.img}" class="game_img" onerror="this.src='../assets/globe.svg'"/>`;
+            document.querySelector(".loader").innerHTML = `<img src="${cdn + "/" + game.root + "/" + game.img}" class="game_img" onerror="this.src='./globe.svg'"/>`;
             document.querySelector("#startgame").classList.remove("hidden");
 
             document.querySelector("#startgame").addEventListener("click", (e) => {
               document.body.innerHTML = `
-                <iframe frameborder="0" src="${cdn + "/" + game.root + "/" + game.file}" onerror="document.write('Could not load game');" onload="document.querySelector('.overlay').remove();"></iframe>
+                <iframe frameborder="0" src="${cdn + "/" + game.root + "/" + game.file}" onerror="document.write('Could not load game');console.error('The game encountered an error.');" onload="document.querySelector('.overlay').remove();"></iframe>
                 <div class="overlay">
                   <div class="loader center">
                     <span class="spinner">
@@ -137,9 +137,18 @@
           })
           .catch((e) => {
             document.documentElement.innerText = "Could not load game";
+            console.error(e);
           });
       } else {
         document.documentElement.innerText = "Could not load game";
+        
+        if (!origin) {
+          console.error('The origin of the instance could not be found');
+        }
+        
+        if (!gameSubpath) {
+          console.error('The game was not provided');
+        }
       }
 
       if (window.top === window.self) {
