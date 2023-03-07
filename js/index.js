@@ -8,10 +8,10 @@ async function isBlocked(url) {
     var README = await fetch(url + "/README.md");
     var content = await README.text();
     if (content.startsWith("# 3kh0 Assets")) {
-      // Something is wrong, it might be blocked
+      // The CDN is not blocked
       return false;
     } else {
-      // CDN is good
+      // The CDN is not returning a valid response or is blocked
       return true;
     }
   } catch {
