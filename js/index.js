@@ -5,9 +5,9 @@
 // Checks if a CDN is blocked by testing the README.md file
 async function isBlocked(url) {
   try {
-    var README = await fetch(url + "/README.md");
+    var README = await fetch(url + '/README.md');
     var content = await README.text();
-    if (content.startsWith("# 3kh0 Assets")) {
+    if (content.startsWith('# 3kh0 Assets')) {
       // The CDN is not blocked
       return false;
     } else {
@@ -31,34 +31,35 @@ async function getCDN(cdns) {
 
 // Define some varibles for later
 const path = location.pathname;
-const origin = localStorage.getItem("instance");
-const cdn = localStorage.getItem("cdn");
+const origin = localStorage.getItem('instance');
+const cdn = localStorage.getItem('cdn');
 const queryString = window.location.search;
-window.history.pushState({}, "", path);
+window.history.pushState({}, '', path);
 const urlParams = new URLSearchParams(queryString);
-const onLoadData = urlParams.get("onload");
+const onLoadData = urlParams.get('onload');
+const dev = localStorage.getItem('dev');
 
-const base = document.createElement("base");
-base.href = location.origin + path.replace(path.split("\\").pop().split("/").pop(), "");
+const base = document.createElement('base');
+base.href = location.origin + path.replace(path.split('\\').pop().split('/').pop(), '');
 document.head.appendChild(base);
 
 // If we do not have the origin var, we make it
 if (!origin) {
-  localStorage.setItem("instance", base.href);
+  localStorage.setItem('instance', base.href);
   location.reload();
 }
 
 // If we do not have the cdn var, we make it
 if (!cdn) {
-  fetch("./assets/json/cdns.json")
+  fetch('./assets/json/cdns.json')
     .then((res) => res.json())
     .then(async (cdns) => {
-      localStorage.setItem("cdn", await getCDN(cdns));
+      localStorage.setItem('cdn', await getCDN(cdns));
       location.reload();
     });
 }
 
-const instance = encodeURIComponent(origin.replace(location.origin, ""));
+const instance = encodeURIComponent(origin.replace(location.origin, ''));
 
 // If we have onLoadData, we run it now
 window.onload = () => {
@@ -73,12 +74,12 @@ window.onerror = (e) => {
 };
 
 // Add the main script in the <head> tags
-const jsdelivr = document.createElement("script");
-jsdelivr.setAttribute("src", "https://cdn.jsdelivr.net/gh/3kh0/3kh0.github.io/js/main.js");
+const jsdelivr = document.createElement('script');
+jsdelivr.setAttribute('src', 'https://cdn.jsdelivr.net/gh/3kh0/3kh0.github.io/js/main.js');
 document.head.append(jsdelivr);
 
 // Collect Tab Cloak data from local storage
-var tab = localStorage.getItem("tab");
+var tab = localStorage.getItem('tab');
 if (tab) {
   try {
     // Parse the data, it is in JSON
@@ -97,67 +98,67 @@ if (tabData.title) {
 
 // Set the Tab icon if the Tab cloak data is there
 if (tabData.icon) {
-  document.querySelector("link[rel='icon']").href = tabData.icon;
+  document.querySelector('link[rel="icon"]').href = tabData.icon;
 }
 
 // Set theme colors if the user has set it
 function getContrastHex(hexcolor) {
-  hexcolor = hexcolor.replace("#", "");
+  hexcolor = hexcolor.replace('#', '');
   var r = parseInt(hexcolor.substr(0, 2), 16);
   var g = parseInt(hexcolor.substr(2, 2), 16);
   var b = parseInt(hexcolor.substr(4, 2), 16);
   var yiq = (r * 299 + g * 587 + b * 114) / 1000;
-  return yiq >= 128 ? "#1c1c1c" : "white";
+  return yiq >= 128 ? '#1c1c1c' : 'white';
 }
 
 // Set theme colors if the user has set it
 function getColorHex(hexcolor) {
-  hexcolor = hexcolor.replace("#", "");
+  hexcolor = hexcolor.replace('#', '');
   var r = parseInt(hexcolor.substr(0, 2), 16);
   var g = parseInt(hexcolor.substr(2, 2), 16);
   var b = parseInt(hexcolor.substr(4, 2), 16);
   var yiq = (r * 299 + g * 587 + b * 114) / 1000;
-  return yiq >= 128 ? "white" : "black";
+  return yiq >= 128 ? 'white' : 'black';
 }
 
 // Set theme colors if the user has set it
-var theme = localStorage.getItem("theme") || "default";
+var theme = localStorage.getItem('theme') || 'default';
 let themes;
 
 // Fetching themes
-fetch(origin + "assets/json/themes.json")
+fetch(origin + 'assets/json/themes.json')
   .then((res) => res.json())
   .then((data_themes) => {
     themes = data_themes;
 
-    if (theme !== "custom") {
-      document.body.setAttribute("theme", theme);
+    if (theme !== 'custom') {
+      document.body.setAttribute('theme', theme);
 
-      if (location.pathname.includes("/settings")) {
+      if (location.pathname.includes('/settings')) {
         themes.forEach((palette) => {
           if (palette.theme == theme) {
             console.log(palette.theme);
-            document.querySelector("#theme_color").value = palette.color;
+            document.querySelector('#theme_color').value = palette.color;
           }
         });
       }
     } else {
       // Get custom theme
-      const theme = localStorage.getItem("theme_color");
+      const theme = localStorage.getItem('theme_color');
 
-      document.body.setAttribute("theme", "custom");
+      document.body.setAttribute('theme', 'custom');
       document.body.style = `--theme: ${theme}; --background: ${getContrastHex(theme)}; --text: ${getColorHex(theme)}; --text-secondary: ${getColorHex(theme)};`;
 
-      if (location.pathname.includes("/settings")) {
+      if (location.pathname.includes('/settings')) {
         // Make the custom theme color selector
-        document.querySelector("#theme_color").value = theme;
+        document.querySelector('#theme_color').value = theme;
       }
     }
   })
   .catch((e) => {
     // Houston, we have a problem.
     console.error(e);
-    throw new Error("Failed to load themes");
+    throw new Error('Failed to load themes');
   });
 
 // Add the changelogAdded element for the changelog
@@ -173,7 +174,7 @@ class changelogAdded extends HTMLElement {
   }
 }
 
-customElements.define("changelog-added", changelogAdded);
+customElements.define('changelog-added', changelogAdded);
 
 // Add the changelogRemoved element for the changelog
 class changelogRemoved extends HTMLElement {
@@ -187,7 +188,7 @@ class changelogRemoved extends HTMLElement {
         `;
   }
 }
-customElements.define("changelog-removed", changelogRemoved);
+customElements.define('changelog-removed', changelogRemoved);
 
 // Add the changelogChanged element for the changelog
 class changelogChanged extends HTMLElement {
@@ -201,37 +202,37 @@ class changelogChanged extends HTMLElement {
         `;
   }
 }
-customElements.define("changelog-changed", changelogChanged);
+customElements.define('changelog-changed', changelogChanged);
 
 // Handle secret themes
 function foundSecretTheme(name) {
-  document.body.setAttribute("theme", name);
-  localStorage.setItem("theme", name);
-  localStorage.setItem(name, "true");
-  if (document.querySelector("." + name)) {
-    document.querySelector("." + name).removeAttribute("hidden");
+  document.body.setAttribute('theme', name);
+  localStorage.setItem('theme', name);
+  localStorage.setItem(name, 'true');
+  if (document.querySelector('.' + name)) {
+    document.querySelector('.' + name).removeAttribute('hidden');
   }
 }
 
 // Handle the secret theme button
 function secretThemeButton(name) {
-  if (localStorage.getItem(name) == "true") {
-    if (document.querySelector("." + name)) {
-      document.querySelector("." + name).removeAttribute("hidden");
+  if (localStorage.getItem(name) == 'true') {
+    if (document.querySelector('.' + name)) {
+      document.querySelector('.' + name).removeAttribute('hidden');
     }
   }
 }
 
 // Keybind themes
 function createSecretThemeType(name, pattern) {
-  window[name + "pattern"] = pattern;
-  window[name + "current"] = 0;
+  window[name + 'pattern'] = pattern;
+  window[name + 'current'] = 0;
 
-  var themePattern = window[name + "pattern"];
-  var themeCurrent = window[name + "current"];
+  var themePattern = window[name + 'pattern'];
+  var themeCurrent = window[name + 'current'];
 
   // Log key presses to see if the user got the theme
-  document.addEventListener("keydown", function (e) {
+  document.addEventListener('keydown', function (e) {
     if (e.key !== themePattern[themeCurrent]) {
       return (themeCurrent = 0);
     }
@@ -249,15 +250,41 @@ function createSecretThemeType(name, pattern) {
 }
 
 // Define the cool themes, stop using this as a cheatsheet
-createSecretThemeType("nebelung", ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a"]);
-createSecretThemeType("piplup", ["p", "i", "p", "l", "u", "p", "i", "s", "c", "o", "o", "l"]);
-createSecretThemeType("forternish", ["c", "o", "m", "i", "c", "s", "a", "n", "s"]);
-createSecretThemeType("russell2259", ["l", "o", "l"]);
+createSecretThemeType('nebelung', ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a']);
+createSecretThemeType('piplup', ['p', 'i', 'p', 'l', 'u', 'p', 'i', 's', 'c', 'o', 'o', 'l']);
+createSecretThemeType('forternish', ['c', 'o', 'm', 'i', 'c', 's', 'a', 'n', 's']);
+createSecretThemeType('russell2259', ['l', 'o', 'l']);
 
 // Define the secret theme button, stop using this as a cheatsheet
-secretThemeButton("hacker");
+secretThemeButton('hacker');
 
 // Handle the secret theme button
 window.nebelung_the_hacker = function () {
-  foundSecretTheme("hacker");
+  foundSecretTheme('hacker');
 };
+
+
+if (dev.developer && dev.expires) {
+  if (!dev.expires > 10 && !dev.expires <= 0) {
+    const devTools = document.createElement('script');
+    devTools.src = 'https://cdn.jsdelivr.net/npm/eruda';
+    document.body.appendChild(devTools);
+    
+    devTools.onload = () => {
+      eruda.init();
+
+      console.log(`Welcome ${dev.developer}`);
+      console.log(dev.expires);
+    }
+  } else {
+    alert('Developer tools limit reached please use the bookmarklet to refresh');
+  }
+}
+
+window.onbeforeunload = (e) => {
+  if (dev.developer) {
+    return e;
+
+    localStorage.setItem('dev', { developer: dev.developer, expires: dev.expires - 1 });
+  }
+}
