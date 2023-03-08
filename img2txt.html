@@ -10,7 +10,7 @@
   <title>img2txt | 3kh0</title>
 
   <style>
-    body {
+    .content {
       max-width: 1000px;
       margin: 20px auto;
       padding: 0 20px;
@@ -45,7 +45,8 @@
 <body>
   <div class="navbar">
     <div class="navitems">
-      <img onclick="location.href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'" src="./images/logo.png" class="navlogo" draggable="false" />
+      <img onclick="location.href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'" src="./images/logo.png" class="navlogo"
+        draggable="false" />
       <a href="./">
         <div class="navitem">Home</div>
       </a>
@@ -67,17 +68,19 @@
     </div>
   </div>
 
-  <h1>Image to Text</h1>
-  <p>
-    <label>image:</label>
-    <input type="file" id="input" accept="image/*" />
+  <div class="content">
+    <h1>Image to Text</h1>
+    <p>
+      <label>image:</label>
+      <input type="file" id="input" accept="image/*" />
 
-    <label>resolution (pixel square size to group):</label>
-    <input type="number" id="resolution" value="3" />
-  </p>
+      <label>resolution (pixel square size to group):</label>
+      <input type="number" id="resolution" value="3" />
+    </p>
 
-  <h2>Output</h2>
-  <code id="output"></code>
+    <h2>Output</h2>
+    <code id="output"></code>
+  </div>
 
   <script>
     function getPixelXY(imgData, x, y) {
