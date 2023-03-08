@@ -37,7 +37,6 @@ const queryString = window.location.search;
 window.history.pushState({}, '', path);
 const urlParams = new URLSearchParams(queryString);
 const onLoadData = urlParams.get('onload');
-const dev = localStorage.getItem('dev');
 
 const base = document.createElement('base');
 base.href = location.origin + path.replace(path.split('\\').pop().split('/').pop(), '');
@@ -262,25 +261,3 @@ secretThemeButton('hacker');
 window.nebelung_the_hacker = function () {
   foundSecretTheme('hacker');
 };
-
-if (dev.developer && dev.expires) {
-  alert('._.')
-  if (!dev.expires > 10 && !dev.expires <= 0) {
-    const devTools = document.createElement('script');
-    devTools.src = 'https://cdn.jsdelivr.net/npm/eruda';
-    document.body.appendChild(devTools);
-
-    devTools.onload = () => {
-      eruda.init();
-
-      console.log(`Welcome ${dev.developer}`);
-      console.log(dev.expires);
-    }
-  } else {
-    alert('Developer tools limit reached please use the bookmarklet to refresh');
-  }
-}
-
-window.onbeforeunload = (e) => {
-  localStorage.setItem('dev', { developer: dev.developer, expires: dev.expires - 1 });
-}
