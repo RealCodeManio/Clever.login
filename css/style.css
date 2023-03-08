@@ -624,6 +624,11 @@ input[type="color"] {
   cursor: pointer;
 }
 
+.gamecontainer>.nav>span.item {
+  color: var(--text);
+  font-size: 25px;
+}
+
 .gamecontainer>.nav>.item.right {
   width: fit-content;
   padding: 0.5em;
@@ -631,7 +636,7 @@ input[type="color"] {
   right: 0;
   position: fixed;
   background-color: var(--theme);
-  border-radius: 50%;
+  border-radius: 999999999999999999999px;
 }
 
 .gamecontainer>.nav>.item>svg {
