@@ -624,9 +624,11 @@ input[type="color"] {
   cursor: pointer;
 }
 
-.gamecontainer>.nav>span.item {
+.gamecontainer>.nav>span {
+  width: fit-content;
+  padding: 0.5em;
   color: var(--text);
-  font-size: 25px;
+  font-size: 22px;
 }
 
 .gamecontainer>.nav>.item.right {
