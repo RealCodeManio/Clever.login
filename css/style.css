@@ -631,9 +631,10 @@ input[type="color"] {
   font-size: 22px;
 }
 
-.gamecontainer>.nav>.item.right {
+.gamecontainer>.nav>.item#fullscreen {
+  margin: 0.2em;
   width: fit-content;
-  padding: 0.5em;
+  padding: 0.4em;
   cursor: pointer;
   right: 0;
   position: fixed;

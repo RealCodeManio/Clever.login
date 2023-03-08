@@ -66,6 +66,7 @@ fetch('./assets/json/games.json')
         gameContainer.classList.add('hidden');
         document.querySelector('.saveItems').classList.remove('hidden');
         document.querySelector('.navbar').classList.remove('noshadow');
+        gameFrame.src = '';
       });
 
       // Add click event listener to the fullscreen button in the game container to enter fullscreen mode
