@@ -56,10 +56,8 @@ fetch('./assets/json/games.json')
         document.querySelector('.saveItems').classList.add('hidden');
         document.querySelector('.navbar').classList.add('noshadow');
         gameFrame.querySelector('iframe').src = `./assets/game?game=${game.root}`;
+        gameNav.querySelector('span').textContent = game.name;
       };
-
-      // Add game title
-      gameNav.querySelector('span').textContent = game.name;
 
       // Add click event listener to the back button in the game container to go back to the games list
       gameNav.querySelector('#back').addEventListener('click', (e) => {
