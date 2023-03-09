@@ -188,3 +188,10 @@ body[theme="hacker"] {
 body[theme="hacker"] * {
   font-family: "JetBrains Mono";
 }
+
+body[theme="parrot"] {
+  --background: #1a1404;
+  --theme: #0580c3;
+  --text: #c39e1f;
+  --text-secondary: #000000;
+}
