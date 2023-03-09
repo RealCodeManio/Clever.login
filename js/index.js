@@ -210,7 +210,7 @@ function setParrotColors() {
 
   document.querySelectorAll("*").forEach((item) => {
     if (getComputedStyle(item).color == parrotColor) {
-        item.style.color = textColors[Math.floor((Math.random()*textColors.length))]
+        item.style.color = parrotColors[Math.floor((Math.random()*parrotColors.length))]
     }
   })
 }
