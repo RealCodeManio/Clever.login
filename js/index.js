@@ -203,6 +203,22 @@ class changelogChanged extends HTMLElement {
 }
 customElements.define('changelog-changed', changelogChanged);
 
+// Parrot theme random colors
+function setParrotColors() {
+  var parrotColor = "rgb(195, 158, 31)"
+  var parrotColors = ["#ff4c4b", "#c39e1f", "#b42e63"]
+
+  document.querySelectorAll("*").forEach((item) => {
+    if (getComputedStyle(item).color == parrotColor) {
+        item.style.color = textColors[Math.floor((Math.random()*textColors.length))]
+    }
+  })
+}
+
+if (localStorage.getItem("theme") == "parrot") {
+    setParrotColors()
+}
+
 // Handle secret themes
 function foundSecretTheme(name) {
   document.body.setAttribute('theme', name);
