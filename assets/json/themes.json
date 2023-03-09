@@ -72,5 +72,9 @@
     "theme": "hacker",
     "color": "#72dc83",
     "hidden": true
+  },
+  {
+    "theme": "parrot",
+    "color": "#0580c3"
   }
 ]
