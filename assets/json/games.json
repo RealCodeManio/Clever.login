@@ -83,6 +83,12 @@
 		"file": "index.html",
 		"img": "splash.png"
 	},
+  {
+     "name": "Run",
+     "root": "run",
+     "file": "index.html",
+     "img": "run.png"
+  },
 	{
 		"name": "Run 2",
 		"root": "Run 2",
