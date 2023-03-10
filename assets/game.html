@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="../css/index.css" />
     <link rel="shortcut icon" href="../images/logo.png" type="image/png" />
     <title>Loading... | 3kh0</title>
-
     <style>
       html,
       body {
@@ -122,7 +121,9 @@
 
             document.querySelector("#startgame").addEventListener("click", (e) => {
               document.body.innerHTML = `
-                <iframe frameborder="0" src="${cdn + "/" + game.root + "/" + game.file}" onerror="document.write('Could not load game');console.error('The game encountered an error.');" onload="document.querySelector('.overlay').remove();"></iframe>
+                <iframe frameborder="0" src="${
+                  cdn + "/" + game.root + "/" + game.file
+                }" onerror="document.write('Could not load game');console.error('The game encountered an error.');" onload="document.querySelector('.overlay').remove();"></iframe>
                 <div class="overlay">
                   <div class="loader center">
                     <span class="spinner">
@@ -141,13 +142,13 @@
           });
       } else {
         document.documentElement.innerText = "Could not load game";
-        
+
         if (!origin) {
-          console.error('The origin of the instance could not be found');
+          console.error("The origin of the instance could not be found");
         }
-        
+
         if (!gameSubpath) {
-          console.error('The game was not provided');
+          console.error("The game was not provided");
         }
       }
 
