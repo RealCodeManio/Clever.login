@@ -504,6 +504,12 @@
 		"img": "img/death.png"
 	},
 	{
+		"name": "Deepest Sword",
+		"root": "deepest-sword",
+		"file": "index.html",
+		"img": "splash.jpg"
+	},
+	{
 		"name": "Defend the Tank",
 		"root": "defend-the-tank",
 		"file": "index.html",
