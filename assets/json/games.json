@@ -107,7 +107,6 @@
   { "name": "Five Nights at Winston's", "root": "fnaw", "file": "index.html", "img": "splash.png" },
   { "name": "Flappy 2048", "root": "flappy-2048", "file": "index.html", "img": "meta/apple-touch-icon.png" },
   { "name": "Flappy Bird", "root": "flappy-bird", "file": "index.html", "img": "assets/thumb.png" },
-  { "name": "Flappy Plane", "root": "flappy plane", "file": "index.html", "img": "assets/thumb.png" },
   { "name": "Flash Tetris", "root": "flashtetris", "file": "index.html", "img": "flashtetris.png" },
   { "name": "Flippy Fish", "root": "flippy-fish", "file": "index.html", "img": "2022_10_28_0jt_Kleki.png" },
   { "name": "Friday Night Funkin'", "root": "fridaynightfunkin", "file": "index.html", "img": "fnf-icon.jpg" },
