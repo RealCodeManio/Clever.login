@@ -280,7 +280,7 @@ footer {
   display: none;
 }
 
-.game > img {
+.game>img {
   background: var(--theme);
   object-fit: cover;
   height: 200px;
@@ -288,7 +288,7 @@ footer {
   border-radius: 15px 15px 0 0;
 }
 
-.game > span {
+.game>span {
   line-height: 40px;
   width: 200px;
   text-align: center;
@@ -610,7 +610,7 @@ input[type="color"] {
   height: 50em;
 }
 
-.gamecontainer > .nav {
+.gamecontainer>.nav {
   display: flex;
   width: 100%;
   height: 50px;
@@ -618,33 +618,43 @@ input[type="color"] {
   align-items: stretch;
 }
 
-.gamecontainer > .nav > .item {
+.gamecontainer>.nav>.item {
   width: fit-content;
   padding: 0.5em;
   cursor: pointer;
 }
 
-.gamecontainer > .nav > .item.right {
+.gamecontainer>.nav>span {
   width: fit-content;
   padding: 0.5em;
+  color: var(--text);
+  font-size: 22px;
+}
+
+.gamecontainer>.nav>.item#fullscreen {
+  margin: 0.2em;
+  width: fit-content;
+  padding: 0.4em;
   cursor: pointer;
   right: 0;
   position: fixed;
+  background-color: var(--theme);
+  border-radius: 999999999999999999999px;
 }
 
-.gamecontainer > .nav > .item > svg {
+.gamecontainer>.nav>.item>svg {
   width: 30px;
 }
 
-.gamecontainer > .nav > .item > svg > path {
+.gamecontainer>.nav>.item>svg>path {
   fill: var(--background);
 }
 
-.gamecontainer > div {
+.gamecontainer>div {
   height: 100%;
 }
 
-.gamecontainer > div > iframe {
+.gamecontainer>div>iframe {
   width: 100%;
   height: 100%;
 }
