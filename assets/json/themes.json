@@ -1,7 +1,7 @@
 [
   {
     "theme": "default",
-    "color": "#4caf50"
+    "color": "#0084ff"
   },
   {
     "theme": "light",
@@ -12,8 +12,8 @@
     "color": "#b625cc"
   },
   {
-    "theme": "sky",
-    "color": "#0084ff"
+    "theme": "alien",
+    "color": "#4caf50"
   },
   {
     "theme": "winter",
