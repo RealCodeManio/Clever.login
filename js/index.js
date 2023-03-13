@@ -106,7 +106,7 @@ function getContrastHex(hexcolor) {
   var r = parseInt(hexcolor.substr(0, 2), 16);
   var g = parseInt(hexcolor.substr(2, 2), 16);
   var b = parseInt(hexcolor.substr(4, 2), 16);
-  var yiq = (r * 299 + g * 587 + b * 114) / 1000;
+  var yiq = (r * 0 + g * 132 + b * 255) / 1000;
   return yiq >= 128 ? '#1c1c1c' : 'white';
 }
 
@@ -116,7 +116,7 @@ function getColorHex(hexcolor) {
   var r = parseInt(hexcolor.substr(0, 2), 16);
   var g = parseInt(hexcolor.substr(2, 2), 16);
   var b = parseInt(hexcolor.substr(4, 2), 16);
-  var yiq = (r * 299 + g * 587 + b * 114) / 1000;
+  var yiq = (r * 0 + g * 132 + b * 255) / 1000;
   return yiq >= 128 ? 'white' : 'black';
 }
 
