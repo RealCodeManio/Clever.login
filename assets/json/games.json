@@ -1,7 +1,6 @@
 [
   { "name": "1", "root": "1", "file": "index.html", "img": "meta/apple-touch-icon.png" },
   { "name": "10 Minutes till dawn", "root": "10-minutes-till-dawn", "file": "index.html", "img": "splash.png" },
-  { "name": "Cash Clicker", "root": "cash", "file": "index.html", "img": "splash.png" },
   { "name": "100 Player Pong", "root": "100ng", "file": "index.html", "img": "100ng.jpg" },
   { "name": "1v1.lol", "root": "1v1lol", "file": "index.html", "img": "splash.png" },
   { "name": "1v1.space", "root": "1v1space", "file": "index.html", "img": "splash.png" },
@@ -114,6 +113,7 @@
   { "name": "Froggy's Battle", "root": "froggys-battle", "file": "index.html", "img": "splash.png" },
   { "name": "Fruit Ninja", "root": "fruitninja", "file": "index.html", "img": "FruitNinjaTeaser.jpg" },
   { "name": "Frying Nemo", "root": "frying-nemo", "file": "index.html", "img": "splash.png" },
+  { "name": "Fantasy Dash", "root": "fantasy-dash", "file": "Fantasy Dash.html", "img": "DF24D85A-B7B5-4CF0-8194-DB6CD89C6975.jpeg" },
   { "name": "GOODNIGHT", "root": "goodnight", "file": "index.html", "img": "goodnight.jpg" },
   { "name": "Game Inside a Game Inside a Game...", "root": "game-inside", "file": "index.html", "img": "img/display.png" },
   { "name": "Generic Fishing Game", "root": "generic-fishing-game", "file": "index.html", "img": "splash.png" },
@@ -318,5 +318,8 @@
   { "name": "eggycar", "root": "eggycar", "file": "index.html", "img": "favicon.ico" },
   { "name": "n-gon", "root": "n-gon", "file": "index.html", "img": "bot.png" },
   { "name": "webxash", "root": "webxash", "file": "index.html", "img": "webxash.png" },
-  { "name": "xx142-b2exe", "root": "xx142-b2exe", "file": "index.html", "img": "splash.png" }
+  { "name": "xx142-b2exe", "root": "xx142-b2exe", "file": "index.html", "img": "splash.png" },
+  { "name": "osu!", "root": "osu!", "file": "index.html", "img": "osu.png" },
+  { "name": "Fleeing The Complex", "root": "fleeingthecomplex", "file": "index.html", "img": "a.png" },
+  { "name": "Happy Wheels", "root": "happywheels", "file": "index.html", "img": "b.png" }
 ]
