@@ -103,6 +103,66 @@ function setFavicon(icon) {
   // Save the updated tab data to localStorage
   localStorage.setItem("tab", JSON.stringify(tabData));
 }
+/*
+Readymade Cloaks
+    <select name="Premade Cloak" id="premadecloaks" title="Cloaks">
+      <option value="search">Google Search</option>
+      <option value="drive">Google Drive</option>
+      <option value="youtube">YouTube</option>
+      <option value="gmail">Gmail</option>
+      <option value="calendar">Google Calendar</option>
+      <option value="meets">Google Meet</option>
+      <option value="classroom">Google Classroom</option>
+      <option value="canvas">Canvas</option>
+      <option value="zoom">Zoom</option>
+      <option value="khan">Khan Academy</option>
+    </select>
+*/
+function setCloak() { // applies only to premade cloaks
+  var cloak = document.getElementById("premadecloaks").value; // cloak seems kind of weird when you spell it out
+  switch (cloak) {
+    case "search": // Google Search
+      setTitle("Google Search");
+      setFavicon("./images/cloaks/Google Search.ico");
+      break;
+    case "drive": // Google Drive
+      setTitle("Google Drive");
+      setFavicon("./images/cloaks/Google Drive.ico");
+      break;
+    case "youtube": // YouTube 
+      setTitle("YouTube");
+      setFavicon("./images/cloaks/YouTube.ico");
+      break;  
+    case "gmail": // Gmail
+      setTitle("Gmail");
+      setFavicon("./images/cloaks/Gmail.ico");
+      break;
+    case "calendar": // Google Calendar
+      setTitle("Google Calendar");
+      setFavicon("./images/cloaks/Calendar.ico");
+      break;
+    case "meets": // Google Meet
+      setTitle("Google Meet");
+      setFavicon("./images/cloaks/Meet.ico");
+      break;
+    case "classroom": // Google Classroom
+      setTitle("Google Classroom");
+      setFavicon("./images/cloaks/Classroom.png"); // could not find an icon
+      break;
+    case "canvas": // Canvas 
+      setTitle("Canvas");
+      setFavicon("./images/cloaks/Canvas.ico");
+      break;
+    case "zoom": // Zoom
+      setTitle("Zoom");
+      setFavicon("./images/cloaks/Zoom.ico");
+      break;
+    case "khan": // Khan Academy
+      setTitle("Khan Academy"); 
+      setFavicon("./images/cloaks/Khan Academy.ico");
+      break;
+  }
+}
 
 // Function to reset the tab settings to default
 function resetTab() {
