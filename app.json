@@ -1,7 +1,7 @@
 {
     "name": "Clever Login",
     "description": "The better unblocked games website.",
-    "repository": "https://github.com/3kh0/3kh0.github.io",
+    "repository": "https://realcodemanio.github.io/Clever.login/",
     "logo": "https://support.highlandschools.org/wp-content/uploads/2020/11/clever1.png",
     "buildpacks": [{"url": "https://github.com/heroku/heroku-buildpack-static"}]
 }
