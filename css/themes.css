@@ -2,7 +2,7 @@
 
 body[theme="default"] {
   --background: #1c1c1c;
-  --theme: #4caf50;
+  --theme: #0084ff;
   --text: white;
   --text-secondary: black;
 }
@@ -21,9 +21,9 @@ body[theme="orchid"] {
   --text-secondary: white;
 }
 
-body[theme="sky"] {
+body[theme="alien"] {
   --background: #1c1c1c;
-  --theme: #0084ff;
+  --theme: #4caf50;
   --text: white;
   --text-secondary: black;
 }
