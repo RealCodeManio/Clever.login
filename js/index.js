@@ -20,10 +20,10 @@ async function isBlocked(url) {
 }
 
 async function getCDN(cdns) {
-  for (let cdn in cdns) {
-    var blocked = await isBlocked(cdns[cdn]);
+  for (let cdn of cdns) {
+    var blocked = await isBlocked(cdn);
     if (!blocked) {
-      return cdns[cdn];
+      return cdn;
     }
   }
   return cdns[0];
