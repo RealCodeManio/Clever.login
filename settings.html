@@ -40,6 +40,21 @@
   <div class="buttons">
     <input id="title" class="input" placeholder="Title" onkeyup="setTitle(this.value)" />
     <input id="icon" class="input" placeholder="Favicon" onkeyup="setFavicon(this.value.trim())" />
+     <!-- Add some premade cloaks -->
+    <p class="text">Or choose a readymade cloak:</p>
+    <select name="Readymade Cloaks" id="premadecloaks" title="Cloaks">
+      <option value="search">Google Search</option>
+      <option value="drive">Google Drive</option>
+      <option value="youtube">YouTube</option>
+      <option value="gmail">Gmail</option>
+      <option value="calendar">Google Calendar</option>
+      <option value="meets">Google Meet</option>
+      <option value="classroom">Google Classroom</option>
+      <option value="canvas">Canvas</option>
+      <option value="zoom">Zoom</option>
+      <option value="khan">Khan Academy</option>
+    </select>
+    <button class="button" onclick="setCloak()">Set readymade cloak</button>
     <button class="button" onclick="resetTab()">Reset</button>
   </div>
 
@@ -64,7 +79,7 @@
   </div>
   <br />
   <div class="buttons">
-    <input type="color" id="theme_color" name="Theme picker" value="#4caf50" oninput="setThemeColor(this.value)" />
+    <input type="color" id="theme_color" name="Theme picker" value="#0084ff" oninput="setThemeColor(this.value)" />
     <label for="head">Set custom color</label>
   </div>
 
